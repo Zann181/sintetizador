@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"liblo-populate"
+		],
+		"name" : "liblo-populate"
+	}
+}

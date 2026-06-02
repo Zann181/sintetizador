@@ -1,0 +1,37 @@
+# ninja log v5
+2486	2606	8020736026869380	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-configure	5e9243dc472a7237
+2	119	8020729516651915	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-mkdir	177f42d7e8552bf6
+2859	2966	8020736030548817	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-test	fc3ddfa0bccf060c
+120	5296	8020729568414126	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-download	9554df7ccc860583
+2	119	8020729516651915	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-mkdir	177f42d7e8552bf6
+20	2383	0	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-update	aecb6fa3157e5d51
+2486	2606	8020736026869380	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-configure	5e9243dc472a7237
+2384	2486	8020736025720631	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-patch	f64f7c8c7adbeba4
+120	5296	8020729568414126	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-download	9554df7ccc860583
+2384	2486	8020736025720631	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-patch	f64f7c8c7adbeba4
+20	2383	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-update	aecb6fa3157e5d51
+2606	2738	8020736028227502	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-build	43177cd4f6520f4b
+2606	2738	8020736028227502	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-build	43177cd4f6520f4b
+2738	2859	8020736029423378	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-install	f595ea638cef96b7
+2738	2859	8020736029423378	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-install	f595ea638cef96b7
+2859	2966	8020736030548817	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-test	fc3ddfa0bccf060c
+2966	3111	8020736031984271	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-done	2919d44b6545cd7d
+2966	3111	8020736031984271	CMakeFiles/rtaudio-populate-complete	2919d44b6545cd7d
+2966	3111	8020736031984271	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/CMakeFiles/rtaudio-populate-complete	2919d44b6545cd7d
+2966	3111	8020736031984271	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-done	2919d44b6545cd7d
+20	2240	0	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-update	aecb6fa3157e5d51
+20	2240	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-update	aecb6fa3157e5d51
+2240	2327	8020740671371512	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-patch	f64f7c8c7adbeba4
+2240	2327	8020740671371512	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-patch	f64f7c8c7adbeba4
+2327	2401	8020740672121226	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-configure	5e9243dc472a7237
+2327	2401	8020740672121226	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-configure	5e9243dc472a7237
+2401	2475	8020740672848433	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-build	43177cd4f6520f4b
+2401	2475	8020740672848433	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-build	43177cd4f6520f4b
+2475	2570	8020740673773559	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-install	f595ea638cef96b7
+2475	2570	8020740673773559	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-install	f595ea638cef96b7
+2570	2649	8020740674550837	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-test	fc3ddfa0bccf060c
+2570	2649	8020740674550837	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-test	fc3ddfa0bccf060c
+2650	2762	8020740675722135	CMakeFiles/rtaudio-populate-complete	2919d44b6545cd7d
+2650	2762	8020740675722135	rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-done	2919d44b6545cd7d
+2650	2762	8020740675722135	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/CMakeFiles/rtaudio-populate-complete	2919d44b6545cd7d
+2650	2762	8020740675722135	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/src/rtaudio-populate-stamp/rtaudio-populate-done	2919d44b6545cd7d

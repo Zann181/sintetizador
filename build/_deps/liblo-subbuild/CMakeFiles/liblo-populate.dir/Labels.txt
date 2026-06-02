@@ -1,0 +1,14 @@
+# Target labels
+ liblo-populate
+# Source files and their labels
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate-complete.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-download.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-mkdir.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test.rule
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update.rule

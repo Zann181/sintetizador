@@ -1,0 +1,10 @@
+prefix=C:/Program Files (x86)/FaustSynthServer
+exec_prefix=${prefix}
+libdir=C:/Program Files (x86)/FaustSynthServer/lib
+includedir=C:/Program Files (x86)/FaustSynthServer/include
+
+Name: liblo
+Version: 0.35
+Description: A lightweight OSC server/client library
+Libs: -L${libdir} -llo  
+Cflags: -I${includedir}
