@@ -2327,3 +2327,547 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:60 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_W4"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l7ojdo"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l7ojdo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_W4"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l7ojdo'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_05458
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_W4  -std=gnu90   /W4 -o CMakeFiles/cmTC_05458.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l7ojdo/src.c"
+        FAILED: CMakeFiles/cmTC_05458.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_W4  -std=gnu90   /W4 -o CMakeFiles/cmTC_05458.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l7ojdo/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:61 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_UNUSED_PARAMETER_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-hs6d77"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-hs6d77"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_UNUSED_PARAMETER_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-hs6d77'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_b37ed
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER_MSVC  -std=gnu90   /wd4100 -o CMakeFiles/cmTC_b37ed.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-hs6d77/src.c"
+        FAILED: CMakeFiles/cmTC_b37ed.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER_MSVC  -std=gnu90   /wd4100 -o CMakeFiles/cmTC_b37ed.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-hs6d77/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:62 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4wbmix"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4wbmix"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4wbmix'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_de1e0
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC  -std=gnu90   /wd4127 -o CMakeFiles/cmTC_de1e0.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4wbmix/src.c"
+        FAILED: CMakeFiles/cmTC_de1e0.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC  -std=gnu90   /wd4127 -o CMakeFiles/cmTC_de1e0.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4wbmix/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:63 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_NONSTANDARD_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nzik16"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nzik16"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_NONSTANDARD_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nzik16'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_ebeb6
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_MSVC  -std=gnu90   /wd4201 -o CMakeFiles/cmTC_ebeb6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nzik16/src.c"
+        FAILED: CMakeFiles/cmTC_ebeb6.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_MSVC  -std=gnu90   /wd4201 -o CMakeFiles/cmTC_ebeb6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nzik16/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:64 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ou5ly8"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ou5ly8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ou5ly8'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_e62ac
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC  -std=gnu90   /wd4206 -o CMakeFiles/cmTC_e62ac.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ou5ly8/src.c"
+        FAILED: CMakeFiles/cmTC_e62ac.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC  -std=gnu90   /wd4206 -o CMakeFiles/cmTC_e62ac.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ou5ly8/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:65 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aeez32"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aeez32"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aeez32'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_3f393
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC  -std=gnu90   /wd4210 -o CMakeFiles/cmTC_3f393.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aeez32/src.c"
+        FAILED: CMakeFiles/cmTC_3f393.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC  -std=gnu90   /wd4210 -o CMakeFiles/cmTC_3f393.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aeez32/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:66 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-592joi"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-592joi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-592joi'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_9f5d4
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC  -std=gnu90   /wd4232 -o CMakeFiles/cmTC_9f5d4.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-592joi/src.c"
+        FAILED: CMakeFiles/cmTC_9f5d4.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC  -std=gnu90   /wd4232 -o CMakeFiles/cmTC_9f5d4.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-592joi/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:67 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_HIDES_LOCAL"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rqhirq"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rqhirq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_HIDES_LOCAL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rqhirq'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_db908
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_LOCAL  -std=gnu90   /wd4456 -o CMakeFiles/cmTC_db908.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rqhirq/src.c"
+        FAILED: CMakeFiles/cmTC_db908.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_LOCAL  -std=gnu90   /wd4456 -o CMakeFiles/cmTC_db908.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rqhirq/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:68 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_HIDES_PARAM"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-65nkui"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-65nkui"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_HIDES_PARAM"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-65nkui'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_4d336
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_PARAM  -std=gnu90   /wd4457 -o CMakeFiles/cmTC_4d336.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-65nkui/src.c"
+        FAILED: CMakeFiles/cmTC_4d336.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_PARAM  -std=gnu90   /wd4457 -o CMakeFiles/cmTC_4d336.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-65nkui/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:69 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_HIDES_GLOBAL"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rxj4mo"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rxj4mo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_HIDES_GLOBAL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rxj4mo'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_67c9b
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_GLOBAL  -std=gnu90   /wd4459 -o CMakeFiles/cmTC_67c9b.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rxj4mo/src.c"
+        FAILED: CMakeFiles/cmTC_67c9b.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_GLOBAL  -std=gnu90   /wd4459 -o CMakeFiles/cmTC_67c9b.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rxj4mo/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:70 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rct05a"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rct05a"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rct05a'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_39aa8
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC  -std=gnu90   /wd4706 -o CMakeFiles/cmTC_39aa8.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rct05a/src.c"
+        FAILED: CMakeFiles/cmTC_39aa8.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC  -std=gnu90   /wd4706 -o CMakeFiles/cmTC_39aa8.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rct05a/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:71 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_UNSAFE_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-bffdq0"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-bffdq0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_UNSAFE_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-bffdq0'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_d68d6
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNSAFE_MSVC  -std=gnu90   /wd4996 -o CMakeFiles/cmTC_d68d6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-bffdq0/src.c"
+        FAILED: CMakeFiles/cmTC_d68d6.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNSAFE_MSVC  -std=gnu90   /wd4996 -o CMakeFiles/cmTC_d68d6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-bffdq0/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:73 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_WALL"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ifo6kp"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ifo6kp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_WALL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ifo6kp'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_230d0
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_WALL  -std=gnu90   -Wall -o CMakeFiles/cmTC_230d0.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ifo6kp/src.c"
+        FAILED: CMakeFiles/cmTC_230d0.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_WALL  -std=gnu90   -Wall -o CMakeFiles/cmTC_230d0.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ifo6kp/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:76 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_NO_UNUSED_PARAMETER"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0bk8dy"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0bk8dy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_NO_UNUSED_PARAMETER"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0bk8dy'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_dd514
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER  -std=gnu90   -Wno-unused-parameter -o CMakeFiles/cmTC_dd514.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0bk8dy/src.c"
+        FAILED: CMakeFiles/cmTC_dd514.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER  -std=gnu90   -Wno-unused-parameter -o CMakeFiles/cmTC_dd514.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0bk8dy/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:77 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_STRICT_PROTOTYPES"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ddqgmt"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ddqgmt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_STRICT_PROTOTYPES"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ddqgmt'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_2a1f6
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_STRICT_PROTOTYPES  -std=gnu90   -Wstrict-prototypes -o CMakeFiles/cmTC_2a1f6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ddqgmt/src.c"
+        FAILED: CMakeFiles/cmTC_2a1f6.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_STRICT_PROTOTYPES  -std=gnu90   -Wstrict-prototypes -o CMakeFiles/cmTC_2a1f6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ddqgmt/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:78 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_EXTRA"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-68n3jz"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-68n3jz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_EXTRA"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-68n3jz'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_d0a6e
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_EXTRA  -std=gnu90   -Wextra -o CMakeFiles/cmTC_d0a6e.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-68n3jz/src.c"
+        FAILED: CMakeFiles/cmTC_d0a6e.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_EXTRA  -std=gnu90   -Wextra -o CMakeFiles/cmTC_d0a6e.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-68n3jz/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:80 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_LINT_UTF8_MSVC"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-mswosb"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-mswosb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_LINT_UTF8_MSVC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-mswosb'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_32e88
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_UTF8_MSVC  -std=gnu90   /utf-8 -o CMakeFiles/cmTC_32e88.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-mswosb/src.c"
+        FAILED: CMakeFiles/cmTC_32e88.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_UTF8_MSVC  -std=gnu90   /utf-8 -o CMakeFiles/cmTC_32e88.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-mswosb/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/libuv-src/CMakeLists.txt:119 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test UV_F_STRICT_ALIASING"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dmo1h8"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dmo1h8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/cmake"
+    buildResult:
+      variable: "UV_F_STRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dmo1h8'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_9e45a
+        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_F_STRICT_ALIASING  -std=gnu90   -fno-strict-aliasing -o CMakeFiles/cmTC_9e45a.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dmo1h8/src.c"
+        FAILED: CMakeFiles/cmTC_9e45a.dir/src.c.obj 
+        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_F_STRICT_ALIASING  -std=gnu90   -fno-strict-aliasing -o CMakeFiles/cmTC_9e45a.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dmo1h8/src.c"
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...

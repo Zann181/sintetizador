@@ -4,13 +4,9 @@
 #include "../state/AutomationRecorder.h"
 #include "../audio/RtAudioBackend.h"
 #include <lo/lo.h>
-#include <uwebsockets/App.h>
 #include <nlohmann/json.hpp>
 
-// Global WebSocket app and connection set
-static std::shared_ptr<uWS::App> g_wsApp;
-static std::mutex g_wsMutex;
-static std::vector<uWS::WebSocket<false, true>*> g_wsConnections;
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -287,12 +283,25 @@ private:
             std::string headers = "HTTP/1.1 404 Not Found\r\n"
                                   "Content-Length: " + std::to_string(body.length()) + "\r\n"
                                   "Content-Type: text/plain\r\n"
+                                  "Access-Control-Allow-Origin: *\r\n"
                                   "Connection: close\r\n\r\n";
+            send(client_fd, (headers + body).c_str(), headers.length() + body.length(), 0);
         }
     }
 
     void serveHTML(int client_fd) {
-        const std::string html = R"html(<!DOCTYPE html>
+        std::string html;
+        std::ifstream file("web/index.html");
+        if (!file.is_open()) {
+            file.open("index.html");
+        }
+        if (file.is_open()) {
+            std::stringstream ss;
+            ss << file.rdbuf();
+            html = ss.str();
+            file.close();
+        } else {
+            html = R"html(<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -829,6 +838,201 @@ private:
         }
         .mixer-slider-h::-webkit-slider-thumb {
             -webkit-appearance: none;
+            transform: translateX(0px);
+            background: #00e5ff;
+            box-shadow: 0 0 6px #00e5ff, 0 1px 2px rgba(0,0,0,0.6);
+        }
+
+        /* ── TWO COLUMN APP CONTAINER ── */
+        .app-container {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 64px);
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .center-col {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #000000;
+            overflow-y: auto;
+            padding: 16px 24px;
+            gap: 16px;
+            transition: padding-left 0.3s ease, padding-right 0.3s ease;
+        }
+
+        /* Symmetric collapsible drawers */
+        .right-col {
+            position: fixed;
+            top: 64px;
+            right: -340px;
+            width: 340px;
+            height: calc(100vh - 64px);
+            background: var(--panel-bg);
+            border-left: 2px solid var(--border);
+            box-shadow: -5px 0 25px rgba(84, 38, 38, 0.2);
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 16px;
+            overflow-y: auto;
+        }
+        .right-col.open {
+            right: 0;
+        }
+
+        .performer-drawer {
+            position: fixed;
+            top: 64px;
+            left: -340px;
+            width: 340px;
+            height: calc(100vh - 64px);
+            background: var(--panel-bg);
+            border-right: 2px solid var(--border);
+            box-shadow: 5px 0 25px rgba(84, 38, 38, 0.2);
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 16px;
+            overflow-y: auto;
+        }
+        .performer-drawer.open {
+            left: 0;
+        }
+
+        /* ── MASTER MIXER CONSOLE ───────────────────────── */
+        .master-mix-console {
+            background: var(--panel-bg);
+            border: 2px solid var(--border-strong);
+            border-radius: 8px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 0 10px rgba(84,61,38,0.1);
+            flex-shrink: 0;
+        }
+        .mixer-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 900;
+            color: var(--accent-orange) !important;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 8px rgba(84, 61, 38, 0.4);
+            border-bottom: 1px solid var(--border-strong);
+            padding-bottom: 6px;
+            text-transform: uppercase;
+        }
+        .mixer-channels-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            width: 100%;
+        }
+        .mixer-channel-strip {
+            background: var(--panel-inner);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.6);
+            min-width: 0;
+            transition: all 0.25s ease;
+        }
+
+        /* Active mixer strip premium glow highlight */
+        .mixer-channel-strip.active-strip {
+            border-color: var(--accent-orange) !important;
+            box-shadow: 0 0 8px var(--orange-glow), inset 0 1px 3px rgba(0,0,0,0.6) !important;
+            background: rgba(84, 61, 38, 0.05);
+        }
+
+        .chan-title-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 6px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .chan-title-row:hover .chan-title {
+            color: var(--accent-orange) !important;
+            text-shadow: 0 0 6px var(--orange-glow);
+        }
+        .chan-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 900;
+            color: var(--neutral-white) !important;
+            text-shadow: 0 0 4px var(--accent-glow);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+        .mixer-widget-box {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(84, 38, 38, 0.25);
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .mixer-lbl-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mixer-lbl {
+            font-size: 0.5rem;
+            font-weight: 900;
+            color: var(--neutral-white) !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mixer-val-txt, .fader-val-txt, .mixer-val-mini {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.5rem;
+            font-weight: 700;
+            color: var(--neutral-white) !important;
+        }
+        .mixer-select {
+            background: #000;
+            border: 1px solid var(--border);
+            color: var(--neutral-white) !important;
+            font-size: 0.55rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .mixer-select:focus {
+            border-color: var(--accent-cyan);
+        }
+        .mixer-slider-h {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 2px;
+            background: #111;
+            border: 1px solid var(--border);
+            border-radius: 1px;
+            outline: none;
+        }
+        .mixer-slider-h::-webkit-slider-thumb {
+            -webkit-appearance: none;
             width: 6px;
             height: 10px;
             background: var(--accent-orange);
@@ -851,7 +1055,8 @@ private:
             border: 1px solid var(--border);
             border-radius: 4px;
             padding: 6px;
-            height: 140px;
+            height: 165px;
+            width: 100%;
         }
         .fader-lbl-row {
             display: flex;
@@ -861,18 +1066,18 @@ private:
             padding-bottom: 2px;
         }
         .fader-track-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
+            width: 24px;
+            height: 110px;
             position: relative;
-            padding: 10px 0;
+            margin: 6px auto;
         }
         .fader-slider-v {
             -webkit-appearance: none;
-            transform: rotate(-90deg);
-            width: 90px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 110px;
             height: 4px;
             background: #111;
             border: 1px solid var(--border);
@@ -1190,6 +1395,47 @@ private:
         ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
         ::-webkit-scrollbar-thumb:hover { background: #333; }
+    
+        /* -- MAPPING MODAL -- */
+        .mapping-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.8); z-index: 1000;
+            display: none; justify-content: center; align-items: center;
+        }
+        .mapping-modal {
+            background: var(--panel-bg); border: 2px solid var(--border-strong);
+            padding: 20px; border-radius: 8px; width: 300px;
+            display: flex; flex-direction: column; gap: 15px;
+            box-shadow: 0 0 20px rgba(84,38,38,0.5);
+        }
+        .modal-title { font-family: 'Orbitron', sans-serif; font-size: 1rem; color: var(--accent-orange) !important; text-align: center; }
+        .modal-param-path { font-size: 0.7rem; color: #aaa !important; text-align: center; margin-bottom: 10px; }
+        .modal-input-group { display: flex; justify-content: space-between; align-items: center; }
+        .modal-input-group label { font-size: 0.8rem; }
+        .modal-input-group input { width: 80px; background: #000; color: #fff; border: 1px solid var(--border); padding: 4px; text-align: center; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
+
+        /* -- RESPONSIVE MEDIA QUERIES -- */
+        @media (max-width: 900px) {
+            .mixer-channels-grid {
+                display: flex; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 10px;
+            }
+            .mixer-channel-strip { min-width: 90px; }
+            .instrument-tabs { flex-wrap: wrap; }
+            .tab-btn { font-size: 0.55rem; padding: 6px 4px; }
+            .right-col, .performer-drawer { width: 280px; }
+            .header-logo { max-width: 140px; }
+            .bpm-text { font-size: 1rem; }
+            .fader-widget-vertical { height: 135px; padding: 4px; }
+            .fader-track-container { width: 20px; height: 80px; margin: 4px auto; }
+            .fader-slider-v { width: 80px; }
+        }
+        @media (max-width: 600px) {
+            .header-center-deck { flex-direction: column; gap: 5px; height: auto; }
+            header { height: auto; padding: 10px; flex-wrap: wrap; justify-content: center; gap: 10px;}
+            .system-status-lcd { display: none; }
+        }
+
     </style>
 </head>
 <body>
@@ -1203,7 +1449,7 @@ private:
             <!-- BPM CONTROL Deck -->
             <div class="bpm-control-center">
                 <button class="bpm-btn" title="Dividir Tempo (/2)" onclick="onBpmAction('divide')">/2</button>
-                <button class="bpm-btn" title="Restar 1 BPM" onclick="onBpmAction('dec')">−</button>
+                <button class="bpm-btn" title="Restar 1 BPM" onclick="onBpmAction('dec')">-</button>
                 <div class="bpm-display-group">
                     <div class="led" id="bpm-led"></div>
                     <span class="bpm-text"><span id="bpm-display">140</span> <span class="bpm-unit">BPM</span></span>
@@ -1369,6 +1615,12 @@ private:
             <!-- AJUSTES DE SISTEMA -->
             <div class="right-col-module">
                 <div class="right-col-module-title">Ajustes de Sistema (Settings)</div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; background:rgba(255,255,255,0.02); padding:8px; border-radius:4px; border:1px solid var(--border);">
+                    <span style="font-size:0.7rem; font-weight:700;">Modo Mapeo (Faders)</span>
+                    <button class="btn" id="btn-mapeo" onclick="toggleMappingMode()">ACTIVAR</button>
+                </div>
+
                 
                 <!-- RELOJ DE PRUEBA -->
                 <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:8px; border-bottom:1px dashed var(--border); padding-bottom:12px;">
@@ -1413,8 +1665,112 @@ private:
 
     </div>
 
+    <!-- Mapping Modal -->
+    <div id="mapping-modal" class="mapping-modal-overlay">
+        <div class="mapping-modal">
+            <div class="modal-title">Mapear Parámetro</div>
+            <div id="modal-path" class="modal-param-path"></div>
+            <div class="modal-input-group">
+                <label>Min:</label>
+                <input type="number" id="modal-min" step="0.01">
+            </div>
+            <div class="modal-input-group">
+                <label>Max:</label>
+                <input type="number" id="modal-max" step="0.01">
+            </div>
+            <div class="modal-actions">
+                <button class="btn" onclick="closeMappingModal()">Cancelar</button>
+                <button class="btn" onclick="saveMappingModal()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        let parameters = [];
+
+        const apiBase = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
+
+        
+        let isMappingMode = false;
+        let paramMappings = JSON.parse(localStorage.getItem("paramMappings") || "{}");
+
+        function toggleMappingMode() {
+            isMappingMode = !isMappingMode;
+            const btn = document.getElementById("btn-mapeo");
+            if(isMappingMode) {
+                btn.style.background = "var(--accent-cyan)";
+                btn.innerText = "DESACTIVAR";
+            } else {
+                btn.style.background = "rgba(255,255,255,0.02)";
+                btn.innerText = "ACTIVAR";
+            }
+        }
+
+        let currentMappingPath = "";
+        function openMappingModal(path, defaultMin, defaultMax) {
+            currentMappingPath = path;
+            document.getElementById("modal-path").innerText = path;
+            let map = paramMappings[path] || { min: defaultMin, max: defaultMax };
+            document.getElementById("modal-min").value = map.min;
+            document.getElementById("modal-max").value = map.max;
+            document.getElementById("mapping-modal").style.display = "flex";
+        }
+
+        function closeMappingModal() {
+            document.getElementById("mapping-modal").style.display = "none";
+        }
+
+        function saveMappingModal() {
+            let nMin = parseFloat(document.getElementById("modal-min").value);
+            let nMax = parseFloat(document.getElementById("modal-max").value);
+            paramMappings[currentMappingPath] = { min: nMin, max: nMax };
+            localStorage.setItem("paramMappings", JSON.stringify(paramMappings));
+            closeMappingModal();
+            saveMappingsToServer();
+        }
+
+        async function saveMappingsToServer() {
+            try {
+                const jsonStr = JSON.stringify(paramMappings);
+                await fetch(apiBase + `/api/mappings/save?data=${encodeURIComponent(jsonStr)}`);
+                console.log("Mapped ranges saved to server.");
+            } catch (e) {
+                console.error("Error saving mappings to server:", e);
+            }
+        }
+
+        async function loadMappingsFromServer() {
+            try {
+                const response = await fetch(apiBase + '/api/mappings/load');
+                if (response.ok) {
+                    const mappings = await response.json();
+                    if (mappings && typeof mappings === 'object') {
+                        paramMappings = mappings;
+                        localStorage.setItem("paramMappings", JSON.stringify(paramMappings));
+                        console.log("Mapped ranges loaded from server:", paramMappings);
+                        if (typeof updateActiveInstrumentValues === 'function') {
+                            updateActiveInstrumentValues();
+                        }
+                    }
+                }
+            } catch (e) {
+                console.error("Error loading mappings from server:", e);
+            }
+        }
+
+        function getEffectiveRange(path, origMin, origMax) {
+            return paramMappings[path] || { min: origMin, max: origMax };
+        }
+
+        function getSliderValueFromEffective(path, effValue, origMin, origMax) {
+            let eff = getEffectiveRange(path, origMin, origMax);
+            if (eff.min === eff.max) return origMin;
+            let proportion = (effValue - eff.min) / (eff.max - eff.min);
+            if (isNaN(proportion)) proportion = 0;
+            proportion = Math.max(0, Math.min(1, proportion));
+            return origMin + proportion * (origMax - origMin);
+        }
+
+let parameters = [];
         let activeKnob = null;
         let startY = 0, startVal = 0;
         let ledInterval = null;
@@ -1690,7 +2046,7 @@ private:
 
         async function initPerformer() {
             try {
-                const response = await fetch('/api/performances/load');
+                const response = await fetch(apiBase + '/api/performances/load');
                 const data = await response.json();
                 if (data && data.customPerfPresets) {
                     customPerfPresets = data.customPerfPresets;
@@ -1713,7 +2069,7 @@ private:
             };
             const jsonStr = JSON.stringify(dataToSave);
             try {
-                const response = await fetch(`/api/performances/save?data=${encodeURIComponent(jsonStr)}`);
+                const response = await fetch(apiBase + `/api/performances/save?data=${encodeURIComponent(jsonStr)}`);
                 const resText = await response.text();
                 if (resText !== "OK") {
                     console.error("Error al guardar en el servidor:", resText);
@@ -1957,7 +2313,7 @@ private:
             const isCustom = !BUILTIN_PERFS[activePerfKey];
             if (!isCustom) return;
 
-            if (confirm("¿Estás seguro de borrar este Preset Personalizado?")) {
+            if (confirm("Â¿Estás seguro de borrar este Preset Personalizado?")) {
                 delete customPerfPresets[activePerfKey];
                 await savePerformancesAndStatesToServer();
                 activePerfKey = 'song-5m';
@@ -1997,7 +2353,7 @@ private:
         /* ── FETCH PARAMS ─────────────────────── */
         async function fetchParams() {
             try {
-                const r = await fetch('/api/params');
+                const r = await fetch(apiBase + '/api/params');
                 if (!r.ok) return;
                 parameters = await r.json();
 
@@ -2024,7 +2380,10 @@ private:
                     if (accentParam) {
                         const outer = document.getElementById(`outer-inst-master-accent-${inst.key}`);
                         if (outer && activeKnob !== outer) {
-                            outer.setAttribute('data-value', accentParam.value);
+                            let origMin = parseFloat(outer.getAttribute('data-min'));
+                            let origMax = parseFloat(outer.getAttribute('data-max'));
+                            let rawVal = getSliderValueFromEffective(accentParam.path, accentParam.value, origMin, origMax);
+                            outer.setAttribute('data-value', rawVal);
                             updateKnobGraphics(outer);
                         }
                         const disp = document.getElementById(`display-inst-master-accent-${inst.key}`);
@@ -2035,7 +2394,10 @@ private:
                     if (swingParam) {
                         const outer = document.getElementById(`outer-inst-master-swing-${inst.key}`);
                         if (outer && activeKnob !== outer) {
-                            outer.setAttribute('data-value', swingParam.value);
+                            let origMin = parseFloat(outer.getAttribute('data-min'));
+                            let origMax = parseFloat(outer.getAttribute('data-max'));
+                            let rawVal = getSliderValueFromEffective(swingParam.path, swingParam.value, origMin, origMax);
+                            outer.setAttribute('data-value', rawVal);
                             updateKnobGraphics(outer);
                         }
                         const disp = document.getElementById(`display-inst-master-swing-${inst.key}`);
@@ -2064,7 +2426,8 @@ private:
                         if (disp) disp.innerText = volParam.value.toFixed(2);
                         const sl = document.getElementById(`slider-mixer-vol-${inst.key}`);
                         if (sl && document.activeElement !== sl) {
-                            sl.value = volParam.value;
+                            let rawVal = getSliderValueFromEffective(volParam.path, volParam.value, parseFloat(sl.min), parseFloat(sl.max));
+                            sl.value = rawVal;
                         }
                     }
 
@@ -2075,7 +2438,8 @@ private:
                         if (disp) disp.innerText = decayParam.value.toFixed(2);
                         const sl = document.getElementById(`slider-mixer-decay-${inst.key}`);
                         if (sl && document.activeElement !== sl) {
-                            sl.value = decayParam.value;
+                            let rawVal = getSliderValueFromEffective(decayParam.path, decayParam.value, parseFloat(sl.min), parseFloat(sl.max));
+                            sl.value = rawVal;
                         }
                     }
                 });
@@ -2110,7 +2474,7 @@ private:
         /* ── FETCH STATUS ─────────────────────── */
         async function fetchStatus() {
             try {
-                const r = await fetch('/api/status');
+                const r = await fetch(apiBase + '/api/status');
                 if (!r.ok) return;
                 const st = await r.json();
 
@@ -2247,7 +2611,7 @@ private:
                         
                         const decayKey = inst.key === 'snare' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
                         const decayParam = parameters.find(p => p.path === inst.prefix + decayKey) || parameters.find(p => p.path.endsWith('/dec')) || { value: 0.2, min: 0.01, max: 2.0 };
-                        const decayName = decayParam ? decayParam.path.split('/').pop().toUpperCase() : 'DECAY';
+                        const decayName = (decayParam && decayParam.path) ? decayParam.path.split('/').pop().toUpperCase() : 'DECAY';
                         const activeStripClass = inst.key === activeInstrumentKey ? 'active-strip' : '';
 
                         return `
@@ -2479,7 +2843,10 @@ private:
                 if (parsed.style === 'knob') {
                     const outer = document.getElementById(`outer-${elemId}`);
                     if (outer && activeKnob !== outer) {
-                        outer.setAttribute('data-value', p.value);
+                        let origMin = parseFloat(outer.getAttribute('data-min'));
+                        let origMax = parseFloat(outer.getAttribute('data-max'));
+                        let rawVal = getSliderValueFromEffective(p.path, p.value, origMin, origMax);
+                        outer.setAttribute('data-value', rawVal);
                         updateKnobGraphics(outer);
                     }
                     const disp = document.getElementById(`disp-${elemId}`);
@@ -2492,7 +2859,8 @@ private:
                 } else {
                     const inp = document.getElementById(`inp-${elemId}`);
                     if (inp && document.activeElement !== inp) {
-                        inp.value = p.value;
+                        let rawVal = getSliderValueFromEffective(p.path, p.value, parseFloat(inp.min), parseFloat(inp.max));
+                        inp.value = rawVal;
                     }
                     const disp = document.getElementById(`disp-${elemId}`);
                     if (disp) disp.innerText = p.value.toFixed(2);
@@ -2589,22 +2957,67 @@ private:
             startLedBlinking();
         }
         async function updateParam(path, value, displayId = null) {
+            let origMin = 0; let origMax = 1;
+            let sliderEl = null;
+            if(displayId && displayId.startsWith('disp-')) {
+                let elemId = displayId.substring(5);
+                sliderEl = document.getElementById('inp-' + elemId);
+            } else if (displayId) {
+                // fallbacks for display-mixer-vol-... by finding the input that calls this displayId
+                sliderEl = document.querySelector('input[oninput*="' + displayId + '"]');
+            }
+            if(sliderEl) {
+                origMin = parseFloat(sliderEl.min);
+                origMax = parseFloat(sliderEl.max);
+            }
+
+            if (isMappingMode) {
+                openMappingModal(path, origMin, origMax);
+                // Si el slider se mueve mientras estamos en modo mapeo, devolvemos el slider a su posición anterior (opcional) pero simplemente bloqueamos el envió al backend.
+                return;
+            }
+
+            let effValue = parseFloat(value);
+            let eff = getEffectiveRange(path, origMin, origMax);
+            if (eff.min != origMin || eff.max != origMax) {
+                let proportion = (effValue - origMin) / (origMax - origMin);
+                if(isNaN(proportion)) proportion = 0;
+                effValue = eff.min + proportion * (eff.max - eff.min);
+            }
+
             if (displayId) {
                 const el = document.getElementById(displayId);
-                if (el) el.innerText = Number(value).toFixed(2);
+                if (el) el.innerText = effValue.toFixed(2);
             }
-            try { await fetch(`/api/set?path=${encodeURIComponent(path)}&value=${value}`); } catch(e) { console.error(e); }
+            
+            // Actualizar botones de reloj visualmente sin recargar
+            if (path.endsWith('/reloj')) {
+                const buttons = document.querySelectorAll(`button[onclick*="${path}"]`);
+                buttons.forEach(btn => {
+                    if (btn.getAttribute('onclick').includes(effValue.toString())) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            try {
+                await fetch(apiBase + `/api/set?path=${encodeURIComponent(path)}&value=${effValue}`);
+            } catch(e) {
+                console.error(e);
+            }
         }
         async function triggerPreset(action) {
             try {
-                await fetch(`/api/set?path=${encodeURIComponent('/preset/'+action)}&value=1`);
+                await fetch(apiBase + `/api/set?path=${encodeURIComponent('/preset/'+action)}&value=1`);
                 alert(`Preset ${action === 'save' ? 'guardado' : 'cargado'} con éxito.`);
                 setTimeout(fetchParams, 300);
             } catch(e) { console.error(e); }
         }
         async function triggerAutomation(action) {
             try {
-                await fetch(`/api/set?path=${encodeURIComponent('/automation/'+action)}&value=1`);
+                await fetch(apiBase + `/api/set?path=${encodeURIComponent('/automation/'+action)}&value=1`);
                 ['btn-record','btn-play','btn-stop','btn-r-rec','btn-r-play','btn-r-stop'].forEach(id => {
                     const el = document.getElementById(id);
                     if (el) el.classList.remove('btn-active');
@@ -2618,7 +3031,7 @@ private:
         }
         async function setAudioDevice(id) {
             if (!id) return;
-            try { await fetch(`/api/audio/set?id=${id}`); } catch(e) { console.error(e); }
+            try { await fetch(apiBase + `/api/audio/set?id=${id}`); } catch(e) { console.error(e); }
         }
 
         /* ── EMULATOR ──────────────────────────── */
@@ -2629,14 +3042,42 @@ private:
         }
 
         /* ── INIT ──────────────────────────────── */
-        fetchParams();
-        fetchStatus();
+        loadMappingsFromServer().then(() => {
+            fetchParams();
+            fetchStatus();
+        });
         initPerformer();
         setInterval(fetchParams, 1000);
         setInterval(fetchStatus, 2000);
-    </script>
+    
+
+
+</script>
+
+    <!-- MAPPING MODAL -->
+    <div class="mapping-modal-overlay" id="mapping-modal">
+        <div class="mapping-modal">
+            <div class="modal-title">Ajustar Rango</div>
+            <div class="modal-param-path" id="modal-path">/kick/vol</div>
+            <div class="modal-input-group">
+                <label>Min (Faust):</label>
+                <input type="number" step="0.01" id="modal-min">
+            </div>
+            <div class="modal-input-group">
+                <label>Max (Faust):</label>
+                <input type="number" step="0.01" id="modal-max">
+            </div>
+            <div class="modal-actions">
+                <button class="btn" onclick="closeMappingModal()">Cancelar</button>
+                <button class="btn btn-active" onclick="saveMappingModal()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
 </body>
-</html>)html";
+</html>
+)html";
+        }
 
         std::string headers = "HTTP/1.1 200 OK\r\n"
                               "Content-Length: " + std::to_string(html.length()) + "\r\n"
@@ -2648,7 +3089,11 @@ private:
     }
 
     void serveLogo(int client_fd) {
-        std::ifstream file("Logo.png", std::ios::binary);
+        std::ifstream file("web/Logo.png", std::ios::binary);
+        if (!file.is_open()) {
+            file.clear();
+            file.open("Logo.png", std::ios::binary);
+        }
         if (!file.is_open()) {
             std::string body = "404 Not Found";
             std::string headers = "HTTP/1.1 404 Not Found\r\n"

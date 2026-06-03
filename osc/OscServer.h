@@ -2,6 +2,7 @@
 
 #include <string>
 #include <memory>
+#include <thread>
 
 #include <lo/lo.h>
 
@@ -34,6 +35,7 @@ private:
     state::AutomationRecorder* m_recorder;
     audio::RtAudioBackend* m_audioBackend;
     std::unique_ptr<HttpServer> m_htmlServer;
+    std::thread m_wsThread;
 };
 
 } // namespace osc

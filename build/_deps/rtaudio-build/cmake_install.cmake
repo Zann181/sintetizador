@@ -92,3 +92,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-build/rtaudio.pc")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-build/tests/cmake_install.cmake")
+
+endif()
+

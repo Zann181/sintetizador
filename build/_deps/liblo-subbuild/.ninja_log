@@ -1,37 +1,37 @@
 # ninja log v5
 4	125	8020729651158538	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-mkdir	3a559a1a733d2503
-2882	3050	8020736068184772	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
+2081	2176	8021327822115995	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
 127	3638	8020729686275493	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-download	c122faf7f83280fc
 4	125	8020729651158538	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-mkdir	3a559a1a733d2503
 127	3638	8020729686275493	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-download	c122faf7f83280fc
-23	2351	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
-23	2351	0	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
-2352	2474	8020736062447861	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
-2352	2474	8020736062447861	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
-2559	2667	8020736064360756	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
-2474	2559	8020736063288841	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
-2474	2559	8020736063288841	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
-2559	2667	8020736064360756	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
-2667	2758	8020736065300281	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
-2667	2758	8020736065300281	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
-2760	2881	8020736066453133	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
-2760	2881	8020736066453133	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
-2882	3050	8020736068184772	CMakeFiles/liblo-populate-complete	705cc31d981f90dc
-2882	3050	8020736068184772	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate-complete	705cc31d981f90dc
-2882	3050	8020736068184772	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
-20	2110	0	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
-20	2110	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
-2110	2184	8020740702398391	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
-2110	2184	8020740702398391	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
-2184	2267	8020740703219225	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
-2184	2267	8020740703219225	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
-2267	2358	8020740704120611	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
-2267	2358	8020740704120611	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
-2358	2471	8020740705219801	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
-2358	2471	8020740705219801	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
-2472	2564	8020740706121795	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
-2472	2564	8020740706121795	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
-2564	2687	8020740707424537	CMakeFiles/liblo-populate-complete	705cc31d981f90dc
-2564	2687	8020740707424537	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
-2564	2687	8020740707424537	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate-complete	705cc31d981f90dc
-2564	2687	8020740707424537	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
+19	1751	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
+19	1751	0	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
+1751	1816	8021327818522174	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
+1751	1816	8021327818522174	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
+1893	1961	8021327819969943	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
+1816	1893	8021327819239100	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
+1816	1893	8021327819239100	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
+1893	1961	8021327819969943	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
+1961	2022	8021327820566382	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
+1961	2022	8021327820566382	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
+2022	2081	8021327821170726	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
+2022	2081	8021327821170726	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
+2081	2176	8021327822115995	CMakeFiles/liblo-populate-complete	705cc31d981f90dc
+2081	2176	8021327822115995	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate-complete	705cc31d981f90dc
+2081	2176	8021327822115995	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
+22	1947	0	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
+22	1947	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-update	1680d58a38b3f857
+1948	2023	8021329224515333	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
+1948	2023	8021329224515333	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-patch	d554810d3fe728f9
+2023	2102	8021329225284136	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
+2023	2102	8021329225284136	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-configure	e4c5367d8d8f44d2
+2102	2183	8021329226114932	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
+2102	2183	8021329226114932	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-build	def99e2ae8b11af
+2183	2252	8021329226817313	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
+2183	2252	8021329226817313	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-install	cd403d1f7f4379f6
+2252	2321	8021329227481445	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
+2252	2321	8021329227481445	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-test	e69267b182dd2cb6
+2321	2403	8021329228330579	CMakeFiles/liblo-populate-complete	705cc31d981f90dc
+2321	2403	8021329228330579	liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
+2321	2403	8021329228330579	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/CMakeFiles/liblo-populate-complete	705cc31d981f90dc
+2321	2403	8021329228330579	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/src/liblo-populate-stamp/liblo-populate-done	705cc31d981f90dc
