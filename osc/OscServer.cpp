@@ -2431,8 +2431,8 @@ let parameters = [];
                         }
                     }
 
-                    const decayKey = inst.key === 'snare' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
-                    const decayParam = parameters.find(p => p.path === inst.prefix + decayKey) || parameters.find(p => p.path.endsWith('/dec'));
+                    const decayKey = inst.key === 'caja' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
+                    const decayParam = parameters.find(p => p.path === inst.prefix + decayKey);
                     if (decayParam) {
                         const disp = document.getElementById(`display-mixer-decay-${inst.key}`);
                         if (disp) disp.innerText = decayParam.value.toFixed(2);
@@ -2609,8 +2609,8 @@ let parameters = [];
                         const clkParam = parameters.find(p => p.path === inst.prefix + 'reloj') || { value: 1.0 };
                         const volParam = parameters.find(p => p.path === inst.prefix + 'vol') || { value: 0.8, min: 0, max: 1 };
                         
-                        const decayKey = inst.key === 'snare' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
-                        const decayParam = parameters.find(p => p.path === inst.prefix + decayKey) || parameters.find(p => p.path.endsWith('/dec')) || { value: 0.2, min: 0.01, max: 2.0 };
+                        const decayKey = inst.key === 'caja' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
+                        const decayParam = parameters.find(p => p.path === inst.prefix + decayKey) || { value: 0.2, min: 0.01, max: 2.0 };
                         const decayName = (decayParam && decayParam.path) ? decayParam.path.split('/').pop().toUpperCase() : 'DECAY';
                         const activeStripClass = inst.key === activeInstrumentKey ? 'active-strip' : '';
 

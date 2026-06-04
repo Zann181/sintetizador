@@ -33,104 +33,90 @@ bool RtAudioBackend::openDevice(int deviceId) {
         return false;
     }
 
-    unsigned int resolvedId = 0;
-    bool foundValid = false;
-
-    if (deviceId == 0) {
-        resolvedId = m_dac->getDefaultOutputDevice();
-        try {
-            rt::audio::RtAudio::DeviceInfo info = m_dac->getDeviceInfo(resolvedId);
-            if (info.outputChannels > 0) {
-                foundValid = true;
-            }
-        } catch (...) {
-            // ignore
-        }
-
-        if (!foundValid) {
-            std::cout << "El dispositivo de audio por defecto no es de salida válido. Buscando alternativas..." << std::endl;
-            std::vector<unsigned int> deviceIds = m_dac->getDeviceIds();
-            for (unsigned int id : deviceIds) {
-                try {
-                    rt::audio::RtAudio::DeviceInfo info = m_dac->getDeviceInfo(id);
-                    if (info.outputChannels > 0) {
-                        resolvedId = id;
-                        foundValid = true;
-                        std::cout << "Dispositivo de salida seleccionado automáticamente: [" << id << "] " << info.name << std::endl;
-                        break;
-                    }
-                } catch (...) {}
-            }
-        }
+    std::vector<unsigned int> candidates;
+    if (deviceId != 0) {
+        candidates.push_back(static_cast<unsigned int>(deviceId));
     } else {
-        resolvedId = static_cast<unsigned int>(deviceId);
+        // Primero intentamos con el dispositivo por defecto
         try {
-            rt::audio::RtAudio::DeviceInfo info = m_dac->getDeviceInfo(resolvedId);
-            if (info.outputChannels > 0) {
-                foundValid = true;
-            } else {
-                std::cerr << "Advertencia: El dispositivo " << deviceId << " tiene 0 canales de salida." << std::endl;
-            }
-        } catch (...) {
-            std::cerr << "Advertencia: El dispositivo ID " << deviceId << " no es válido." << std::endl;
-        }
-    }
-
-    // Si falló el ID especificado, intentamos usar el por defecto u otro de salida
-    if (!foundValid && deviceId != 0) {
-        std::cout << "Intentando buscar cualquier dispositivo de salida alternativo..." << std::endl;
+            unsigned int default_device = m_dac->getDefaultOutputDevice();
+            candidates.push_back(default_device);
+        } catch (...) {}
+        
+        // Luego añadimos todos los demás dispositivos como alternativas de fallback
         std::vector<unsigned int> deviceIds = m_dac->getDeviceIds();
         for (unsigned int id : deviceIds) {
-            try {
-                rt::audio::RtAudio::DeviceInfo info = m_dac->getDeviceInfo(id);
-                if (info.outputChannels > 0) {
-                    resolvedId = id;
-                    foundValid = true;
-                    std::cout << "Fallback al dispositivo de salida: [" << id << "] " << info.name << std::endl;
+            bool alreadyInList = false;
+            for (unsigned int c : candidates) {
+                if (c == id) {
+                    alreadyInList = true;
                     break;
                 }
-            } catch (...) {}
+            }
+            if (!alreadyInList) {
+                candidates.push_back(id);
+            }
         }
     }
 
-    if (!foundValid) {
-        std::cerr << "Error: No se encontró ningún dispositivo de salida de audio válido." << std::endl;
-        return false;
-    }
+    bool streamOpened = false;
 
-    m_currentDeviceId = resolvedId;
+    for (unsigned int id : candidates) {
+        try {
+            rt::audio::RtAudio::DeviceInfo info = m_dac->getDeviceInfo(id);
+            if (info.outputChannels == 0) {
+                continue; // No es un dispositivo de salida
+            }
 
-    rt::audio::RtAudio::StreamParameters out_parameters;
-    out_parameters.deviceId = resolvedId;
-    out_parameters.nChannels = m_dsp->getNumOutputs(); // Stereo desde Faust
-    out_parameters.firstChannel = 0;
+            std::cout << "Intentando abrir dispositivo de audio: [" << id << "] " << info.name << "..." << std::endl;
 
-    rt::audio::RtAudio::StreamParameters in_parameters;
-    bool hasInput = false;
-    try {
-        rt::audio::RtAudio::DeviceInfo info = m_dac->getDeviceInfo(resolvedId);
-        if (info.inputChannels > 0) {
-            in_parameters.deviceId = resolvedId;
-            in_parameters.nChannels = 1; // 1 canal (mono) es suficiente para el pulso de sincronización
-            in_parameters.firstChannel = 0;
-            hasInput = true;
-            std::cout << "CLOCK: Entrada de audio analógica detectada y habilitada para recibir señales de voltaje del reloj." << std::endl;
+            rt::audio::RtAudio::StreamParameters out_parameters;
+            out_parameters.deviceId = id;
+            out_parameters.nChannels = m_dsp->getNumOutputs(); // Stereo (desde Faust)
+            out_parameters.firstChannel = 0;
+
+            rt::audio::RtAudio::StreamParameters in_parameters;
+            bool hasInput = false;
+            if (info.inputChannels > 0) {
+                in_parameters.deviceId = id;
+                in_parameters.nChannels = 1; // Mono es suficiente para recibir sincronización externa
+                in_parameters.firstChannel = 0;
+                hasInput = true;
+            }
+
+            unsigned int sampleRate = 48000;
+            unsigned int bufferFrames = 256;
+
+            m_dsp->init(sampleRate);
+
+            rt::audio::RtAudioErrorType err = m_dac->openStream(
+                &out_parameters,
+                hasInput ? &in_parameters : nullptr,
+                rt::audio::RTAUDIO_FLOAT32,
+                sampleRate,
+                &bufferFrames,
+                &RtAudioBackend::audioCallback,
+                this
+            );
+
+            if (err == rt::audio::RTAUDIO_NO_ERROR) {
+                streamOpened = true;
+                m_currentDeviceId = id;
+                std::cout << "-> Dispositivo abierto con éxito: [" << id << "] " << info.name << std::endl;
+                if (hasInput) {
+                    std::cout << "CLOCK: Entrada de audio analógica habilitada para sincronización." << std::endl;
+                }
+                break; // Conexión exitosa, detenemos la búsqueda
+            } else {
+                std::cerr << "-> Falló al abrir flujo en [" << id << "]: " << m_dac->getErrorText() << std::endl;
+            }
+        } catch (...) {
+            std::cerr << "-> Excepción o error desconocido al intentar abrir dispositivo ID " << id << std::endl;
         }
-    } catch (...) {}
-    
-    unsigned int sampleRate = 48000; // Estándar para Pi/V8
-    unsigned int bufferFrames = 256; // Baja latencia
-    
-    m_dsp->init(sampleRate);
- 
-    rt::audio::RtAudioErrorType err = m_dac->openStream(&out_parameters, hasInput ? &in_parameters : nullptr, rt::audio::RTAUDIO_FLOAT32,
-                                                       sampleRate, &bufferFrames, &RtAudioBackend::audioCallback, this);
-    if (err != rt::audio::RTAUDIO_NO_ERROR) {
-        std::cerr << "RtAudio error al abrir stream: " << m_dac->getErrorText() << std::endl;
-        return false;
     }
 
-    return true;
+    return streamOpened;
+}
 }
 
 bool RtAudioBackend::changeDevice(int deviceId) {
@@ -163,6 +149,10 @@ std::vector<std::pair<int, std::string>> RtAudioBackend::getAvailableOutputs() {
 }
 
 void RtAudioBackend::start() {
+    if (!m_dac->isStreamOpen()) {
+        std::cerr << "Advertencia: El flujo de audio no esta abierto. Use la interfaz web o el comando 'set <id>' para seleccionar un dispositivo." << std::endl;
+        return;
+    }
     rt::audio::RtAudioErrorType err = m_dac->startStream();
     if (err != rt::audio::RTAUDIO_NO_ERROR) {
         std::cerr << "Error al iniciar el audio: " << m_dac->getErrorText() << std::endl;

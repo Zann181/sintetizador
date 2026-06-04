@@ -78,8 +78,8 @@ int main(int argc, char* argv[]) {
 
     std::cout << "\nIniciando conexión automática de audio..." << std::endl;
     if (!audioBackend.openDevice(deviceId)) {
-        std::cerr << "Error crítico: No se pudo abrir un dispositivo de audio de salida válido." << std::endl;
-        return 1;
+        std::cerr << "Advertencia: No se pudo abrir un dispositivo de audio de salida válido al iniciar." << std::endl;
+        std::cerr << "El servidor continuará ejecutándose para permitir la selección de dispositivo desde la interfaz web (puerto 8000/9001)." << std::endl;
     }
 
     // 6. Servidor OSC (pasando el backend de audio para controlarlo remotamente)

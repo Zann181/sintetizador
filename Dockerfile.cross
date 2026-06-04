@@ -1,0 +1,27 @@
+# Stage 1: Build the C++ binaries in an emulated ARMv7 Debian Trixie environment
+FROM --platform=linux/arm/v7 debian:trixie AS builder
+
+# Install all compiler tools and development libraries using the PC's internet connection
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    libasound2-dev \
+    liblo-dev \
+    libgpiod-dev \
+    gpiod \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory and copy the source code
+WORKDIR /app
+COPY . .
+
+# Run CMake and compile both targets in Release mode
+RUN rm -rf build && \
+    cmake -B build -S . -DCMAKE_BUILD_TYPE=Release && \
+    cmake --build build --config Release -j$(nproc)
+
+# Stage 2: Extract the compiled binaries to the host machine
+FROM scratch
+COPY --from=builder /app/build/FaustSynthServer /
+COPY --from=builder /app/build/pi_gpio_sync /

@@ -22,6 +22,9 @@ sudo apt install -y libasound2-dev
 
 # Instalar la librería OSC liblo (opcional, pero agiliza la compilación)
 sudo apt install -y liblo-dev
+
+# Instalar librerías de desarrollo para GPIO (para la sincronización de hardware en C++)
+sudo apt install -y libgpiod-dev gpiod
 ```
 
 ---
@@ -177,23 +180,23 @@ El puente de sincronización GPIO utiliza el **GPIO 17** (Pin Físico 11) como e
 
 ### 💻 B. Ejecución del Puente en Raspberry Pi
 
-Para actuar como puente ultra-rápido de baja latencia entre el pin físico de la Raspberry Pi y el motor DSP de Faust, implementamos un script daemon modular en `/scratch/pi_gpio_sync.py`.
+Para actuar como puente de ultra-baja latencia entre el pin físico de la Raspberry Pi y el motor DSP de Faust, compilamos un daemon nativo en C++ ubicado en `app/pi_gpio_sync.cpp`.
 
-Este script utiliza interrupts por flanco de subida en C (`gpiozero`) y envía paquetes OSC directos (`/clock/sync`) vía UDP raw para latencia cero y cero consumo de CPU.
+Este programa utiliza interrupciones del kernel por flanco de subida en C++ (`libgpiod`) y envía paquetes OSC directos (`/clock/sync`) a través de UDP loopback local para una latencia casi nula y cero consumo innecesario de CPU.
 
-#### 1. Probar el script manualmente:
-Ejecuta el script en la Raspberry Pi para verificar que detecta tus pulsos:
+#### 1. Probar el daemon manualmente:
+Ejecuta el binario compilado en la Raspberry Pi para verificar que detecta los pulsos:
 ```bash
-python3 scratch/pi_gpio_sync.py
+./build/pi_gpio_sync
 ```
-*Cuando envíes pulsos de sincronización desde tu hardware, la terminal imprimirá instantáneamente:*
-`[*] Pulso de reloj recibido en GPIO 17 -> Sincronizado OSC a las HH:MM:SS`
+*Cuando envíes pulsos de sincronización desde tu secuenciador de hardware, la terminal imprimirá:*
+`[GPIO SYNC] Pulse received on GPIO 17 -> Sent OSC /clock/sync @ <timestamp> ms`
 
 ---
 
 ### 🚀 C. Automatización Completa al Arrancar (Headless Dual-Service)
 
-Puedes configurar el puente GPIO para que corra como un servicio del sistema junto con el sintetizador. Así, al encender la Raspberry Pi, tendrás audio y sincronización por hardware listos al instante:
+Puedes configurar el puente GPIO de C++ para que corra como un servicio del sistema junto con el sintetizador. Así, al encender la Raspberry Pi, tendrás audio y sincronización por hardware listos al instante:
 
 1. **Crear el archivo de servicio de sincronización:**
    ```bash
@@ -202,7 +205,7 @@ Puedes configurar el puente GPIO para que corra como un servicio del sistema jun
 2. **Pegar la siguiente configuración:**
    ```ini
    [Unit]
-   Description=TR-808 GPIO Sync Bridge
+   Description=TR-808 GPIO Sync Bridge (C++)
    After=network.target sound.target synthesizer.service
    Requires=synthesizer.service
 
@@ -210,7 +213,7 @@ Puedes configurar el puente GPIO para que corra como un servicio del sistema jun
    Type=simple
    User=pi
    WorkingDirectory=/home/pi/sintetizador
-   ExecStart=/usr/bin/python3 /home/pi/sintetizador/scratch/pi_gpio_sync.py
+   ExecStart=/home/pi/sintetizador/build/pi_gpio_sync
    Restart=on-failure
    RestartSec=3
 
