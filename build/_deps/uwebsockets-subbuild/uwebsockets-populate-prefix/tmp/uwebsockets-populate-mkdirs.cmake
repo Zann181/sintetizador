@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-src"
+  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/uWebSockets"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-build"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/tmp"

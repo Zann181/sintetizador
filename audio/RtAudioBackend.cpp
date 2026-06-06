@@ -117,7 +117,6 @@ bool RtAudioBackend::openDevice(int deviceId) {
 
     return streamOpened;
 }
-}
 
 bool RtAudioBackend::changeDevice(int deviceId) {
     std::cout << "Cambiando dinámicamente de dispositivo de audio a: " << deviceId << "..." << std::endl;
@@ -235,10 +234,22 @@ int RtAudioBackend::audioCallback(void* outputBuffer, void* inputBuffer, unsigne
     // 2. Transferir valores atómicos (lock-free) al DSP
     backend->m_ui->updateDSPValues();
     
+    // Obtener el sintetizador y actualizar el BPM del DSP para la sincronización de visuales
+    core::Synthesizer* synth = backend->m_ui ? backend->m_ui->getSynth() : nullptr;
+    if (synth) {
+        backend->m_dsp->setBpm(synth->getClock()->getBpm());
+    }
+    
     // 3. Ejecutar Faust DSP
     backend->m_dsp->compute(nBufferFrames, nullptr, faustOut);
     
-    // 4. Intercalar salida para RtAudio
+    // 4. Leer el timestamp del paso 0 calculado por Faust
+    if (synth) {
+        uint64_t lastStep0 = backend->m_dsp->getLastStep0TimeMs();
+        synth->getClock()->setLastStep0TimeMs(static_cast<double>(lastStep0));
+    }
+    
+    // 5. Intercalar salida para RtAudio
     for (unsigned int i = 0; i < nBufferFrames; i++) {
         out[2 * i]     = outL[i];
         out[2 * i + 1] = outR[i];

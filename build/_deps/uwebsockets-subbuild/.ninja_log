@@ -1,37 +1,21 @@
 # ninja log v5
-570	662	8021327832361466	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-done	5c82a03d1a8bddc9
-2	112	8021293427423188	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-mkdir	bb1bb79aba479e16
-570	662	8021327832361466	CMakeFiles/uwebsockets-populate-complete	5c82a03d1a8bddc9
-3	108299	8021318767801656	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-download	2f495b1b7a14fa67
-2	112	8021293427423188	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-mkdir	bb1bb79aba479e16
-3	108299	8021318767801656	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-download	2f495b1b7a14fa67
-206	280	8021327828554477	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-patch	8e4ab884c6240cdb
-20	206	0	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-update	7b865e4b0ad690bc
-20	206	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-update	7b865e4b0ad690bc
-206	280	8021327828554477	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-patch	8e4ab884c6240cdb
-280	340	8021327829160427	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-configure	af6d57df4ae122
-280	340	8021327829160427	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-configure	af6d57df4ae122
-340	403	8021327829794444	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-build	515c57a817e18b18
-340	403	8021327829794444	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-build	515c57a817e18b18
-570	662	8021327832361466	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/CMakeFiles/uwebsockets-populate-complete	5c82a03d1a8bddc9
-404	483	8021327830553169	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-install	b6b75ee87f36d52c
-404	483	8021327830553169	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-install	b6b75ee87f36d52c
-483	570	8021327831446061	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-test	8f3f1a4103a7c37d
-483	570	8021327831446061	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-test	8f3f1a4103a7c37d
-570	662	8021327832361466	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-done	5c82a03d1a8bddc9
-22	257	0	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-update	7b865e4b0ad690bc
-22	257	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-update	7b865e4b0ad690bc
-257	354	8021329235844724	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-patch	8e4ab884c6240cdb
-257	354	8021329235844724	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-patch	8e4ab884c6240cdb
-354	418	8021329236502983	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-configure	af6d57df4ae122
-354	418	8021329236502983	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-configure	af6d57df4ae122
-418	506	8021329237339777	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-build	515c57a817e18b18
-418	506	8021329237339777	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-build	515c57a817e18b18
-506	581	8021329238119540	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-install	b6b75ee87f36d52c
-506	581	8021329238119540	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-install	b6b75ee87f36d52c
-582	656	8021329238834842	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-test	8f3f1a4103a7c37d
-582	656	8021329238834842	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-test	8f3f1a4103a7c37d
-656	753	8021329239821311	CMakeFiles/uwebsockets-populate-complete	5c82a03d1a8bddc9
-656	753	8021329239821311	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-done	5c82a03d1a8bddc9
-656	753	8021329239821311	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/CMakeFiles/uwebsockets-populate-complete	5c82a03d1a8bddc9
-656	753	8021329239821311	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-done	5c82a03d1a8bddc9
+1	94	8023880134904595	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-mkdir	bb1bb79aba479e16
+1	94	8023880134904595	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-mkdir	bb1bb79aba479e16
+95	173	8023880135702339	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-download	6880ceee23ac20fa
+95	173	8023880135702339	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-download	6880ceee23ac20fa
+174	358	8023880137488392	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-update	673fcb9b707c6a3a
+174	358	8023880137488392	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-update	673fcb9b707c6a3a
+358	441	8023880138440780	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-patch	8e4ab884c6240cdb
+358	441	8023880138440780	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-patch	8e4ab884c6240cdb
+441	506	8023880139122272	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-configure	af6d57df4ae122
+441	506	8023880139122272	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-configure	af6d57df4ae122
+506	582	8023880139841501	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-build	515c57a817e18b18
+506	582	8023880139841501	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-build	515c57a817e18b18
+583	650	8023880140544590	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-install	b6b75ee87f36d52c
+583	650	8023880140544590	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-install	b6b75ee87f36d52c
+651	714	8023880141202577	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-test	8f3f1a4103a7c37d
+651	714	8023880141202577	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-test	8f3f1a4103a7c37d
+714	811	8023880142161952	CMakeFiles/uwebsockets-populate-complete	5c82a03d1a8bddc9
+714	811	8023880142161952	uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-done	5c82a03d1a8bddc9
+714	811	8023880142161952	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/CMakeFiles/uwebsockets-populate-complete	5c82a03d1a8bddc9
+714	811	8023880142161952	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-subbuild/uwebsockets-populate-prefix/src/uwebsockets-populate-stamp/uwebsockets-populate-done	5c82a03d1a8bddc9

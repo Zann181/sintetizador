@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src"
+  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-subbuild/liblo-populate-prefix/tmp"

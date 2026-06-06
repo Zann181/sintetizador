@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src"
+  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/libuv"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-build"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/tmp"

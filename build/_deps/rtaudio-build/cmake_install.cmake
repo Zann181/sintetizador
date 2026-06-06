@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-src
+# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/rtaudio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -53,8 +53,8 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/rtaudio" TYPE FILE FILES
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-src/RtAudio.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-src/rtaudio_c.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/rtaudio/RtAudio.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/rtaudio/rtaudio_c.h"
     )
 endif()
 
@@ -90,11 +90,5 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-build/rtaudio.pc")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-build/tests/cmake_install.cmake")
-
 endif()
 

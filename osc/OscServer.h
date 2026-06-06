@@ -3,6 +3,7 @@
 #include <string>
 #include <memory>
 #include <thread>
+#include <atomic>
 
 #include <lo/lo.h>
 
@@ -29,13 +30,16 @@ private:
     static int genericHandler(const char *path, const char *types, lo_arg **argv,
                               int argc, lo_message msg, void *user_data);
 
+    void syncMonitorLoop();
+
     lo_server_thread m_thread;
     core::Synthesizer* m_synth;
     state::PresetManager* m_presetMgr;
     state::AutomationRecorder* m_recorder;
     audio::RtAudioBackend* m_audioBackend;
     std::unique_ptr<HttpServer> m_htmlServer;
-    std::thread m_wsThread;
+    std::thread m_syncMonitorThread;
+    std::atomic<bool> m_running{false};
 };
 
 } // namespace osc

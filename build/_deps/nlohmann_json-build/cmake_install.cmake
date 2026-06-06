@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-src
+# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/nlohmann_json
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

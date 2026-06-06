@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src
+# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/libuv
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,11 +38,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/libuv/include/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/libuv" TYPE FILE FILES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src/LICENSE")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/libuv" TYPE FILE FILES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/libuv/LICENSE")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)

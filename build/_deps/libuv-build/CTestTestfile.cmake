@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-src
+# Source directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/libuv
 # Build directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-build
 # 
 # This file includes the relevant testing commands required for 

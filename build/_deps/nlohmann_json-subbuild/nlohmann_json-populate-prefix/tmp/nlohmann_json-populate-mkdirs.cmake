@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-src"
+  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/nlohmann_json"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-build"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/tmp"

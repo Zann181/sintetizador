@@ -3,6 +3,7 @@
 #include "../state/PresetManager.h"
 #include "../state/AutomationRecorder.h"
 #include "../audio/RtAudioBackend.h"
+#include "../core/FaustDefs.h"
 #include <lo/lo.h>
 #include <nlohmann/json.hpp>
 
@@ -3169,13 +3170,18 @@ let parameters = [];
         }
         json += "],";
 
-        // Estado del reloj externo
+        // Estado del reloj externo y sincronización de paso
         bool extClockActive = m_synth->getClock()->isExternalClockActive();
         float extBpm = m_synth->getClock()->getExternalBpm();
         float curBpm = m_synth->getClock()->getBpm();
+        double lastStep0 = m_synth->getClock()->getLastStep0TimeMs();
+        double serverTime = std::chrono::duration_cast<std::chrono::milliseconds>(
+            std::chrono::system_clock::now().time_since_epoch()).count();
         json += "\"externalClock\":" + std::string(extClockActive ? "true" : "false") + ",";
         json += "\"externalBpm\":" + std::to_string(extBpm) + ",";
-        json += "\"bpm\":" + std::to_string(curBpm);
+        json += "\"bpm\":" + std::to_string(curBpm) + ",";
+        json += "\"lastStep0\":" + std::to_string(lastStep0) + ",";
+        json += "\"serverTime\":" + std::to_string(serverTime);
 
         json += "}";
 
@@ -3344,7 +3350,7 @@ let parameters = [];
 };
 
 OscServer::OscServer(core::Synthesizer* synth, state::PresetManager* presetMgr, state::AutomationRecorder* recorder, audio::RtAudioBackend* audioBackend)
-    : m_synth(synth), m_presetMgr(presetMgr), m_recorder(recorder), m_audioBackend(audioBackend), m_thread(nullptr) {
+    : m_synth(synth), m_presetMgr(presetMgr), m_recorder(recorder), m_audioBackend(audioBackend), m_thread(nullptr), m_running(false) {
     m_htmlServer = std::make_unique<HttpServer>(synth, presetMgr, recorder, audioBackend);
 }
 
@@ -3353,6 +3359,9 @@ OscServer::~OscServer() {
 }
 
 bool OscServer::start(const std::string& port) {
+    m_running = true;
+    m_syncMonitorThread = std::thread(&OscServer::syncMonitorLoop, this);
+
     // Arrancar Servidor HTTP (Web)
     m_htmlServer->start(port);
 
@@ -3385,6 +3394,10 @@ bool OscServer::start(const std::string& port) {
 }
 
 void OscServer::stop() {
+    m_running = false;
+    if (m_syncMonitorThread.joinable()) {
+        m_syncMonitorThread.join();
+    }
     if (m_htmlServer) {
         m_htmlServer->stop();
     }
@@ -3392,6 +3405,30 @@ void OscServer::stop() {
         lo_server_thread_stop(m_thread);
         lo_server_thread_free(m_thread);
         m_thread = nullptr;
+    }
+}
+
+void OscServer::syncMonitorLoop() {
+    double lastTime = 0.0;
+    lo_address bridge_target = lo_address_new("127.0.0.1", "8001");
+    
+    while (m_running) {
+        if (m_audioBackend && m_audioBackend->getDSP()) {
+            dsp* faustDsp = m_audioBackend->getDSP();
+            double t = static_cast<double>(faustDsp->getLastBeatTimeMs());
+            if (t != lastTime) {
+                lastTime = t;
+                int step = faustDsp->getLastBeatStep();
+                if (bridge_target) {
+                    lo_send(bridge_target, "/synth/beat", "i", step);
+                }
+            }
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    }
+    
+    if (bridge_target) {
+        lo_address_free(bridge_target);
     }
 }
 
@@ -3455,12 +3492,23 @@ int OscServer::genericHandler(const char *path, const char *types, lo_arg **argv
         return 0;
     }
     
-    // Si es señal de reloj externo
+    // Enviar ACK de vuelta al Bridge GUI para que pueda "escanear" que el sintetizador recibió la señal
+    static lo_address bridge_target = lo_address_new("127.0.0.1", "8001");
+
     if (sPath == "/clock/sync") {
         auto now = std::chrono::steady_clock::now();
         double current_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
         server->m_synth->getClock()->syncPulse(current_time_ms);
-        return 0;
+        if (bridge_target) lo_send(bridge_target, "/synth/ack", "s", "sync");
+        return 1;
+    }
+    if (sPath == "/master/sync_reset") {
+        std::cout << "\n[SYNC] <<< REINICIO DE COMPAS RECIBIDO DESDE BRIDGE >>>" << std::endl;
+        if (bridge_target) lo_send(bridge_target, "/synth/ack", "s", "reset");
+        if (server->m_audioBackend && server->m_audioBackend->getDSP()) {
+            server->m_audioBackend->getDSP()->resetSequencer();
+        }
+        // NO retornamos 1, para que el flujo normal actualice el parámetro en Faust
     }
 
     // De lo contrario, intentar parsear como valor flotante para un parámetro de Faust

@@ -50,7 +50,7 @@ unset(_cmake_expected_targets)
 add_library(RtAudio::rtaudio SHARED IMPORTED)
 
 set_target_properties(RtAudio::rtaudio PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-src"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/rtaudio"
   INTERFACE_LINK_LIBRARIES "ksuser;mfplat;mfuuid;wmcodecdspuuid;winmm;ole32;Threads::Threads"
 )
 

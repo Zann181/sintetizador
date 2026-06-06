@@ -205,6 +205,21 @@
             box-shadow: 0 0 8px var(--border), 0 0 16px var(--accent-glow);
         }
 
+        .led-active-green {
+            background-color: #00ff00 !important;
+            box-shadow: 0 0 8px #00ff00, 0 0 16px rgba(0, 255, 0, 0.6) !important;
+        }
+
+        .led-active-red {
+            background-color: #ff0000 !important;
+            box-shadow: 0 0 8px #ff0000, 0 0 16px rgba(255, 0, 0, 0.6) !important;
+        }
+
+        .led-active-blue {
+            background-color: #0088ff !important;
+            box-shadow: 0 0 8px #0088ff, 0 0 16px rgba(0, 136, 255, 0.6) !important;
+        }
+
         /* ── SYSTEM STATUS LCD DECK (INTEGRATED) ────────── */
         .system-status-lcd {
             display: flex;
@@ -1740,6 +1755,44 @@
             <div class="right-col-module">
                 <div class="right-col-module-title">Ajustes de Sistema (Settings)</div>
 
+                <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:12px; background:rgba(255,255,255,0.02); padding:8px; border-radius:4px; border:1px solid var(--border);">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.7rem; font-weight:700;">Bloquear BPM (Sync Externo)</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="bpm-lock-toggle" onchange="toggleBpmLock(this.checked)">
+                            <span class="slider-switch"></span>
+                        </label>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:0.7rem; font-weight:700;">Desfase / Nudge</span>
+                        <div style="display:flex; gap:5px;">
+                            <button class="btn" onmousedown="nudgeBpm(-5)" onmouseup="resetNudge()" onmouseleave="resetNudge()">&lt;&lt; NUDGE</button>
+                            <button class="btn" onmousedown="nudgeBpm(5)" onmouseup="resetNudge()" onmouseleave="resetNudge()">NUDGE &gt;&gt;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONITOR OSCILOSCOPIO -->
+                <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px; background:rgba(255,255,255,0.02); padding:8px; border-radius:4px; border:1px solid var(--border);">
+                    <span style="font-size:0.65rem; font-weight:700; color:var(--text-light); text-align:center;">SEÑAL SYNC / OSCILOSCOPIO</span>
+                    <div style="width:100%; height:40px; background:#0a0a0a; border:1px solid var(--border); position:relative;" id="web-osc-canvas">
+                        <!-- Linea base -->
+                        <div style="position:absolute; bottom:5px; left:0; width:100%; height:1px; background:#333;"></div>
+                        <!-- Trazo dinamico -->
+                        <div id="web-osc-trace" style="position:absolute; bottom:5px; left:0; height:30px; width:0; border-top:2px solid transparent; border-left:2px solid transparent; border-right:2px solid transparent;"></div>
+                    </div>
+                    <div style="display:flex; justify-content:space-evenly; align-items:center;">
+                        <div style="display:flex; flex-direction:column; align-items:center;">
+                            <span style="font-size:0.6rem;">BRIDGE TX</span>
+                            <div id="led-tx" style="width:12px; height:12px; border-radius:50%; background:#220000; border:1px solid var(--border); margin-top:3px;"></div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center;">
+                            <span style="font-size:0.6rem;">SYNTH RX</span>
+                            <div id="led-rx" style="width:12px; height:12px; border-radius:50%; background:#002200; border:1px solid var(--border); margin-top:3px;"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div
                     style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; background:rgba(255,255,255,0.02); padding:8px; border-radius:4px; border:1px solid var(--border);">
                     <span style="font-size:0.7rem; font-weight:700;">Modo Mapeo (Faders)</span>
@@ -1817,6 +1870,107 @@
 
         const apiBase = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
 
+        let isBpmLocked = false;
+        let lastServerStep0 = 0;
+        let lastServerTime = 0;
+        let lastTriggeredStepIndex = -1;
+        let localSchedulerInterval = null;
+        let hasWebSocketSync = false;
+        let wsSyncTimeout = null;
+        function toggleBpmLock(isLocked) {
+            isBpmLocked = isLocked;
+            const bpmSlider = document.getElementById("master-bpm-slider");
+            if (bpmSlider) bpmSlider.disabled = isLocked;
+        }
+
+        let originalBpmBeforeNudge = 140;
+        function nudgeBpm(amount) {
+            if (isBpmLocked) return;
+            const bpmSlider = document.getElementById("master-bpm-slider");
+            if (!bpmSlider) return;
+            originalBpmBeforeNudge = parseFloat(bpmSlider.value) || 140;
+            const newBpm = originalBpmBeforeNudge + amount;
+            if (window.faustUI) {
+                window.faustUI.setParamValue("/master/bpm", newBpm);
+            } else {
+                fetch(`${apiBase}/param`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ path: "/master/bpm", value: newBpm }) });
+            }
+        }
+
+        function resetNudge() {
+            if (isBpmLocked) return;
+            if (window.faustUI) {
+                window.faustUI.setParamValue("/master/bpm", originalBpmBeforeNudge);
+            } else {
+                fetch(`${apiBase}/param`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ path: "/master/bpm", value: originalBpmBeforeNudge }) });
+            }
+        }
+        
+        // WebSocket para Monitor de Sincronización
+        let wsMonitor = null;
+        function connectWsMonitor() {
+            wsMonitor = new WebSocket("ws://127.0.0.1:8002");
+            wsMonitor.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+                    if (data.type === "beat") {
+                        hasWebSocketSync = true;
+                        if (data.step === 0) {
+                            triggerBlueLedFlash(); // Cada 16 beats (64 pasos, inicio de frase de 4 compases)
+                        } else if (data.step === 16 || data.step === 32 || data.step === 48) {
+                            triggerGreenLedFlash(); // Cada 4 beats (16 pasos, inicio de compás)
+                        } else {
+                            triggerRedLedFlash(); // Beats intermedios (cada beat)
+                        }
+                        if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
+                        wsSyncTimeout = setTimeout(() => {
+                            hasWebSocketSync = false;
+                        }, 3000);
+                    } else if (data.type === "tx") {
+                        const ledTx = document.getElementById("led-tx");
+                        const trace = document.getElementById("web-osc-trace");
+                        if (data.pulse === 1) { // 50ms Beat 1 (Step 0)
+                            hasWebSocketSync = true;
+                            triggerGreenLedFlash();
+                            if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
+                            wsSyncTimeout = setTimeout(() => {
+                                hasWebSocketSync = false;
+                            }, 3000);
+
+                            const c = data.color || "#00ff00";
+                            ledTx.style.background = c;
+                            ledTx.style.boxShadow = "0 0 5px " + c;
+                            trace.style.borderColor = c;
+                            trace.style.borderBottomColor = "transparent";
+                            trace.style.width = "40%";
+                        } else if (data.pulse === 2) { // 10ms
+                            const c = data.color || "#00ffff";
+                            ledTx.style.background = c;
+                            ledTx.style.boxShadow = "0 0 5px " + c;
+                            trace.style.borderColor = c;
+                            trace.style.borderBottomColor = "transparent";
+                            trace.style.width = "10%";
+                        } else {
+                            ledTx.style.background = "#220000";
+                            ledTx.style.boxShadow = "none";
+                            trace.style.borderColor = "transparent";
+                        }
+                    } else if (data.type === "rx") {
+                        const ledRx = document.getElementById("led-rx");
+                        ledRx.style.background = data.color;
+                        ledRx.style.boxShadow = "0 0 5px " + data.color;
+                        setTimeout(() => {
+                            ledRx.style.background = "#002200";
+                            ledRx.style.boxShadow = "none";
+                        }, 50);
+                    }
+                } catch(e) {}
+            };
+            wsMonitor.onclose = function() {
+                setTimeout(connectWsMonitor, 3000);
+            };
+        }
+        connectWsMonitor();
 
         let isMappingMode = false;
         let paramMappings = JSON.parse(localStorage.getItem("paramMappings") || "{}");
@@ -2501,16 +2655,36 @@
         }
 
         /* ── BPM LED ──────────────────────────── */
+        function triggerGreenLedFlash() {
+            const led = document.getElementById('bpm-led');
+            if (!led) return;
+            led.classList.add('led-active-green');
+            setTimeout(() => {
+                led.classList.remove('led-active-green');
+            }, 120);
+        }
+
+        function triggerRedLedFlash() {
+            const led = document.getElementById('bpm-led');
+            if (!led) return;
+            led.classList.add('led-active-red');
+            setTimeout(() => {
+                led.classList.remove('led-active-red');
+            }, 120);
+        }
+
+        function triggerBlueLedFlash() {
+            const led = document.getElementById('bpm-led');
+            if (!led) return;
+            led.classList.add('led-active-blue');
+            setTimeout(() => {
+                led.classList.remove('led-active-blue');
+            }, 120);
+        }
+
         function startLedBlinking() {
             if (ledInterval) clearInterval(ledInterval);
-            const intervalMs = (60000 / currentBpm) / 2;
-            let on = false;
-            ledInterval = setInterval(() => {
-                const led = document.getElementById('bpm-led');
-                if (!led) return;
-                on = !on;
-                led.classList.toggle('led-active', on);
-            }, intervalMs);
+            if (localSchedulerInterval) clearInterval(localSchedulerInterval);
         }
 
         /* ── TOGGLE SETTINGS DRAWER ─────────────────────── */
@@ -2655,6 +2829,11 @@
                 const r = await fetch(apiBase + '/api/status');
                 if (!r.ok) return;
                 const st = await r.json();
+
+                if (st.lastStep0 !== undefined && st.serverTime !== undefined) {
+                    lastServerStep0 = st.lastStep0;
+                    lastServerTime = st.serverTime;
+                }
 
                 const ipList = document.getElementById('ip-list');
                 if (ipList) {
@@ -3111,14 +3290,14 @@
         }
 
         function onMasterBpmInput(val) {
-            if (externalClockActive) return;
+            if (externalClockActive || isBpmLocked) return;
             lastBpmChangeTime = Date.now();
             document.getElementById('bpm-display').innerText = Math.round(val);
             currentBpm = parseFloat(val);
             updateParam('/master/bpm', val);
         }
         function onBpmAction(action) {
-            if (externalClockActive) return;
+            if (externalClockActive || isBpmLocked) return;
             lastBpmChangeTime = Date.now();
             let currentBpmNum = parseFloat(currentBpm) || 140;
             let targetBpm = currentBpmNum;
@@ -3223,6 +3402,7 @@
         loadMappingsFromServer().then(() => {
             fetchParams();
             fetchStatus();
+            startLedBlinking();
         });
         initPerformer();
         setInterval(fetchParams, 1000);

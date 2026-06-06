@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake
+# Install script for directory: C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,14 +39,14 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/lo" TYPE FILE FILES
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_cpp.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_errors.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_lowlevel.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_macros.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_osc_types.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_serverthread.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_throw.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_types.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_cpp.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_errors.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_lowlevel.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_macros.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_osc_types.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_serverthread.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_throw.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_types.h"
     "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/lo/lo_endian.h"
     "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/lo/lo.h"
     )
@@ -112,14 +112,14 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/lo" TYPE FILE FILES
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_cpp.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_errors.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_lowlevel.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_macros.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_osc_types.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_serverthread.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_throw.h"
-    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-src/cmake/../lo/lo_types.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_cpp.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_errors.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_lowlevel.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_macros.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_osc_types.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_serverthread.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_throw.h"
+    "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/../lo/lo_types.h"
     "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/lo/lo_endian.h"
     "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/lo/lo.h"
     )

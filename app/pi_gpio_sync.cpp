@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     gpiod_line_settings_set_direction(settings, GPIOD_LINE_DIRECTION_INPUT);
-    gpiod_line_settings_set_edge_detection(settings, GPIOD_LINE_EDGE_RISING);
+    gpiod_line_settings_set_edge_detection(settings, GPIOD_LINE_EDGE_BOTH);
 
     // 3. Add the settings to the line configuration for specific offset
     unsigned int offset = static_cast<unsigned int>(pin);
@@ -152,8 +152,8 @@ int main(int argc, char* argv[]) {
     std::cout << "[GPIO SYNC] Native C++ daemon started (libgpiod v2 API)." << std::endl;
     std::cout << "Listening on GPIO Pin: " << pin << " -> sending OSC /clock/sync to 127.0.0.1:8000" << std::endl;
 
-    double last_pulse_ms = 0.0;
-    const double debounce_ms = 40.0; // Debounce window to prevent double trigger on noisy signals
+    double last_rising_ms = 0.0;
+    static int sync_id_counter = 1;
 
     while (keep_running) {
         // Wait for an event (blocks for up to 1 second)
@@ -170,16 +170,27 @@ int main(int argc, char* argv[]) {
             
             for (int i = 0; i < num_events; i++) {
                 struct gpiod_edge_event *event = gpiod_edge_event_buffer_get_event(event_buffer, i);
-                if (event && gpiod_edge_event_get_event_type(event) == GPIOD_EDGE_EVENT_RISING_EDGE) {
+                if (event) {
                     auto now = std::chrono::steady_clock::now();
                     double now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
                     
-                    // Software debounce logic
-                    if (now_ms - last_pulse_ms >= debounce_ms) {
+                    if (gpiod_edge_event_get_event_type(event) == GPIOD_EDGE_EVENT_RISING_EDGE) {
+                        last_rising_ms = now_ms;
                         lo_send(target, "/clock/sync", "");
-                        std::cout << "[GPIO SYNC] Pulse received on GPIO " << pin 
-                                  << " -> Sent OSC /clock/sync @ " << now_ms << " ms" << std::endl;
-                        last_pulse_ms = now_ms;
+                    } 
+                    else if (gpiod_edge_event_get_event_type(event) == GPIOD_EDGE_EVENT_FALLING_EDGE) {
+                        if (last_rising_ms > 0) {
+                            double width = now_ms - last_rising_ms;
+                            if (width > 30.0) {
+                                // Es el primer compás (pulso ancho)
+                                sync_id_counter++;
+                                lo_send(target, "/master/sync_reset", "i", sync_id_counter);
+                                std::cout << "[GPIO SYNC] Pulse width: " << width << "ms -> MEASURE START (Beat 1)" << std::endl;
+                            } else {
+                                std::cout << "[GPIO SYNC] Pulse width: " << width << "ms -> Normal Beat" << std::endl;
+                            }
+                            last_rising_ms = 0.0;
+                        }
                     }
                 }
             }

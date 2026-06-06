@@ -32,7 +32,9 @@ F0 = ba.midikey2hz(nota_base);
 semitono2ratio(s) = pow(2.0, s / 12.0);
 
 master_clock_engine = environment {
-    sample_counter = +(1) ~ _;
+    sync_id = hslider("v:0_MASTER/Sync_Reset [osc:/master/sync_reset]", 0, 0, 10000000, 1);
+    pulse_reset = sync_id != sync_id';
+    sample_counter = (+(1) : *(1 - pulse_reset)) ~ _;
     get_step(bpm, mult) = int(sample_counter / ((ma.SR * 15.0 / bpm) / mult)) % 16;
     get_raw_trig(bpm, mult) = (step != step') with { step = get_step(bpm, mult); };
     get_trig(bpm, mult, swing) = select2(is_even_step, raw_trig, delayed_trig)

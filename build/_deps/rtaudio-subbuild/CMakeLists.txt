@@ -16,19 +16,11 @@ unset(ENV{CMAKE_TOOLCHAIN_FILE})
 project(rtaudio-populate NONE)
 
 
-# Pass through things we've already detected in the main project to avoid
-# paying the cost of redetecting them again in ExternalProject_Add()
-set(GIT_EXECUTABLE [==[C:/Program Files/Git/cmd/git.exe]==])
-set(GIT_VERSION_STRING [==[2.50.0.windows.1]==])
-set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
-  [==[C:/Program Files/Git/cmd/git.exe;2.50.0.windows.1]==]
-)
-
 
 include(ExternalProject)
 ExternalProject_Add(rtaudio-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/thestk/rtaudio.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "master"
-                    SOURCE_DIR          "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-src"
+                     "UPDATE_DISCONNECTED" "False" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR"
+                    SOURCE_DIR          "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/rtaudio"
                     BINARY_DIR          "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""

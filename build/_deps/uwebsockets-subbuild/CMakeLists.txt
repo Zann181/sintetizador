@@ -16,19 +16,11 @@ unset(ENV{CMAKE_TOOLCHAIN_FILE})
 project(uwebsockets-populate NONE)
 
 
-# Pass through things we've already detected in the main project to avoid
-# paying the cost of redetecting them again in ExternalProject_Add()
-set(GIT_EXECUTABLE [==[C:/Program Files/Git/cmd/git.exe]==])
-set(GIT_VERSION_STRING [==[2.50.0.windows.1]==])
-set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
-  [==[C:/Program Files/Git/cmd/git.exe;2.50.0.windows.1]==]
-)
-
 
 include(ExternalProject)
 ExternalProject_Add(uwebsockets-populate
-                     "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/uNetworking/uWebSockets.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "v20.44.0"
-                    SOURCE_DIR          "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-src"
+                     "UPDATE_DISCONNECTED" "False" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR"
+                    SOURCE_DIR          "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/uWebSockets"
                     BINARY_DIR          "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/uwebsockets-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""

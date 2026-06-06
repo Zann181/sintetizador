@@ -1,37 +1,21 @@
 # ninja log v5
-128	7966	8021327926470225	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-download	20f241bda6ab6297
-4	128	8021327848035985	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-mkdir	82e23d7818f6a94c
-7966	8173	0	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-update	9160d6f302f3b714
-7966	8173	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-update	9160d6f302f3b714
-8367	8440	8021327931218661	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-install	8f89173442817eaf
-8174	8241	8021327929242354	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-patch	a499d506b7c40141
-4	128	8021327848035985	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-mkdir	82e23d7818f6a94c
-8174	8241	8021327929242354	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-patch	a499d506b7c40141
-128	7966	8021327926470225	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-download	20f241bda6ab6297
-8367	8440	8021327931218661	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-install	8f89173442817eaf
-8242	8306	8021327929881700	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-configure	36485f6dfa418243
-8242	8306	8021327929881700	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-configure	36485f6dfa418243
-8306	8367	8021327930493260	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-build	ea9061a031bf016d
-8306	8367	8021327930493260	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-build	ea9061a031bf016d
-8440	8509	8021327931912584	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-test	dd82a893ac266550
-8440	8509	8021327931912584	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-test	dd82a893ac266550
-8509	8607	8021327932888095	CMakeFiles/libuv-populate-complete	39e329c4690f2c26
-8509	8607	8021327932888095	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-done	39e329c4690f2c26
-8509	8607	8021327932888095	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/CMakeFiles/libuv-populate-complete	39e329c4690f2c26
-8509	8607	8021327932888095	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-done	39e329c4690f2c26
-18	231	0	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-update	9160d6f302f3b714
-18	231	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-update	9160d6f302f3b714
-231	306	8021329256220739	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-patch	a499d506b7c40141
-231	306	8021329256220739	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-patch	a499d506b7c40141
-306	376	8021329256927296	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-configure	36485f6dfa418243
-306	376	8021329256927296	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-configure	36485f6dfa418243
-376	444	8021329257607810	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-build	ea9061a031bf016d
-376	444	8021329257607810	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-build	ea9061a031bf016d
-445	510	8021329258261015	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-install	8f89173442817eaf
-445	510	8021329258261015	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-install	8f89173442817eaf
-511	576	8021329258937597	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-test	dd82a893ac266550
-511	576	8021329258937597	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-test	dd82a893ac266550
-576	669	8021329259848820	CMakeFiles/libuv-populate-complete	39e329c4690f2c26
-576	669	8021329259848820	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-done	39e329c4690f2c26
-576	669	8021329259848820	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/CMakeFiles/libuv-populate-complete	39e329c4690f2c26
-576	669	8021329259848820	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-done	39e329c4690f2c26
+2	97	8023880158500432	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-mkdir	82e23d7818f6a94c
+2	97	8023880158500432	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-mkdir	82e23d7818f6a94c
+98	179	8023880159403286	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-download	befc2f531f592585
+98	179	8023880159403286	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-download	befc2f531f592585
+179	261	8023880160208804	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-update	585431ceb33e0f8c
+179	261	8023880160208804	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-update	585431ceb33e0f8c
+261	337	8023880161004708	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-patch	a499d506b7c40141
+261	337	8023880161004708	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-patch	a499d506b7c40141
+337	405	8023880161699937	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-configure	36485f6dfa418243
+337	405	8023880161699937	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-configure	36485f6dfa418243
+405	479	8023880162400606	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-build	ea9061a031bf016d
+405	479	8023880162400606	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-build	ea9061a031bf016d
+479	560	8023880163217544	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-install	8f89173442817eaf
+479	560	8023880163217544	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-install	8f89173442817eaf
+560	654	8023880164120057	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-test	dd82a893ac266550
+560	654	8023880164120057	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-test	dd82a893ac266550
+654	774	8023880165352147	CMakeFiles/libuv-populate-complete	39e329c4690f2c26
+654	774	8023880165352147	libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-done	39e329c4690f2c26
+654	774	8023880165352147	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/CMakeFiles/libuv-populate-complete	39e329c4690f2c26
+654	774	8023880165352147	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/libuv-subbuild/libuv-populate-prefix/src/libuv-populate-stamp/libuv-populate-done	39e329c4690f2c26

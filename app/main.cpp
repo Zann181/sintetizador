@@ -15,6 +15,37 @@ extern "C" void deletemydsp(dsp* d);
 #include <thread>
 #include <csignal>
 #include <atomic>
+#include <cstdlib>
+#include <cstring>
+
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <windows.h>
+
+std::string getPrimaryIp() {
+    char hostname[256];
+    if (gethostname(hostname, sizeof(hostname)) == 0) {
+        struct addrinfo hints, *res, *p;
+        memset(&hints, 0, sizeof(hints));
+        hints.ai_family = AF_INET;
+        if (getaddrinfo(hostname, nullptr, &hints, &res) == 0) {
+            for (p = res; p != nullptr; p = p->ai_next) {
+                struct sockaddr_in* ipv4 = (struct sockaddr_in*)p->ai_addr;
+                char ipstr[INET_ADDRSTRLEN];
+                inet_ntop(AF_INET, &(ipv4->sin_addr), ipstr, sizeof(ipstr));
+                std::string ip(ipstr);
+                if (ip != "127.0.0.1" && ip != "0.0.0.0") {
+                    freeaddrinfo(res);
+                    return ip;
+                }
+            }
+            freeaddrinfo(res);
+        }
+    }
+    return "127.0.0.1";
+}
+#endif
 
 static state::PresetManager* g_presetMgr = nullptr;
 
@@ -91,6 +122,13 @@ int main(int argc, char* argv[]) {
 
     // Arrancar audio
     audioBackend.start();
+
+#ifdef _WIN32
+    // Desplegar el servidor automáticamente en el navegador predeterminado apuntando a la IP en red
+    std::string ip = getPrimaryIp();
+    std::string cmd = "start http://" + ip + ":8000";
+    std::system(cmd.c_str());
+#endif
 
     std::cout << "\n==========================================================" << std::endl;
     std::cout << "TR-808 Algorithmic Techno Station Server ACTIVO." << std::endl;

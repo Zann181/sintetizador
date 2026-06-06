@@ -38,6 +38,7 @@ public:
 
     // Obtiene lista de dispositivos con canales de salida
     std::vector<std::pair<int, std::string>> getAvailableOutputs();
+    dsp* getDSP() const { return m_dsp; }
 
 private:
     static int audioCallback(void* outputBuffer, void* inputBuffer, unsigned int nBufferFrames,

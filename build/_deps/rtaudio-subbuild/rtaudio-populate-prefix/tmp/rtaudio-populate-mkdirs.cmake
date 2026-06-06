@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-src"
+  "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/rtaudio"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-build"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix"
   "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/rtaudio-subbuild/rtaudio-populate-prefix/tmp"
