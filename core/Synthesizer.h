@@ -19,7 +19,15 @@ public:
     }
 
     std::shared_ptr<Parameter> getParameter(const std::string& path) {
-        auto it = m_parameters.find(path);
+        std::string resolvedPath = path;
+        if (path == "/kick/dec") resolvedPath = "/kick/decay";
+        else if (path == "/kick/sweep") resolvedPath = "/kick/click";
+        else if (path == "/kick/comp_drive") resolvedPath = "/kick/drive";
+        else if (path == "/kick/mix") resolvedPath = "/kick/res/mix";
+        else if (path == "/kick/tune") resolvedPath = "/kick/pitch";
+        else if (path == "/kick/comp_thresh") resolvedPath = "/kick/lim/ceiling";
+
+        auto it = m_parameters.find(resolvedPath);
         if (it != m_parameters.end()) {
             return it->second;
         }

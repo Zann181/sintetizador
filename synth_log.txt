@@ -1,0 +1,46 @@
+=== TR-808 Algorithmic Techno Station Server ===
+Se cargo la ultima configuracion de perillas desde preset.json
+--- Dispositivos de Audio Disponibles ---
+[129] CABLE Input (VB-Audio Virtual Cable) (In: 0, Out: 2)
+[130] CABLE In 16ch (VB-Audio Virtual Cable) (In: 0, Out: 2)
+[131] SAMSUNG (2- HD Audio Driver for Display Audio) (In: 0, Out: 2)
+[132] Altavoces (2- Realtek(R) Audio) (In: 0, Out: 2)
+[133] CABLE Output (VB-Audio Virtual Cable) (In: 2, Out: 0)
+[134] Varios micr�fonos (2- Realtek(R) Audio) (In: 2, Out: 0)
+-----------------------------------------
+
+Iniciando conexión automática de audio...
+Intentando abrir dispositivo de audio: [131] SAMSUNG (2- HD Audio Driver for Display Audio)...
+-> Dispositivo abierto con éxito: [131] SAMSUNG (2- HD Audio Driver for Display Audio)
+Servidor HTTP (Web) iniciado en el puerto TCP 8000
+Servidor OSC (UDP) iniciado en el puerto 8000
+
+----------------------------------------------------------
+>>> DIRECCIONES IP LOCALES PARA CONEXION DE TOUCHOSC <<<
+  * IP activa: 169.254.182.165
+  * IP activa: 192.168.1.2
+  * Puerto: 8000
+----------------------------------------------------------
+
+Flujo de audio iniciado correctamente.
+
+==========================================================
+TR-808 Algorithmic Techno Station Server ACTIVO.
+Dispositivo de audio activo: [131]
+==========================================================
+Comandos de consola disponibles:
+  list          - Listar dispositivos de salida de audio
+  set <id>      - Cambiar al dispositivo de audio indicado
+  emu on / off  - Activar o desactivar emulación de reloj
+  emu bpm <val> - Establecer tempo del emulador
+  status        - Ver estado detallado en tiempo real
+  exit / quit   - Detener el servidor y salir
+==========================================================
+
+synth-server> Entrada interactiva cerrada. Servidor ejecutándose en segundo plano...
+
+[SYNC] <<< REINICIO DE COMPAS RECIBIDO DESDE BRIDGE >>>
+
+[SYNC] <<< REINICIO DE COMPAS RECIBIDO DESDE BRIDGE >>>
+
+[SYNC] <<< REINICIO DE COMPAS RECIBIDO DESDE BRIDGE >>>

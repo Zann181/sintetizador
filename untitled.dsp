@@ -32,17 +32,26 @@ F0 = ba.midikey2hz(nota_base);
 semitono2ratio(s) = pow(2.0, s / 12.0);
 
 master_clock_engine = environment {
-    sync_id = hslider("v:0_MASTER/Sync_Reset [osc:/master/sync_reset]", 0, 0, 10000000, 1);
-    pulse_reset = sync_id != sync_id';
-    sample_counter = (+(1) : *(1 - pulse_reset)) ~ _;
-    get_step(bpm, mult) = int(sample_counter / ((ma.SR * 15.0 / bpm) / mult)) % 16;
-    get_raw_trig(bpm, mult) = (step != step') with { step = get_step(bpm, mult); };
+    // Frecuencia de pasos en Hz: (bpm / 60.0) * 4.0 * mult = (bpm / 15.0) * mult
+    step_freq(bpm, mult) = (bpm / 15.0) * mult;
+    
+    // Phasor: rampa acumulativa de 0 a 1 que se resetea automáticamente en 1
+    phase(bpm, mult) = (+(step_freq(bpm, mult) / ma.SR) ~ ma.decimal);
+    
+    // Disparo limpio solo cuando el phasor da la vuelta (phase < phase')
+    get_raw_trig(bpm, mult) = phase(bpm, mult) < phase(bpm, mult)';
+    
+    // Contador de paso (0-15) incrementado estrictamente en los flancos de disparo
+    tick(trig, s) = select2(trig, s, (s + 1) % 16);
+    get_step(bpm, mult) = tick(get_raw_trig(bpm, mult)) ~ _;
+    
+    // Disparador con soporte de swing delay
     get_trig(bpm, mult, swing) = select2(is_even_step, raw_trig, delayed_trig)
     with {
         step = get_step(bpm, mult);
         raw_trig = get_raw_trig(bpm, mult);
         is_even_step = (step % 2 == 1); 
-        samples_per_step = (ma.SR * 15.0 / bpm) / mult;
+        samples_per_step = ma.SR / step_freq(bpm, mult);
         d_amt = (swing / 100.0) * 0.5 * samples_per_step;
         delayed_trig = de.fdelay(16384, d_amt, raw_trig);
     };
@@ -61,70 +70,76 @@ groove_menu = hslider("Evolucion_Groove [style:menu{
 is_downbeat(s) = (s == 0) | (s == 4) | (s == 8) | (s == 12);
 calc_accent(s) = select2(is_downbeat(s), 1.0, 1.0 + accent_level * 0.4);
 
-master_accent(style, s) = is_downbeat(s);
-m_syn2(style, s) = pat_syn2(style, s);
+master_accent(s) = is_downbeat(s);
+m_syn2(s) = pat_syn2(s);
 
 // =============================================================================
 // 2. BANCOS DE DATOS RÍTMICOS DE ALTA COMPATIBILIDAD (7 ESTILOS x 16 PASOS)
 // =============================================================================
-pat_kick(style, s) = ba.selectn(7, style,
-    ba.selectn(16, s, 1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0), 
-    ba.selectn(16, s, 1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,1,0), 
-    ba.selectn(16, s, 1,0,0,0, 1,0,0,1, 0,0,0,0, 1,0,0,0), 
-    ba.selectn(16, s, 1,0,0,0, 1,0,1,0, 1,0,0,0, 1,0,1,0), 
-    ba.selectn(16, s, 1,0,0,1, 0,0,1,0, 1,0,0,0, 1,0,0,1), 
-    ba.selectn(16, s, 1,0,0,0, 1,0,0,1, 1,0,0,0, 1,0,1,0), 
-    ba.selectn(16, s, 1,0,1,0, 1,0,0,1, 1,0,1,0, 1,1,0,0)  
+pat_kick(s) = ba.selectn(16, s, 
+    checkbox("v:PAD/KICK/00 [osc:/kick/step0]"), checkbox("v:PAD/KICK/01 [osc:/kick/step1]"),
+    checkbox("v:PAD/KICK/02 [osc:/kick/step2]"), checkbox("v:PAD/KICK/03 [osc:/kick/step3]"),
+    checkbox("v:PAD/KICK/04 [osc:/kick/step4]"), checkbox("v:PAD/KICK/05 [osc:/kick/step5]"),
+    checkbox("v:PAD/KICK/06 [osc:/kick/step6]"), checkbox("v:PAD/KICK/07 [osc:/kick/step7]"),
+    checkbox("v:PAD/KICK/08 [osc:/kick/step8]"), checkbox("v:PAD/KICK/09 [osc:/kick/step9]"),
+    checkbox("v:PAD/KICK/10 [osc:/kick/step10]"), checkbox("v:PAD/KICK/11 [osc:/kick/step11]"),
+    checkbox("v:PAD/KICK/12 [osc:/kick/step12]"), checkbox("v:PAD/KICK/13 [osc:/kick/step13]"),
+    checkbox("v:PAD/KICK/14 [osc:/kick/step14]"), checkbox("v:PAD/KICK/15 [osc:/kick/step15]")
 );
 
-pat_snare(style, s) = ba.selectn(7, style,
-    ba.selectn(16, s, 0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0), 
-    ba.selectn(16, s, 0,0,0,0, 1,0,0,0, 0,0,1,0, 1,0,0,0), 
-    ba.selectn(16, s, 0,0,1,0, 1,0,0,0, 0,1,0,0, 1,0,0,0), 
-    ba.selectn(16, s, 0,0,0,0, 1,0,0,1, 0,0,0,0, 1,0,1,0), 
-    ba.selectn(16, s, 0,0,1,0, 1,0,0,1, 0,0,1,0, 1,0,0,1), 
-    ba.selectn(16, s, 0,0,1,1, 1,0,0,1, 0,1,0,1, 1,0,1,0), 
-    ba.selectn(16, s, 1,0,1,0, 1,1,0,1, 1,0,1,0, 1,1,1,1)  
+pat_snare(s) = ba.selectn(16, s, 
+    checkbox("v:PAD/SNARE/00 [osc:/snare/step0]"), checkbox("v:PAD/SNARE/01 [osc:/snare/step1]"),
+    checkbox("v:PAD/SNARE/02 [osc:/snare/step2]"), checkbox("v:PAD/SNARE/03 [osc:/snare/step3]"),
+    checkbox("v:PAD/SNARE/04 [osc:/snare/step4]"), checkbox("v:PAD/SNARE/05 [osc:/snare/step5]"),
+    checkbox("v:PAD/SNARE/06 [osc:/snare/step6]"), checkbox("v:PAD/SNARE/07 [osc:/snare/step7]"),
+    checkbox("v:PAD/SNARE/08 [osc:/snare/step8]"), checkbox("v:PAD/SNARE/09 [osc:/snare/step9]"),
+    checkbox("v:PAD/SNARE/10 [osc:/snare/step10]"), checkbox("v:PAD/SNARE/11 [osc:/snare/step11]"),
+    checkbox("v:PAD/SNARE/12 [osc:/snare/step12]"), checkbox("v:PAD/SNARE/13 [osc:/snare/step13]"),
+    checkbox("v:PAD/SNARE/14 [osc:/snare/step14]"), checkbox("v:PAD/SNARE/15 [osc:/snare/step15]")
 );
 
-pat_hat(style, s) = ba.selectn(7, style,
-    ba.selectn(16, s, 0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0), 
-    ba.selectn(16, s, 0,1,1,0, 0,1,1,0, 0,1,1,0, 0,1,1,0), 
-    ba.selectn(16, s, 1,0,1,0, 0,1,1,0, 1,0,1,1, 0,0,1,0), 
-    ba.selectn(16, s, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1), 
-    ba.selectn(16, s, 1,0,1,1, 0,1,0,1, 1,1,0,1, 0,1,1,0), 
-    ba.selectn(16, s, 1,1,0,1, 1,1,0,1, 1,1,0,1, 1,1,1,1), 
-    ba.selectn(16, s, 1,1,1,1, 1,0,1,1, 1,1,1,1, 1,1,1,1)  
+pat_hat(s) = ba.selectn(16, s, 
+    checkbox("v:PAD/HAT/00 [osc:/hat/step0]"), checkbox("v:PAD/HAT/01 [osc:/hat/step1]"),
+    checkbox("v:PAD/HAT/02 [osc:/hat/step2]"), checkbox("v:PAD/HAT/03 [osc:/hat/step3]"),
+    checkbox("v:PAD/HAT/04 [osc:/hat/step4]"), checkbox("v:PAD/HAT/05 [osc:/hat/step5]"),
+    checkbox("v:PAD/HAT/06 [osc:/hat/step6]"), checkbox("v:PAD/HAT/07 [osc:/hat/step7]"),
+    checkbox("v:PAD/HAT/08 [osc:/hat/step8]"), checkbox("v:PAD/HAT/09 [osc:/hat/step9]"),
+    checkbox("v:PAD/HAT/10 [osc:/hat/step10]"), checkbox("v:PAD/HAT/11 [osc:/hat/step11]"),
+    checkbox("v:PAD/HAT/12 [osc:/hat/step12]"), checkbox("v:PAD/HAT/13 [osc:/hat/step13]"),
+    checkbox("v:PAD/HAT/14 [osc:/hat/step14]"), checkbox("v:PAD/HAT/15 [osc:/hat/step15]")
 );
 
-pat_bass(style, s) = ba.selectn(7, style,
-    ba.selectn(16, s, 0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0), 
-    ba.selectn(16, s, 0,1,1,0, 0,1,1,0, 0,1,1,0, 0,1,1,0), 
-    ba.selectn(16, s, 0,0,1,1, 0,0,1,1, 0,0,1,1, 0,0,1,1), 
-    ba.selectn(16, s, 1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0), 
-    ba.selectn(16, s, 0,1,0,1, 1,0,1,0, 0,1,1,0, 1,0,0,1), 
-    ba.selectn(16, s, 1,0,1,1, 0,1,1,0, 1,0,1,1, 0,1,1,1), 
-    ba.selectn(16, s, 1,1,1,0, 1,1,1,0, 1,1,1,0, 1,1,1,1)  
+pat_bass(s) = ba.selectn(16, s, 
+    checkbox("v:PAD/BASS/00 [osc:/bass/step0]"), checkbox("v:PAD/BASS/01 [osc:/bass/step1]"),
+    checkbox("v:PAD/BASS/02 [osc:/bass/step2]"), checkbox("v:PAD/BASS/03 [osc:/bass/step3]"),
+    checkbox("v:PAD/BASS/04 [osc:/bass/step4]"), checkbox("v:PAD/BASS/05 [osc:/bass/step5]"),
+    checkbox("v:PAD/BASS/06 [osc:/bass/step6]"), checkbox("v:PAD/BASS/07 [osc:/bass/step7]"),
+    checkbox("v:PAD/BASS/08 [osc:/bass/step8]"), checkbox("v:PAD/BASS/09 [osc:/bass/step9]"),
+    checkbox("v:PAD/BASS/10 [osc:/bass/step10]"), checkbox("v:PAD/BASS/11 [osc:/bass/step11]"),
+    checkbox("v:PAD/BASS/12 [osc:/bass/step12]"), checkbox("v:PAD/BASS/13 [osc:/bass/step13]"),
+    checkbox("v:PAD/BASS/14 [osc:/bass/step14]"), checkbox("v:PAD/BASS/15 [osc:/bass/step15]")
 );
 
-pat_syn1(style, s) = ba.selectn(7, style,
-    ba.selectn(16, s, 0,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0), 
-    ba.selectn(16, s, 0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,1,0), 
-    ba.selectn(16, s, 0,0,1,0, 0,1,0,0, 0,0,1,0, 0,1,0,0), 
-    ba.selectn(16, s, 1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0), 
-    ba.selectn(16, s, 0,0,1,1, 1,0,0,0, 0,1,1,0, 0,0,1,0), 
-    ba.selectn(16, s, 1,0,1,0, 1,0,1,1, 1,0,1,0, 1,1,0,1), 
-    ba.selectn(16, s, 1,1,0,1, 1,1,0,1, 1,1,0,1, 1,1,1,1)  
+pat_syn1(s) = ba.selectn(16, s, 
+    checkbox("v:PAD/SYN1/00 [osc:/syn1/step0]"), checkbox("v:PAD/SYN1/01 [osc:/syn1/step1]"),
+    checkbox("v:PAD/SYN1/02 [osc:/syn1/step2]"), checkbox("v:PAD/SYN1/03 [osc:/syn1/step3]"),
+    checkbox("v:PAD/SYN1/04 [osc:/syn1/step4]"), checkbox("v:PAD/SYN1/05 [osc:/syn1/step5]"),
+    checkbox("v:PAD/SYN1/06 [osc:/syn1/step6]"), checkbox("v:PAD/SYN1/07 [osc:/syn1/step7]"),
+    checkbox("v:PAD/SYN1/08 [osc:/syn1/step8]"), checkbox("v:PAD/SYN1/09 [osc:/syn1/step9]"),
+    checkbox("v:PAD/SYN1/10 [osc:/syn1/step10]"), checkbox("v:PAD/SYN1/11 [osc:/syn1/step11]"),
+    checkbox("v:PAD/SYN1/12 [osc:/syn1/step12]"), checkbox("v:PAD/SYN1/13 [osc:/syn1/step13]"),
+    checkbox("v:PAD/SYN1/14 [osc:/syn1/step14]"), checkbox("v:PAD/SYN1/15 [osc:/syn1/step15]")
 );
 
-pat_syn2(style, s) = ba.selectn(7, style,
-    ba.selectn(16, s, 1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0), 
-    ba.selectn(16, s, 0,0,0,0, 0,0,0,0, 0,0,0,0, 1,0,0,0), 
-    ba.selectn(16, s, 0,0,0,1, 0,0,1,0, 0,1,0,0, 1,0,0,0), 
-    ba.selectn(16, s, 0,1,0,0, 1,0,0,1, 0,1,0,0, 1,0,1,0), 
-    ba.selectn(16, s, 1,0,1,0, 0,1,0,1, 1,0,0,1, 0,1,1,0), 
-    ba.selectn(16, s, 0,1,1,1, 0,1,1,1, 0,1,1,1, 0,1,1,1), 
-    ba.selectn(16, s, 1,1,1,1, 0,0,1,1, 1,1,1,1, 0,0,1,1)  
+pat_syn2(s) = ba.selectn(16, s, 
+    checkbox("v:PAD/SYN2/00 [osc:/syn2/step0]"), checkbox("v:PAD/SYN2/01 [osc:/syn2/step1]"),
+    checkbox("v:PAD/SYN2/02 [osc:/syn2/step2]"), checkbox("v:PAD/SYN2/03 [osc:/syn2/step3]"),
+    checkbox("v:PAD/SYN2/04 [osc:/syn2/step4]"), checkbox("v:PAD/SYN2/05 [osc:/syn2/step5]"),
+    checkbox("v:PAD/SYN2/06 [osc:/syn2/step6]"), checkbox("v:PAD/SYN2/07 [osc:/syn2/step7]"),
+    checkbox("v:PAD/SYN2/08 [osc:/syn2/step8]"), checkbox("v:PAD/SYN2/09 [osc:/syn2/step9]"),
+    checkbox("v:PAD/SYN2/10 [osc:/syn2/step10]"), checkbox("v:PAD/SYN2/11 [osc:/syn2/step11]"),
+    checkbox("v:PAD/SYN2/12 [osc:/syn2/step12]"), checkbox("v:PAD/SYN2/13 [osc:/syn2/step13]"),
+    checkbox("v:PAD/SYN2/14 [osc:/syn2/step14]"), checkbox("v:PAD/SYN2/15 [osc:/syn2/step15]")
 );
 
 // =============================================================================
@@ -150,12 +165,11 @@ with {
     accent     = hslider("[1] Sintesis/Accent [style:knob][osc:/kick/accent]", 0.5, 0, 1, 0.01);
     swing      = hslider("[1] Sintesis/Swing [style:knob][osc:/kick/swing]", 0, 0, 75, 1);
     nota       = hslider("[1] Sintesis/Nota [style:menu{'C (Do)':36; 'C# (Do#)':37; 'D (Re)':38; 'D# (Re#)':39; 'E (Mi)':40; 'F (Fa)':41; 'F# (Fa#)':42; 'G (Sol)':43; 'G# (Sol#)':44; 'A (La)':45; 'A# (La#)':46; 'B (Si)':47}][osc:/kick/nota]", 36, 36, 47, 1);
-    groove     = hslider("[1] Sintesis/Groove [style:menu{'1: Ultra Hipnotico':0; '2: Deep Mental':1; '3: Bucle Psiquico':2; '4: Driving Techno':3; '5: Tribal Funk':4; '6: Hardgroove Tradicional':5; '7: Hardgroove Frenetico':6}][osc:/kick/groove]", 0, 0, 6, 1);
 
     local_step = master_clock_engine.get_step(master_bpm, clk_mult);
     local_trig = master_clock_engine.get_trig(master_bpm, clk_mult, swing);
     
-    gate = local_trig & (pat_kick(groove, local_step) > 0);
+    gate = local_trig & (pat_kick(local_step) > 0);
     calc_local_accent(s) = select2(is_downbeat(s), 1.0, 1.0 + accent * 0.4);
     v_trig = calc_local_accent(local_step);
 
@@ -187,7 +201,6 @@ with {
     tune_sn   = hslider("[1] Sintesis/Afinacion [style:knob][osc:/snare/tune]", 0, -12, 12, 1); 
     snare_mix = hslider("[1] Sintesis/Mix Resortes [style:knob][osc:/snare/mix]", 0.55, 0.0, 1.0, 0.01);
 
-    // NUEVOS CONTROLES DE CAJA AUDITADOS Y AGREGADOS
     sn_freq   = hslider("[1] Sintesis/Frecuencia Resortes [style:knob][osc:/snare/freq]", 1650.0, 1000.0, 4000.0, 10.0);
     sn_q      = hslider("[1] Sintesis/Resonancia Resortes [style:knob][osc:/snare/q]", 2.5, 1.0, 5.0, 0.1);
     sn_hp     = hslider("[1] Sintesis/Filtro Paso Alto [style:knob][osc:/snare/hp]", 160.0, 80.0, 400.0, 1.0);
@@ -196,12 +209,11 @@ with {
     accent     = hslider("[1] Sintesis/Accent [style:knob][osc:/snare/accent]", 0.5, 0, 1, 0.01);
     swing      = hslider("[1] Sintesis/Swing [style:knob][osc:/snare/swing]", 0, 0, 75, 1);
     nota       = hslider("[1] Sintesis/Nota [style:menu{'C (Do)':36; 'C# (Do#)':37; 'D (Re)':38; 'D# (Re#)':39; 'E (Mi)':40; 'F (Fa)':41; 'F# (Fa#)':42; 'G (Sol)':43; 'G# (Sol#)':44; 'A (La)':45; 'A# (La#)':46; 'B (Si)':47}][osc:/snare/nota]", 36, 36, 47, 1);
-    groove     = hslider("[1] Sintesis/Groove [style:menu{'1: Ultra Hipnotico':0; '2: Deep Mental':1; '3: Bucle Psiquico':2; '4: Driving Techno':3; '5: Tribal Funk':4; '6: Hardgroove Tradicional':5; '7: Hardgroove Frenetico':6}][osc:/snare/groove]", 0, 0, 6, 1);
 
     local_step = master_clock_engine.get_step(master_bpm, clk_mult);
     local_trig = master_clock_engine.get_trig(master_bpm, clk_mult, swing);
     
-    gate = local_trig & (pat_snare(groove, local_step) > 0);
+    gate = local_trig & (pat_snare(local_step) > 0);
     calc_local_accent(s) = select2(is_downbeat(s), 1.0, 1.0 + accent * 0.4);
     v_trig = calc_local_accent(local_step);
 
@@ -229,19 +241,17 @@ with {
     tune_h   = hslider("[1] Sintesis/Afinacion [style:knob][osc:/hat/tune]", 0, -12, 12, 1); 
     drive    = hslider("[1] Sintesis/Saturacion [style:knob][osc:/hat/drive]", 0.35, 0.0, 1.0, 0.001);
 
-    // NUEVOS CONTROLES DE PLATILLOS AUDITADOS Y AGREGADOS
     h_mix    = hslider("[1] Sintesis/Mix Metal Ruido [style:knob][osc:/hat/mix]", 0.5, 0.0, 1.0, 0.01);
     h_cutoff = hslider("[1] Sintesis/Filtro Paso Alto [style:knob][osc:/hat/cutoff]", 6500.0, 3000.0, 12000.0, 50.0);
 
     accent     = hslider("[1] Sintesis/Accent [style:knob][osc:/hat/accent]", 0.5, 0, 1, 0.01);
     swing      = hslider("[1] Sintesis/Swing [style:knob][osc:/hat/swing]", 0, 0, 75, 1);
     nota       = hslider("[1] Sintesis/Nota [style:menu{'C (Do)':36; 'C# (Do#)':37; 'D (Re)':38; 'D# (Re#)':39; 'E (Mi)':40; 'F (Fa)':41; 'F# (Fa#)':42; 'G (Sol)':43; 'G# (Sol#)':44; 'A (La)':45; 'A# (La#)':46; 'B (Si)':47}][osc:/hat/nota]", 36, 36, 47, 1);
-    groove     = hslider("[1] Sintesis/Groove [style:menu{'1: Ultra Hipnotico':0; '2: Deep Mental':1; '3: Bucle Psiquico':2; '4: Driving Techno':3; '5: Tribal Funk':4; '6: Hardgroove Tradicional':5; '7: Hardgroove Frenetico':6}][osc:/hat/groove]", 0, 0, 6, 1);
 
     local_step = master_clock_engine.get_step(master_bpm, clk_mult);
     local_trig = master_clock_engine.get_trig(master_bpm, clk_mult, swing);
     
-    gate = local_trig & (pat_hat(groove, local_step) > 0);
+    gate = local_trig & (pat_hat(local_step) > 0);
     calc_local_accent(s) = select2(is_downbeat(s), 1.0, 1.0 + accent * 0.4);
     v_trig = calc_local_accent(local_step);
 
@@ -272,12 +282,11 @@ with {
     accent     = hslider("[1] Sintesis/Accent [style:knob][osc:/bass/accent]", 0.5, 0, 1, 0.01);
     swing      = hslider("[1] Sintesis/Swing [style:knob][osc:/bass/swing]", 0, 0, 75, 1);
     nota       = hslider("[1] Sintesis/Nota [style:menu{'C (Do)':36; 'C# (Do#)':37; 'D (Re)':38; 'D# (Re#)':39; 'E (Mi)':40; 'F (Fa)':41; 'F# (Fa#)':42; 'G (Sol)':43; 'G# (Sol#)':44; 'A (La)':45; 'A# (La#)':46; 'B (Si)':47}][osc:/bass/nota]", 36, 36, 47, 1);
-    groove     = hslider("[1] Sintesis/Groove [style:menu{'1: Ultra Hipnotico':0; '2: Deep Mental':1; '3: Bucle Psiquico':2; '4: Driving Techno':3; '5: Tribal Funk':4; '6: Hardgroove Tradicional':5; '7: Hardgroove Frenetico':6}][osc:/bass/groove]", 0, 0, 6, 1);
 
     local_step = master_clock_engine.get_step(master_bpm, clk_mult);
     local_trig = master_clock_engine.get_trig(master_bpm, clk_mult, swing);
     
-    gate = local_trig & (pat_bass(groove, local_step) > 0);
+    gate = local_trig & (pat_bass(local_step) > 0);
     calc_local_accent(s) = select2(is_downbeat(s), 1.0, 1.0 + accent * 0.4);
     v_trig = calc_local_accent(local_step);
 
@@ -317,12 +326,11 @@ with {
     accent     = hslider("[1] Sintesis/Accent [style:knob][osc:/syn1/accent]", 0.5, 0, 1, 0.01);
     swing      = hslider("[1] Sintesis/Swing [style:knob][osc:/syn1/swing]", 0, 0, 75, 1);
     nota       = hslider("[1] Sintesis/Nota [style:menu{'C (Do)':36; 'C# (Do#)':37; 'D (Re)':38; 'D# (Re#)':39; 'E (Mi)':40; 'F (Fa)':41; 'F# (Fa#)':42; 'G (Sol)':43; 'G# (Sol#)':44; 'A (La)':45; 'A# (La#)':46; 'B (Si)':47}][osc:/syn1/nota]", 36, 36, 47, 1);
-    groove     = hslider("[1] Sintesis/Groove [style:menu{'1: Ultra Hipnotico':0; '2: Deep Mental':1; '3: Bucle Psiquico':2; '4: Driving Techno':3; '5: Tribal Funk':4; '6: Hardgroove Tradicional':5; '7: Hardgroove Frenetico':6}][osc:/syn1/groove]", 0, 0, 6, 1);
 
     local_step = master_clock_engine.get_step(master_bpm, clk_mult);
     local_trig = master_clock_engine.get_trig(master_bpm, clk_mult, swing);
     
-    gate = local_trig & (pat_syn1(groove, local_step) > 0);
+    gate = local_trig & (pat_syn1(local_step) > 0);
     calc_local_accent(s) = select2(is_downbeat(s), 1.0, 1.0 + accent * 0.4);
     v_trig = calc_local_accent(local_step);
 
@@ -369,14 +377,13 @@ with {
     accent     = hslider("[1] Sintesis/Accent [style:knob][osc:/syn2/accent]", 0.5, 0, 1, 0.01);
     swing      = hslider("[1] Sintesis/Swing [style:knob][osc:/syn2/swing]", 0, 0, 75, 1);
     nota       = hslider("[1] Sintesis/Nota [style:menu{'C (Do)':36; 'C# (Do#)':37; 'D (Re)':38; 'D# (Re#)':39; 'E (Mi)':40; 'F (Fa)':41; 'F# (Fa#)':42; 'G (Sol)':43; 'G# (Sol#)':44; 'A (La)':45; 'A# (La#)':46; 'B (Si)':47}][osc:/syn2/nota]", 36, 36, 47, 1);
-    groove     = hslider("[1] Sintesis/Groove [style:menu{'1':0; '2':1; '3':2; '4':3; '5':4; '6':5; '7':6}][osc:/syn2/groove]", 0, 0, 6, 1);
 
     local_step = master_clock_engine.get_step(master_bpm, clk_mult);
     local_trig = master_clock_engine.get_trig(master_bpm, clk_mult, swing);
-
-    acc_active = master_accent(groove, local_step);
+    
+    acc_active = master_accent(local_step);
     v_trig = select2(acc_active, 1.0, 1.0 + accent * 0.6);
-    gate = local_trig & (m_syn2(groove, local_step) > 0);
+    gate = local_trig & (m_syn2(local_step) > 0);
 
     f0_local = ba.midikey2hz(nota);
     freq_base = f0_local * semitono2ratio(intervalo_siringe);

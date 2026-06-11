@@ -1,0 +1,4 @@
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/BAZZ_Sintetizador/build/CMakeFiles/bazz_synth.dir
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/BAZZ_Sintetizador/build/CMakeFiles/bazz_test.dir
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/BAZZ_Sintetizador/build/CMakeFiles/edit_cache.dir
+C:/Users/Motaz/Music/Nueva carpeta/sintetizador/BAZZ_Sintetizador/build/CMakeFiles/rebuild_cache.dir

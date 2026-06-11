@@ -10,19 +10,32 @@ namespace core {
 
 class MasterClock {
 public:
-    MasterClock() : m_bpm(140.0f), m_externalBpm(0.0f), m_lastExternalPulseMs(0.0), m_lastStep0TimeMs(0), m_hIdx(0), m_hCount(0) {
+    MasterClock() : m_bpm(140.0f), m_externalBpm(0.0f), m_lastExternalPulseMs(0.0), m_lastStep0TimeMs(0), m_estimateBpm(true), m_hIdx(0), m_hCount(0) {
         for(int i=0; i<16; i++) m_history[i] = 500.0;
+    }
+
+    void setEstimateBpm(bool enable) {
+        m_estimateBpm.store(enable, std::memory_order_release);
+    }
+
+    bool getEstimateBpm() const {
+        return m_estimateBpm.load(std::memory_order_acquire);
     }
 
     // Llama a esto cuando se reciba un pulso de reloj externo (ej. cada cuarto de nota o beat)
     void syncPulse(double timestamp_ms) {
+        m_lastExternalPulseMs.store(timestamp_ms, std::memory_order_release);
+        if (!m_estimateBpm.load(std::memory_order_acquire)) {
+            m_lastPulseTime = timestamp_ms;
+            return;
+        }
         if (m_lastPulseTime > 0) {
             double delta_ms = timestamp_ms - m_lastPulseTime;
             // Protección contra rebotes y ruidos
-            // Para semicorcheas (1/16): 30 ms = ~500 BPM, 1000 ms = 15 BPM
-            if (delta_ms > 30.0 && delta_ms < 1000.0) {
+            // Para compás de 4 beats: 100 ms = ~600 BPM, 2000 ms = 30 BPM
+            if (delta_ms > 100.0 && delta_ms < 2000.0) {
                 // Ignore severe outliers (jitter spikes > 30%)
-                double expected = 60000.0 / (m_bpm.load(std::memory_order_acquire) * 4.0);
+                double expected = 60000.0 / m_bpm.load(std::memory_order_acquire);
                 if (delta_ms > expected * 1.3 || delta_ms < expected * 0.7) {
                     // Reset history on sudden large tempo change
                     for(int i=0; i<16; i++) m_history[i] = delta_ms;
@@ -37,7 +50,7 @@ public:
                 for(int i = 0; i < m_hCount; i++) sum += m_history[i];
                 double avg_delta = sum / m_hCount;
                 
-                float new_bpm = static_cast<float>(60000.0 / (avg_delta * 4.0));
+                float new_bpm = static_cast<float>(60000.0 / avg_delta);
                 
                 float prev = m_bpm.load(std::memory_order_acquire);
                 float smoothed = prev * 0.8f + new_bpm * 0.2f;
@@ -96,6 +109,7 @@ private:
     std::atomic<float>    m_externalBpm;
     std::atomic<double>   m_lastExternalPulseMs;
     std::atomic<uint64_t> m_lastStep0TimeMs;
+    std::atomic<bool>     m_estimateBpm;
     double                m_lastPulseTime{0.0};
 
     // Historial para Moving Average (PLL)

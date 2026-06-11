@@ -3,6 +3,7 @@
 #include "../core/Synthesizer.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 #ifndef FAUSTFLOAT
 #define FAUSTFLOAT float
@@ -49,11 +50,24 @@ public:
         std::string sKey(key);
         if (sKey == "osc") {
             m_zoneToOscPath[zone] = std::string(val);
+        } else if (sKey == "style") {
+            m_zoneToStyle[zone] = std::string(val);
         }
     }
 
     // Interceptamos la creación del slider para crear el Parámetro en el Dominio
     void addHorizontalSlider(const char* label, FAUSTFLOAT* zone, FAUSTFLOAT init, FAUSTFLOAT min, FAUSTFLOAT max, FAUSTFLOAT step) override {
+        registerParameter(label, zone, init, min, max);
+    }
+
+    // Interceptamos los checkboxes (botones de step del pad)
+    void addCheckButton(const char* label, FAUSTFLOAT* zone) override {
+        std::cout << "addCheckButton called for: " << label << std::endl;
+        registerParameter(label, zone, 0.0f, 0.0f, 1.0f);
+    }
+
+    // Método auxiliar para registrar el parámetro sin importar el tipo de UI
+    void registerParameter(const char* label, FAUSTFLOAT* zone, FAUSTFLOAT init, FAUSTFLOAT min, FAUSTFLOAT max) {
         std::string path;
         
         // Verificamos si Faust declaró una ruta OSC para este zone
@@ -65,10 +79,16 @@ public:
             path = std::string("/") + label;
         }
 
+        std::string finalLabel = label;
+        auto styleIt = m_zoneToStyle.find(zone);
+        if (styleIt != m_zoneToStyle.end()) {
+            finalLabel += " [style:" + styleIt->second + "]";
+        }
+
         // Buscar si ya existe en el Synthesizer para reutilizar la misma instancia (ej. parámetros maestros compartidos)
         auto param = m_synth->getParameter(path);
         if (!param) {
-            param = std::make_shared<core::Parameter>(path, min, max, init, label);
+            param = std::make_shared<core::Parameter>(path, min, max, *zone, finalLabel);
             m_synth->addParameter(param);
         }
         
@@ -95,6 +115,7 @@ public:
 private:
     core::Synthesizer* m_synth;
     std::map<FAUSTFLOAT*, std::string> m_zoneToOscPath;
+    std::map<FAUSTFLOAT*, std::string> m_zoneToStyle;
     std::map<FAUSTFLOAT*, std::shared_ptr<core::Parameter>> m_zoneToParam;
 };
 

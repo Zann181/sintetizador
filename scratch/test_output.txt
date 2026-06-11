@@ -1,0 +1,17 @@
+--- Testing Clock with 75% Swing ---
+Sample 8250: Triggered step 1 with amplitude 1
+Sample 12000: Triggered step 2 with amplitude 1
+Sample 20250: Triggered step 3 with amplitude 1
+Sample 24000: Triggered step 4 with amplitude 1.2
+Sample 32250: Triggered step 5 with amplitude 1
+Sample 36000: Triggered step 6 with amplitude 1
+Sample 44250: Triggered step 7 with amplitude 1
+Sample 48000: Triggered step 8 with amplitude 1.2
+Sample 56250: Triggered step 9 with amplitude 1
+Sample 60000: Triggered step 10 with amplitude 1
+Sample 68250: Triggered step 11 with amplitude 1
+Sample 72000: Triggered step 12 with amplitude 1.2
+Sample 80250: Triggered step 13 with amplitude 1
+Sample 84000: Triggered step 14 with amplitude 1
+Sample 92250: Triggered step 15 with amplitude 1
+Total triggers: 15

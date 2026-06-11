@@ -20,7 +20,7 @@ ASAN:BOOL=OFF
 //Build language (C or CXX)
 BUILD_LANGUAGE:STRING=C
 
-//Build as shared library
+//Build shared libraries
 BUILD_SHARED_LIBS:BOOL=ON
 
 //Build the testing tree.
@@ -36,8 +36,11 @@ CMAKE_AR:FILEPATH=C:/msys64/ucrt64/bin/ar.exe
 // MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=
 
-//CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/c++.exe
+//Enable/Disable color output during build.
+CMAKE_COLOR_MAKEFILE:BOOL=ON
+
+//No help, variable specified on the command line.
+CMAKE_CXX_COMPILER:UNINITIALIZED=C:/msys64/ucrt64/bin/c++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -65,8 +68,8 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
-//C compiler
-CMAKE_C_COMPILER:FILEPATH=C:/msys64/ucrt64/bin/cc.exe
+//No help, variable specified on the command line.
+CMAKE_C_COMPILER:UNINITIALIZED=C:/msys64/ucrt64/bin/gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -114,9 +117,6 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
-
-//Enable/Disable output of compile commands during generation.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/pkgRedirects
@@ -178,8 +178,8 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/msys64/ucrt64/bin/ld.exe
 
-//Program used to build from build.ninja files.
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe
+//No help, variable specified on the command line.
+CMAKE_MAKE_PROGRAM:UNINITIALIZED=C:/msys64/usr/bin/make.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -347,6 +347,18 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
+// for AbletonLink
+FETCHCONTENT_SOURCE_DIR_ABLETONLINK:PATH=
+
+//When not empty, overrides where to find pre-populated content
+// for glfw
+FETCHCONTENT_SOURCE_DIR_GLFW:PATH=
+
+//When not empty, overrides where to find pre-populated content
+// for imgui
+FETCHCONTENT_SOURCE_DIR_IMGUI:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for liblo
 FETCHCONTENT_SOURCE_DIR_LIBLO:PATH=
 
@@ -368,6 +380,15 @@ FETCHCONTENT_SOURCE_DIR_UWEBSOCKETS:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of AbletonLink
+FETCHCONTENT_UPDATES_DISCONNECTED_ABLETONLINK:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of glfw
+FETCHCONTENT_UPDATES_DISCONNECTED_GLFW:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of imgui
+FETCHCONTENT_UPDATES_DISCONNECTED_IMGUI:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of liblo
 FETCHCONTENT_UPDATES_DISCONNECTED_LIBLO:BOOL=OFF
@@ -395,6 +416,36 @@ FaustSynthServer_SOURCE_DIR:STATIC=C:/Users/Motaz/Music/Nueva carpeta/sintetizad
 
 //Path to a program.
 GITCOMMAND:FILEPATH=C:/Program Files/Git/cmd/git.exe
+
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
+
+//Value Computed by CMake
+GLFW_BINARY_DIR:STATIC=C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-build
+
+//Build the GLFW documentation
+GLFW_BUILD_DOCS:BOOL=OFF
+
+//Build the GLFW example programs
+GLFW_BUILD_EXAMPLES:BOOL=OFF
+
+//Build the GLFW test programs
+GLFW_BUILD_TESTS:BOOL=OFF
+
+//Generate installation target
+GLFW_INSTALL:BOOL=ON
+
+//Value Computed by CMake
+GLFW_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+GLFW_SOURCE_DIR:STATIC=C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-src
+
+//Force use of high-performance GPU on hybrid systems
+GLFW_USE_HYBRID_HPG:BOOL=OFF
+
+//Assume the Vulkan loader is linked with the application
+GLFW_VULKAN_STATIC:BOOL=OFF
 
 //Path to a library.
 JACK_LIB:FILEPATH=JACK_LIB-NOTFOUND
@@ -430,7 +481,7 @@ JSON_MultipleHeaders:BOOL=ON
 JSON_SystemInclude:BOOL=OFF
 
 //Command to build the project
-MAKECOMMAND:STRING=C:\ST\STM32CubeCLT_1.17.0\CMake\bin\cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}"
+MAKECOMMAND:STRING=C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}"
 
 //Path to the memory checking command, used for memory error detection.
 MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
@@ -576,6 +627,8 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=28
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
+//ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
+CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe
 //Path to cpack program executable.
@@ -636,12 +689,10 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
-CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Ninja
+CMAKE_GENERATOR:INTERNAL=MSYS Makefiles
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.
@@ -687,8 +738,6 @@ CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
 CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_MAKE_PROGRAM
-CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
 CMAKE_MODULE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_DEBUG
@@ -702,7 +751,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -768,12 +817,16 @@ CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
+//Have include dinput.h
+DINPUT_H_FOUND:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[C:/msys64/ucrt64/bin/pkg-config.exe][v0.29.2()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Have symbol getifaddrs
 HAVE_GETIFADDRS:INTERNAL=
 //Have function gettimeofday
@@ -836,8 +889,16 @@ UV_LINT_UTF8_MSVC:INTERNAL=
 UV_LINT_W4:INTERNAL=
 //Test UV_LINT_WALL
 UV_LINT_WALL:INTERNAL=1
+//Have include xinput.h
+XINPUT_H_FOUND:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+//Test _GLFW_HAS_64ASLR
+_GLFW_HAS_64ASLR:INTERNAL=1
+//Test _GLFW_HAS_ASLR
+_GLFW_HAS_ASLR:INTERNAL=1
+//Test _GLFW_HAS_DEP
+_GLFW_HAS_DEP:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/FaustSynthServer
 __pkg_config_checked_jack:INTERNAL=1

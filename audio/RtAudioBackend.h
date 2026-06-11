@@ -4,6 +4,7 @@
 #include <memory>
 #include <vector>
 #include <utility>
+#include <atomic>
 #include "../audio/FaustUI.h"
 
 // Declaración frontal para no incluir RtAudio.h en la cabecera (PIMPL)
@@ -40,6 +41,9 @@ public:
     std::vector<std::pair<int, std::string>> getAvailableOutputs();
     dsp* getDSP() const { return m_dsp; }
 
+    // Obtiene el nivel pico actual calculado en tiempo real
+    float getPeakLevel() const { return m_peakLevel.load(); }
+
 private:
     static int audioCallback(void* outputBuffer, void* inputBuffer, unsigned int nBufferFrames,
                              double streamTime, unsigned int status, void* userData);
@@ -48,6 +52,8 @@ private:
     dsp* m_dsp;
     audio::FaustMapUI* m_ui;
     int m_currentDeviceId = 0;
+    std::atomic<float> m_peakLevel{0.0f};
 };
 
 } // namespace audio
+

@@ -6,6 +6,7 @@
 #include "../core/FaustDefs.h"
 #include <lo/lo.h>
 #include <nlohmann/json.hpp>
+#include <cmath>
 
 
 #include <iostream>
@@ -254,6 +255,9 @@ private:
         else if (path == "/Logo.png" || path == "/logo.png") {
             serveLogo(client_fd);
         }
+        else if (path.rfind("/src/", 0) == 0 || path.find(".js") != std::string::npos || path.find(".css") != std::string::npos) {
+            serveStaticFile(client_fd, path);
+        }
         // Endpoint para obtener todos los parámetros y sus valores en JSON
         else if (path == "/api/params") {
             serveParams(client_fd);
@@ -262,9 +266,21 @@ private:
         else if (path == "/api/status") {
             serveStatus(client_fd);
         }
+        // Endpoint para obtener el nivel de salida de audio en tiempo real
+        else if (path == "/api/level") {
+            serveLevel(client_fd);
+        }
         // Endpoint para conmutar la salida de audio
         else if (path.rfind("/api/audio/set", 0) == 0) {
             handleSetAudioDevice(client_fd, path);
+        }
+        // Endpoint para cargar mappings
+        else if (path == "/api/mappings/load") {
+            handleLoadMappings(client_fd);
+        }
+        // Endpoint para guardar mappings
+        else if (path.rfind("/api/mappings/save", 0) == 0) {
+            handleSaveMappings(client_fd, path);
         }
         // Endpoint para cargar las performances personalizadas
         else if (path == "/api/performances/load") {
@@ -273,6 +289,14 @@ private:
         // Endpoint para guardar las performances personalizadas
         else if (path.rfind("/api/performances/save", 0) == 0) {
             handleSavePerformances(client_fd, path);
+        }
+        // Endpoint para cargar grooves
+        else if (path == "/api/grooves/load") {
+            handleLoadGrooves(client_fd);
+        }
+        // Endpoint para guardar grooves
+        else if (path.rfind("/api/grooves/save", 0) == 0) {
+            handleSaveGrooves(client_fd, path);
         }
         // Endpoint para establecer un parámetro: /api/set?path=/kick/vol&value=0.8
         else if (path.rfind("/api/set", 0) == 0) {
@@ -3118,6 +3142,62 @@ let parameters = [];
         send(client_fd, buffer.data(), buffer.size(), 0);
     }
 
+    void serveStaticFile(int client_fd, const std::string& path) {
+        std::string decodedPath = urlDecode(path);
+        
+        // Remove query parameters
+        size_t queryPos = decodedPath.find('?');
+        if (queryPos != std::string::npos) {
+            decodedPath = decodedPath.substr(0, queryPos);
+        }
+
+        // Clean path to prevent directory traversal
+        if (decodedPath.find("..") != std::string::npos) {
+            std::string body = "403 Forbidden";
+            std::string headers = "HTTP/1.1 403 Forbidden\r\nContent-Length: " + std::to_string(body.length()) + "\r\nConnection: close\r\n\r\n";
+            send(client_fd, (headers + body).c_str(), headers.length() + body.length(), 0);
+            return;
+        }
+
+        // Try reading from "web/" + decodedPath
+        std::string filePath = "web" + decodedPath;
+        std::ifstream file(filePath, std::ios::binary);
+        if (!file.is_open()) {
+            // Try direct path fallback
+            filePath = decodedPath;
+            if (!filePath.empty() && filePath[0] == '/') {
+                filePath = filePath.substr(1);
+            }
+            file.open(filePath, std::ios::binary);
+        }
+
+        if (!file.is_open()) {
+            std::string body = "404 Not Found";
+            std::string headers = "HTTP/1.1 404 Not Found\r\nContent-Length: " + std::to_string(body.length()) + "\r\nConnection: close\r\n\r\n";
+            send(client_fd, (headers + body).c_str(), headers.length() + body.length(), 0);
+            return;
+        }
+
+        std::vector<char> buffer((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+        file.close();
+
+        std::string contentType = "text/plain";
+        if (decodedPath.find(".js") != std::string::npos) contentType = "application/javascript";
+        else if (decodedPath.find(".css") != std::string::npos) contentType = "text/css";
+        else if (decodedPath.find(".png") != std::string::npos) contentType = "image/png";
+        else if (decodedPath.find(".html") != std::string::npos) contentType = "text/html";
+        else if (decodedPath.find(".json") != std::string::npos) contentType = "application/json";
+
+        std::string headers = "HTTP/1.1 200 OK\r\n"
+                              "Content-Length: " + std::to_string(buffer.size()) + "\r\n"
+                              "Content-Type: " + contentType + "\r\n"
+                              "Access-Control-Allow-Origin: *\r\n"
+                              "Connection: close\r\n\r\n";
+
+        send(client_fd, headers.c_str(), headers.length(), 0);
+        send(client_fd, buffer.data(), buffer.size(), 0);
+    }
+
         void serveParams(int client_fd) {
         std::string json = "[";
         bool first = true;
@@ -3181,9 +3261,38 @@ let parameters = [];
         json += "\"externalBpm\":" + std::to_string(extBpm) + ",";
         json += "\"bpm\":" + std::to_string(curBpm) + ",";
         json += "\"lastStep0\":" + std::to_string(lastStep0) + ",";
-        json += "\"serverTime\":" + std::to_string(serverTime);
+        json += "\"serverTime\":" + std::to_string(serverTime) + ",";
+        
+        // Paso actual real del secuenciador DSP
+        int currentStep = -1;
+        if (m_audioBackend && m_audioBackend->getDSP()) {
+            currentStep = m_audioBackend->getDSP()->getCurrentStep();
+        }
+        json += "\"currentStep\":" + std::to_string(currentStep);
 
         json += "}";
+
+        std::string headers = "HTTP/1.1 200 OK\r\n"
+                              "Content-Length: " + std::to_string(json.length()) + "\r\n"
+                              "Content-Type: application/json\r\n"
+                              "Access-Control-Allow-Origin: *\r\n"
+                              "Connection: close\r\n\r\n";
+        send(client_fd, (headers + json).c_str(), headers.length() + json.length(), 0);
+    }
+
+    void serveLevel(int client_fd) {
+        float peak = 0.0f;
+        if (m_audioBackend) {
+            peak = m_audioBackend->getPeakLevel();
+        }
+        float db = -96.0f;
+        if (peak > 0.0001f) {
+            db = 20.0f * std::log10(peak);
+        }
+        if (db < -96.0f) db = -96.0f;
+        if (db > 0.0f) db = 0.0f;
+
+        std::string json = "{\"level\":" + std::to_string(peak) + ",\"db\":" + std::to_string(db) + "}";
 
         std::string headers = "HTTP/1.1 200 OK\r\n"
                               "Content-Length: " + std::to_string(json.length()) + "\r\n"
@@ -3324,6 +3433,98 @@ let parameters = [];
                 file.close();
                 body = "OK";
                 std::cout << "HTTP: Performances saved to performances.json" << std::endl;
+            }
+        }
+        
+        std::string headers = "HTTP/1.1 200 OK\r\n"
+                              "Content-Length: " + std::to_string(body.length()) + "\r\n"
+                              "Content-Type: text/plain\r\n"
+                              "Access-Control-Allow-Origin: *\r\n"
+                              "Connection: close\r\n\r\n";
+        send(client_fd, (headers + body).c_str(), headers.length() + body.length(), 0);
+    }
+
+    void handleLoadGrooves(int client_fd) {
+        std::ifstream file("grooves.json");
+        std::string json = "{}";
+        if (file.is_open()) {
+            std::stringstream ss;
+            ss << file.rdbuf();
+            json = ss.str();
+            if (json.empty()) json = "{}";
+            file.close();
+        }
+        std::string headers = "HTTP/1.1 200 OK\r\n"
+                              "Content-Length: " + std::to_string(json.length()) + "\r\n"
+                              "Content-Type: application/json\r\n"
+                              "Access-Control-Allow-Origin: *\r\n"
+                              "Connection: close\r\n\r\n";
+        send(client_fd, (headers + json).c_str(), headers.length() + json.length(), 0);
+    }
+
+    void handleSaveGrooves(int client_fd, const std::string& pathAndQuery) {
+        std::string body = "ERROR";
+        size_t dataPos = pathAndQuery.find("data=");
+        if (dataPos != std::string::npos) {
+            std::string encodedData = pathAndQuery.substr(dataPos + 5);
+            size_t endPos = encodedData.find('&');
+            if (endPos != std::string::npos) {
+                encodedData = encodedData.substr(0, endPos);
+            }
+            std::string decodedData = urlDecode(encodedData);
+            
+            std::ofstream file("grooves.json");
+            if (file.is_open()) {
+                file << decodedData;
+                file.close();
+                body = "OK";
+                std::cout << "HTTP: Grooves saved to grooves.json" << std::endl;
+            }
+        }
+        
+        std::string headers = "HTTP/1.1 200 OK\r\n"
+                              "Content-Length: " + std::to_string(body.length()) + "\r\n"
+                              "Content-Type: text/plain\r\n"
+                              "Access-Control-Allow-Origin: *\r\n"
+                              "Connection: close\r\n\r\n";
+        send(client_fd, (headers + body).c_str(), headers.length() + body.length(), 0);
+    }
+
+    void handleLoadMappings(int client_fd) {
+        std::ifstream file("mappings.json");
+        std::string json = "{}";
+        if (file.is_open()) {
+            std::stringstream ss;
+            ss << file.rdbuf();
+            json = ss.str();
+            if (json.empty()) json = "{}";
+            file.close();
+        }
+        std::string headers = "HTTP/1.1 200 OK\r\n"
+                              "Content-Length: " + std::to_string(json.length()) + "\r\n"
+                              "Content-Type: application/json\r\n"
+                              "Access-Control-Allow-Origin: *\r\n"
+                              "Connection: close\r\n\r\n";
+        send(client_fd, (headers + json).c_str(), headers.length() + json.length(), 0);
+    }
+
+    void handleSaveMappings(int client_fd, const std::string& pathAndQuery) {
+        std::string body = "ERROR";
+        size_t dataPos = pathAndQuery.find("data=");
+        if (dataPos != std::string::npos) {
+            std::string encodedData = pathAndQuery.substr(dataPos + 5);
+            size_t endPos = encodedData.find('&');
+            if (endPos != std::string::npos) {
+                encodedData = encodedData.substr(0, endPos);
+            }
+            std::string decodedData = urlDecode(encodedData);
+            
+            std::ofstream file("mappings.json");
+            if (file.is_open()) {
+                file << decodedData;
+                file.close();
+                body = "OK";
+                std::cout << "HTTP: Mappings saved to mappings.json" << std::endl;
             }
         }
         
@@ -3499,6 +3700,8 @@ int OscServer::genericHandler(const char *path, const char *types, lo_arg **argv
         auto now = std::chrono::steady_clock::now();
         double current_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
         server->m_synth->getClock()->syncPulse(current_time_ms);
+        // Eliminado alignToBeat() aquí porque forzaba un redondeo al beat más cercano,
+        // lo cual causaba tartamudeo al recibir pulsos de semicorchea.
         if (bridge_target) lo_send(bridge_target, "/synth/ack", "s", "sync");
         return 1;
     }
@@ -3519,6 +3722,12 @@ int OscServer::genericHandler(const char *path, const char *types, lo_arg **argv
         
         if (sPath == "/master/bpm") {
             server->m_synth->getClock()->setBpm(value);
+        }
+        
+        if (sPath == "/master/bpm_lock") {
+            int lock_val = static_cast<int>(value);
+            std::cout << "\n[SYNC] <<< RECIBIDO BLOQUEO DE BPM (Lock=" << lock_val << ") >>>" << std::endl;
+            server->m_synth->getClock()->setEstimateBpm(lock_val == 0);
         }
         
         auto param = server->m_synth->getParameter(sPath);

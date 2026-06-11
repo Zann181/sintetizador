@@ -1,0 +1,1 @@
+[Serial] [Warn] No se pudo abrir COM_DUMMY. Modo OSC-only.

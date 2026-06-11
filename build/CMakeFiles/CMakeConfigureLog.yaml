@@ -17,7 +17,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: C:/msys64/ucrt64/bin/cc.exe 
+      Compiler: C:/msys64/ucrt64/bin/gcc.exe 
       Build flags: 
       Id flags:  
       
@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pr0wal"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pr0wal"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,19 +71,22 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pr0wal'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_b9abc
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj -c C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_43dde/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_43dde.dir/build.make CMakeFiles/cmTC_43dde.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h'
+        Building C object CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe   -v -o CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj -c /C/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
+        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe
         Target: x86_64-w64-mingw32
         Configured with: ../gcc-16.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,c++,ada,fortran,lto,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-tls --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev5, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-lto --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (Rev5, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b9abc.dir/'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b9abc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc6cPIrD.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_43dde.dir/'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_43dde.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccbq4OfB.s
         GNU C23 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 16.1.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
         
@@ -101,15 +104,18 @@ events:
          C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed
         End of search list.
         Compiler executable checksum: 8ce1135867793bb4ef554b26be63cf3e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b9abc.dir/'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc6cPIrD.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_43dde.dir/'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccbq4OfB.s
         GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../\x0d
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.'\x0d
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe  -v CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj -o cmTC_b9abc.exe -Wl,--out-implib,libcmTC_b9abc.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_43dde.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_43dde.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_43dde.dir/objects.a @CMakeFiles/cmTC_43dde.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe  -v -Wl,--whole-archive CMakeFiles/cmTC_43dde.dir/objects.a -Wl,--no-whole-archive -o cmTC_43dde.exe -Wl,--out-implib,libcmTC_43dde.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
         Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe
+        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe
         COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe
         Target: x86_64-w64-mingw32
         Configured with: ../gcc-16.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,c++,ada,fortran,lto,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-tls --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev5, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-lto --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
@@ -118,9 +124,10 @@ events:
         gcc version 16.1.0 (Rev5, Built by MSYS2 project) 
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b9abc.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_b9abc.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccAKKHqT.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_b9abc.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_b9abc.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o\x0d
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b9abc.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_b9abc.'\x0d
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_43dde.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_43dde.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc9yKrJY.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_43dde.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. --whole-archive CMakeFiles/cmTC_43dde.dir/objects.a --no-whole-archive --out-implib libcmTC_43dde.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_43dde.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_43dde.'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h'
         
       exitCode: 0
   -
@@ -152,19 +159,22 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pr0wal']
+        ignore line: [Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_b9abc]
-        ignore line: [[1/2] C:\\msys64\\ucrt64\\bin\\cc.exe   -v -o CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj -c C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_43dde/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_43dde.dir/build.make CMakeFiles/cmTC_43dde.dir/build]
+        ignore line: [make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-v00z2h']
+        ignore line: [Building C object CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/C/msys64/ucrt64/bin/gcc.exe   -v -o CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj -c /C/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
+        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe]
         ignore line: [Target: x86_64-w64-mingw32]
         ignore line: [Configured with: ../gcc-16.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,c++,ada,fortran,lto,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-tls --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev5, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-lto --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (Rev5  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b9abc.dir/']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b9abc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc6cPIrD.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_43dde.dir/']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_43dde.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccbq4OfB.s]
         ignore line: [GNU C23 (Rev5  Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 16.1.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -182,8 +192,8 @@ events:
         ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 8ce1135867793bb4ef554b26be63cf3e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b9abc.dir/']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc6cPIrD.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_43dde.dir/']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccbq4OfB.s]
         ignore line: [GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
@@ -193,11 +203,14 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../\x0d]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.'\x0d]
-        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe  -v CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj -o cmTC_b9abc.exe -Wl --out-implib libcmTC_b9abc.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_43dde.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_43dde.exe]
+        ignore line: [/C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_43dde.dir/objects.a]
+        ignore line: [/C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_43dde.dir/objects.a @CMakeFiles/cmTC_43dde.dir/objects1.rsp]
+        ignore line: [/C/msys64/ucrt64/bin/gcc.exe  -v -Wl --whole-archive CMakeFiles/cmTC_43dde.dir/objects.a -Wl --no-whole-archive -o cmTC_43dde.exe -Wl --out-implib libcmTC_43dde.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\cc.exe]
+        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe]
         ignore line: [Target: x86_64-w64-mingw32]
         ignore line: [Configured with: ../gcc-16.1.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-mingw-wildcard --enable-languages=c,c++,ada,fortran,lto,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-tls --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-backtrace=yes --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev5, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --with-libstdcxx-zoneinfo=yes --disable-libstdcxx-debug --enable-lto --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
@@ -213,13 +226,13 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b9abc.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_b9abc.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccAKKHqT.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_b9abc.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_b9abc.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_43dde.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_43dde.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc9yKrJY.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_43dde.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. --whole-archive CMakeFiles/cmTC_43dde.dir/objects.a --no-whole-archive --out-implib libcmTC_43dde.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccAKKHqT.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc9yKrJY.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -241,7 +254,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_b9abc.exe] ==> ignore
+          arg [cmTC_43dde.exe] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0]
@@ -250,9 +263,11 @@ events:
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..]
-          arg [CMakeFiles/cmTC_b9abc.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_43dde.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_b9abc.dll.a] ==> ignore
+          arg [libcmTC_43dde.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -305,8 +320,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-li22yy"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-li22yy"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -315,10 +330,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-li22yy'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_f8c90
-        [1/2] C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj -c C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_63a03/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_63a03.dir/build.make CMakeFiles/cmTC_63a03.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1'
+        Building CXX object CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj
+        /C/msys64/ucrt64/bin/c++.exe   -v -o CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj -c /C/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe
         Target: x86_64-w64-mingw32
@@ -326,8 +344,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (Rev5, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_f8c90.dir/'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f8c90.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccTXvobw.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_63a03.dir/'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_63a03.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccMaMNnQ.s
         GNU C++20 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 16.1.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
         
@@ -351,13 +369,16 @@ events:
          C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed
         End of search list.
         Compiler executable checksum: c17fb94a142b10fdb3ae88ea0e837cbf
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_f8c90.dir/'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccTXvobw.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_63a03.dir/'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccMaMNnQ.s
         GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\c++.exe  -v CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_f8c90.exe -Wl,--out-implib,libcmTC_f8c90.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_63a03.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_63a03.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_63a03.dir/objects.a @CMakeFiles/cmTC_63a03.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/c++.exe  -v -Wl,--whole-archive CMakeFiles/cmTC_63a03.dir/objects.a -Wl,--no-whole-archive -o cmTC_63a03.exe -Wl,--out-implib,libcmTC_63a03.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe
         COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe
@@ -368,9 +389,10 @@ events:
         gcc version 16.1.0 (Rev5, Built by MSYS2 project) 
         COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8c90.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_f8c90.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccNmGwbJ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f8c90.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_f8c90.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o\x0d
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8c90.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_f8c90.'\x0d
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63a03.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_63a03.'
+         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc0xJitd.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_63a03.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. --whole-archive CMakeFiles/cmTC_63a03.dir/objects.a --no-whole-archive --out-implib libcmTC_63a03.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63a03.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_63a03.'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1'
         
       exitCode: 0
   -
@@ -408,10 +430,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-li22yy']
+        ignore line: [Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_f8c90]
-        ignore line: [[1/2] C:\\msys64\\ucrt64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj -c C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_63a03/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_63a03.dir/build.make CMakeFiles/cmTC_63a03.dir/build]
+        ignore line: [make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xfdhr1']
+        ignore line: [Building CXX object CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/C/msys64/ucrt64/bin/c++.exe   -v -o CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj -c /C/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe]
         ignore line: [Target: x86_64-w64-mingw32]
@@ -419,8 +444,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (Rev5  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_f8c90.dir/']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f8c90.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccTXvobw.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_63a03.dir/']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_63a03.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccMaMNnQ.s]
         ignore line: [GNU C++20 (Rev5  Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 16.1.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -444,8 +469,8 @@ events:
         ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/include-fixed]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c17fb94a142b10fdb3ae88ea0e837cbf]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_f8c90.dir/']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccTXvobw.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_63a03.dir/']
+        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccMaMNnQ.s]
         ignore line: [GNU assembler version 2.46 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
@@ -456,8 +481,11 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\c++.exe  -v CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_f8c90.exe -Wl --out-implib libcmTC_f8c90.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_63a03.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_63a03.exe]
+        ignore line: [/C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_63a03.dir/objects.a]
+        ignore line: [/C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_63a03.dir/objects.a @CMakeFiles/cmTC_63a03.dir/objects1.rsp]
+        ignore line: [/C/msys64/ucrt64/bin/c++.exe  -v -Wl --whole-archive CMakeFiles/cmTC_63a03.dir/objects.a -Wl --no-whole-archive -o cmTC_63a03.exe -Wl --out-implib libcmTC_63a03.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\c++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe]
@@ -475,13 +503,13 @@ events:
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8c90.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_f8c90.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccNmGwbJ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_f8c90.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_f8c90.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_63a03.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_63a03.']
+        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc0xJitd.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_63a03.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. --whole-archive CMakeFiles/cmTC_63a03.dir/objects.a --no-whole-archive --out-implib libcmTC_63a03.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\ccNmGwbJ.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Motaz\\AppData\\Local\\Temp\\cc0xJitd.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -503,7 +531,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_f8c90.exe] ==> ignore
+          arg [cmTC_63a03.exe] ==> ignore
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/crt2.o]
           arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0]
@@ -512,9 +540,11 @@ events:
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..]
-          arg [CMakeFiles/cmTC_f8c90.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles/cmTC_63a03.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_f8c90.dll.a] ==> ignore
+          arg [libcmTC_63a03.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -565,8 +595,8 @@ events:
     checks:
       - "Looking for gettimeofday"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rjrd7c"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rjrd7c"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-oj6be9"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-oj6be9"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -575,11 +605,18 @@ events:
       variable: "HAVE_GETTIMEOFDAY"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rjrd7c'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-oj6be9'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_54df0
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=gettimeofday -o CMakeFiles/cmTC_54df0.dir/CheckFunctionExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rjrd7c/CheckFunctionExists.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe -DCHECK_FUNCTION_EXISTS=gettimeofday  CMakeFiles/cmTC_54df0.dir/CheckFunctionExists.c.obj -o cmTC_54df0.exe -Wl,--out-implib,libcmTC_54df0.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_9a4ac/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_9a4ac.dir/build.make CMakeFiles/cmTC_9a4ac.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-oj6be9'
+        Building C object CMakeFiles/cmTC_9a4ac.dir/CheckFunctionExists.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe   -DCHECK_FUNCTION_EXISTS=gettimeofday -o CMakeFiles/cmTC_9a4ac.dir/CheckFunctionExists.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-oj6be9/CheckFunctionExists.c"
+        Linking C executable cmTC_9a4ac.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_9a4ac.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_9a4ac.dir/objects.a @CMakeFiles/cmTC_9a4ac.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe  -DCHECK_FUNCTION_EXISTS=gettimeofday -Wl,--whole-archive CMakeFiles/cmTC_9a4ac.dir/objects.a -Wl,--no-whole-archive -o cmTC_9a4ac.exe -Wl,--out-implib,libcmTC_9a4ac.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_9a4ac.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-oj6be9'
         
       exitCode: 0
   -
@@ -593,8 +630,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-acs7zq"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-acs7zq"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rsqty7"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rsqty7"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -603,11 +640,18 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-acs7zq'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rsqty7'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_c0ce6
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c0ce6.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-acs7zq/src.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_c0ce6.dir/src.c.obj -o cmTC_c0ce6.exe -Wl,--out-implib,libcmTC_c0ce6.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_2ae13/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2ae13.dir/build.make CMakeFiles/cmTC_2ae13.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rsqty7'
+        Building C object CMakeFiles/cmTC_2ae13.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_2ae13.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rsqty7/src.c"
+        Linking C executable cmTC_2ae13.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_2ae13.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_2ae13.dir/objects.a @CMakeFiles/cmTC_2ae13.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_2ae13.dir/objects.a -Wl,--no-whole-archive -o cmTC_2ae13.exe -Wl,--out-implib,libcmTC_2ae13.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_2ae13.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-rsqty7'
         
       exitCode: 0
   -
@@ -619,8 +663,8 @@ events:
     checks:
       - "Looking for poll"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-uc3kxv"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-uc3kxv"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -628,19 +672,22 @@ events:
       variable: "HAVE_POLL"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-uc3kxv'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_562b7
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_562b7.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-uc3kxv/CheckSymbolExists.c"
-        FAILED: CMakeFiles/cmTC_562b7.dir/CheckSymbolExists.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_562b7.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-uc3kxv/CheckSymbolExists.c"
-        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-uc3kxv/CheckSymbolExists.c:2:10: fatal error: poll.h: No such file or directory
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_0ec22/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_0ec22.dir/build.make CMakeFiles/cmTC_0ec22.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4'
+        Building C object CMakeFiles/cmTC_0ec22.dir/CheckSymbolExists.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_0ec22.dir/CheckSymbolExists.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4/CheckSymbolExists.c"
+        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4/CheckSymbolExists.c:2:10: fatal error: poll.h: No such file or directory
             2 | #include <poll.h>
               |          ^~~~~~~~
-        compilation terminated.\x0d
-        ninja: build stopped: subcommand failed.
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_0ec22.dir/build.make:78: CMakeFiles/cmTC_0ec22.dir/CheckSymbolExists.c.obj] Error 1
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gwfyi4'
+        make: *** [Makefile:127: cmTC_0ec22/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -650,8 +697,8 @@ events:
     checks:
       - "Looking for select"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-9ikply"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-9ikply"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -659,19 +706,22 @@ events:
       variable: "HAVE_SELECT"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-9ikply'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_58b7d
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_58b7d.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-9ikply/CheckSymbolExists.c"
-        FAILED: CMakeFiles/cmTC_58b7d.dir/CheckSymbolExists.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_58b7d.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-9ikply/CheckSymbolExists.c"
-        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-9ikply/CheckSymbolExists.c:2:10: fatal error: sys/select.h: No such file or directory
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_7742f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_7742f.dir/build.make CMakeFiles/cmTC_7742f.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy'
+        Building C object CMakeFiles/cmTC_7742f.dir/CheckSymbolExists.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_7742f.dir/CheckSymbolExists.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy/CheckSymbolExists.c"
+        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy/CheckSymbolExists.c:2:10: fatal error: sys/select.h: No such file or directory
             2 | #include <sys/select.h>
               |          ^~~~~~~~~~~~~~
-        compilation terminated.\x0d
-        ninja: build stopped: subcommand failed.
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_7742f.dir/build.make:78: CMakeFiles/cmTC_7742f.dir/CheckSymbolExists.c.obj] Error 1
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6ymcjy'
+        make: *** [Makefile:127: cmTC_7742f/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -681,8 +731,8 @@ events:
     checks:
       - "Looking for getifaddrs"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0uyql8"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0uyql8"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -690,19 +740,22 @@ events:
       variable: "HAVE_GETIFADDRS"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0uyql8'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_c7d36
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_c7d36.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0uyql8/CheckSymbolExists.c"
-        FAILED: CMakeFiles/cmTC_c7d36.dir/CheckSymbolExists.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_c7d36.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0uyql8/CheckSymbolExists.c"
-        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0uyql8/CheckSymbolExists.c:3:10: fatal error: ifaddrs.h: No such file or directory
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_0d8af/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_0d8af.dir/build.make CMakeFiles/cmTC_0d8af.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w'
+        Building C object CMakeFiles/cmTC_0d8af.dir/CheckSymbolExists.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_0d8af.dir/CheckSymbolExists.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w/CheckSymbolExists.c"
+        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w/CheckSymbolExists.c:3:10: fatal error: ifaddrs.h: No such file or directory
             3 | #include <ifaddrs.h>
               |          ^~~~~~~~~~~
-        compilation terminated.\x0d
-        ninja: build stopped: subcommand failed.
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_0d8af.dir/build.make:78: CMakeFiles/cmTC_0d8af.dir/CheckSymbolExists.c.obj] Error 1
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-lre03w'
+        make: *** [Makefile:127: cmTC_0d8af/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -712,8 +765,8 @@ events:
     checks:
       - "Looking for inet_pton"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-x46emx"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-x46emx"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -721,19 +774,22 @@ events:
       variable: "HAVE_INET_PTON"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-x46emx'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_def37
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_def37.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-x46emx/CheckSymbolExists.c"
-        FAILED: CMakeFiles/cmTC_def37.dir/CheckSymbolExists.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_def37.dir/CheckSymbolExists.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-x46emx/CheckSymbolExists.c"
-        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-x46emx/CheckSymbolExists.c:2:10: fatal error: arpa/inet.h: No such file or directory
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_775c0/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_775c0.dir/build.make CMakeFiles/cmTC_775c0.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht'
+        Building C object CMakeFiles/cmTC_775c0.dir/CheckSymbolExists.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_775c0.dir/CheckSymbolExists.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht/CheckSymbolExists.c"
+        C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht/CheckSymbolExists.c:2:10: fatal error: arpa/inet.h: No such file or directory
             2 | #include <arpa/inet.h>
               |          ^~~~~~~~~~~~~
-        compilation terminated.\x0d
-        ninja: build stopped: subcommand failed.
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_775c0.dir/build.make:78: CMakeFiles/cmTC_775c0.dir/CheckSymbolExists.c.obj] Error 1
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-2jbqht'
+        make: *** [Makefile:127: cmTC_775c0/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -750,9 +806,16 @@ events:
       stdout: |
         Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_ac4ba
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe    -o CMakeFiles/cmTC_ac4ba.dir/test-printf-ll.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/test-printf-ll.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_ac4ba.dir/test-printf-ll.c.obj -o cmTC_ac4ba.exe -Wl,--out-implib,libcmTC_ac4ba.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_ccfdc/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ccfdc.dir/build.make CMakeFiles/cmTC_ccfdc.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_ccfdc.dir/test-printf-ll.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_ccfdc.dir/test-printf-ll.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/deps/liblo/cmake/test-printf-ll.c"
+        Linking C executable cmTC_ccfdc.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_ccfdc.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_ccfdc.dir/objects.a @CMakeFiles/cmTC_ccfdc.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_ccfdc.dir/objects.a -Wl,--no-whole-archive -o cmTC_ccfdc.exe -Wl,--out-implib,libcmTC_ccfdc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_ccfdc.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/liblo-build/CMakeFiles/CMakeTmp'
         
       exitCode: 0
   -
@@ -765,8 +828,8 @@ events:
     checks:
       - "Performing Test UV_LINT_W4"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jf7tol"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jf7tol"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0rh74k"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0rh74k"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -776,17 +839,21 @@ events:
       variable: "UV_LINT_W4"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jf7tol'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0rh74k'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_f913a
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_W4  -std=gnu90   /W4 -o CMakeFiles/cmTC_f913a.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jf7tol/src.c"
-        FAILED: CMakeFiles/cmTC_f913a.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_W4  -std=gnu90   /W4 -o CMakeFiles/cmTC_f913a.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jf7tol/src.c"
-        cc.exe: warning: /W4: linker input file unused because linking not done
-        cc.exe: error: /W4: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_b3e37/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_b3e37.dir/build.make CMakeFiles/cmTC_b3e37.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0rh74k'
+        Building C object CMakeFiles/cmTC_b3e37.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_W4  -std=gnu90   /W4 -o CMakeFiles/cmTC_b3e37.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0rh74k/src.c"
+        gcc.exe: warning: C:/msys64/W4: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/W4: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_b3e37.dir/build.make:78: CMakeFiles/cmTC_b3e37.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_b3e37.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-0rh74k'
+        make: *** [Makefile:127: cmTC_b3e37/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -797,8 +864,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_UNUSED_PARAMETER_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8zglfw"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8zglfw"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aqvege"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aqvege"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -808,17 +875,21 @@ events:
       variable: "UV_LINT_NO_UNUSED_PARAMETER_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8zglfw'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aqvege'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_77c4f
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER_MSVC  -std=gnu90   /wd4100 -o CMakeFiles/cmTC_77c4f.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8zglfw/src.c"
-        FAILED: CMakeFiles/cmTC_77c4f.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER_MSVC  -std=gnu90   /wd4100 -o CMakeFiles/cmTC_77c4f.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8zglfw/src.c"
-        cc.exe: warning: /wd4100: linker input file unused because linking not done
-        cc.exe: error: /wd4100: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_ffacf/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ffacf.dir/build.make CMakeFiles/cmTC_ffacf.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aqvege'
+        Building C object CMakeFiles/cmTC_ffacf.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_UNUSED_PARAMETER_MSVC  -std=gnu90   /wd4100 -o CMakeFiles/cmTC_ffacf.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aqvege/src.c"
+        gcc.exe: warning: C:/msys64/wd4100: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4100: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_ffacf.dir/build.make:78: CMakeFiles/cmTC_ffacf.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_ffacf.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-aqvege'
+        make: *** [Makefile:127: cmTC_ffacf/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -829,8 +900,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4w4ivk"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4w4ivk"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34wuag"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34wuag"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -840,17 +911,21 @@ events:
       variable: "UV_LINT_NO_CONDITIONAL_CONSTANT_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4w4ivk'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34wuag'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_17c2d
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC  -std=gnu90   /wd4127 -o CMakeFiles/cmTC_17c2d.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4w4ivk/src.c"
-        FAILED: CMakeFiles/cmTC_17c2d.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC  -std=gnu90   /wd4127 -o CMakeFiles/cmTC_17c2d.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-4w4ivk/src.c"
-        cc.exe: warning: /wd4127: linker input file unused because linking not done
-        cc.exe: error: /wd4127: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_7e98f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_7e98f.dir/build.make CMakeFiles/cmTC_7e98f.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34wuag'
+        Building C object CMakeFiles/cmTC_7e98f.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_CONDITIONAL_CONSTANT_MSVC  -std=gnu90   /wd4127 -o CMakeFiles/cmTC_7e98f.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34wuag/src.c"
+        gcc.exe: warning: C:/msys64/wd4127: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4127: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_7e98f.dir/build.make:78: CMakeFiles/cmTC_7e98f.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_7e98f.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34wuag'
+        make: *** [Makefile:127: cmTC_7e98f/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -861,8 +936,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_NONSTANDARD_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nmxph0"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nmxph0"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-96ghte"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-96ghte"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -872,17 +947,21 @@ events:
       variable: "UV_LINT_NO_NONSTANDARD_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nmxph0'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-96ghte'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_587d7
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_MSVC  -std=gnu90   /wd4201 -o CMakeFiles/cmTC_587d7.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nmxph0/src.c"
-        FAILED: CMakeFiles/cmTC_587d7.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_MSVC  -std=gnu90   /wd4201 -o CMakeFiles/cmTC_587d7.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-nmxph0/src.c"
-        cc.exe: warning: /wd4201: linker input file unused because linking not done
-        cc.exe: error: /wd4201: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_c7a3f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_c7a3f.dir/build.make CMakeFiles/cmTC_c7a3f.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-96ghte'
+        Building C object CMakeFiles/cmTC_c7a3f.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_NONSTANDARD_MSVC  -std=gnu90   /wd4201 -o CMakeFiles/cmTC_c7a3f.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-96ghte/src.c"
+        gcc.exe: warning: C:/msys64/wd4201: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4201: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_c7a3f.dir/build.make:78: CMakeFiles/cmTC_c7a3f.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_c7a3f.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-96ghte'
+        make: *** [Makefile:127: cmTC_c7a3f/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -893,8 +972,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-71czi4"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-71czi4"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j7wa49"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j7wa49"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -904,17 +983,21 @@ events:
       variable: "UV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-71czi4'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j7wa49'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_0bd1c
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC  -std=gnu90   /wd4206 -o CMakeFiles/cmTC_0bd1c.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-71czi4/src.c"
-        FAILED: CMakeFiles/cmTC_0bd1c.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC  -std=gnu90   /wd4206 -o CMakeFiles/cmTC_0bd1c.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-71czi4/src.c"
-        cc.exe: warning: /wd4206: linker input file unused because linking not done
-        cc.exe: error: /wd4206: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_e9d33/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_e9d33.dir/build.make CMakeFiles/cmTC_e9d33.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j7wa49'
+        Building C object CMakeFiles/cmTC_e9d33.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_NONSTANDARD_EMPTY_TU_MSVC  -std=gnu90   /wd4206 -o CMakeFiles/cmTC_e9d33.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j7wa49/src.c"
+        gcc.exe: warning: C:/msys64/wd4206: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4206: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_e9d33.dir/build.make:78: CMakeFiles/cmTC_e9d33.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_e9d33.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j7wa49'
+        make: *** [Makefile:127: cmTC_e9d33/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -925,8 +1008,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ecjqyv"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ecjqyv"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5tird4"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5tird4"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -936,17 +1019,21 @@ events:
       variable: "UV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ecjqyv'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5tird4'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_0d675
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC  -std=gnu90   /wd4210 -o CMakeFiles/cmTC_0d675.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ecjqyv/src.c"
-        FAILED: CMakeFiles/cmTC_0d675.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC  -std=gnu90   /wd4210 -o CMakeFiles/cmTC_0d675.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ecjqyv/src.c"
-        cc.exe: warning: /wd4210: linker input file unused because linking not done
-        cc.exe: error: /wd4210: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_fff5a/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_fff5a.dir/build.make CMakeFiles/cmTC_fff5a.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5tird4'
+        Building C object CMakeFiles/cmTC_fff5a.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_NONSTANDARD_FILE_SCOPE_MSVC  -std=gnu90   /wd4210 -o CMakeFiles/cmTC_fff5a.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5tird4/src.c"
+        gcc.exe: warning: C:/msys64/wd4210: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4210: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_fff5a.dir/build.make:78: CMakeFiles/cmTC_fff5a.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_fff5a.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5tird4'
+        make: *** [Makefile:127: cmTC_fff5a/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -957,8 +1044,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wybr10"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wybr10"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-qnpicj"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-qnpicj"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -968,17 +1055,21 @@ events:
       variable: "UV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wybr10'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-qnpicj'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_20821
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC  -std=gnu90   /wd4232 -o CMakeFiles/cmTC_20821.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wybr10/src.c"
-        FAILED: CMakeFiles/cmTC_20821.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC  -std=gnu90   /wd4232 -o CMakeFiles/cmTC_20821.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wybr10/src.c"
-        cc.exe: warning: /wd4232: linker input file unused because linking not done
-        cc.exe: error: /wd4232: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_4588c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_4588c.dir/build.make CMakeFiles/cmTC_4588c.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-qnpicj'
+        Building C object CMakeFiles/cmTC_4588c.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_NONSTANDARD_NONSTATIC_DLIMPORT_MSVC  -std=gnu90   /wd4232 -o CMakeFiles/cmTC_4588c.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-qnpicj/src.c"
+        gcc.exe: warning: C:/msys64/wd4232: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4232: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_4588c.dir/build.make:78: CMakeFiles/cmTC_4588c.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_4588c.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-qnpicj'
+        make: *** [Makefile:127: cmTC_4588c/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -989,8 +1080,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_HIDES_LOCAL"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-vhs4k6"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-vhs4k6"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wcytph"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wcytph"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1000,17 +1091,21 @@ events:
       variable: "UV_LINT_NO_HIDES_LOCAL"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-vhs4k6'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wcytph'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_a7c22
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_LOCAL  -std=gnu90   /wd4456 -o CMakeFiles/cmTC_a7c22.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-vhs4k6/src.c"
-        FAILED: CMakeFiles/cmTC_a7c22.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_LOCAL  -std=gnu90   /wd4456 -o CMakeFiles/cmTC_a7c22.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-vhs4k6/src.c"
-        cc.exe: warning: /wd4456: linker input file unused because linking not done
-        cc.exe: error: /wd4456: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_6a062/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_6a062.dir/build.make CMakeFiles/cmTC_6a062.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wcytph'
+        Building C object CMakeFiles/cmTC_6a062.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_HIDES_LOCAL  -std=gnu90   /wd4456 -o CMakeFiles/cmTC_6a062.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wcytph/src.c"
+        gcc.exe: warning: C:/msys64/wd4456: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4456: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_6a062.dir/build.make:78: CMakeFiles/cmTC_6a062.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_6a062.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-wcytph'
+        make: *** [Makefile:127: cmTC_6a062/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1021,8 +1116,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_HIDES_PARAM"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5klgf8"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5klgf8"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dkl75w"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dkl75w"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1032,17 +1127,21 @@ events:
       variable: "UV_LINT_NO_HIDES_PARAM"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5klgf8'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dkl75w'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_0a77b
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_PARAM  -std=gnu90   /wd4457 -o CMakeFiles/cmTC_0a77b.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5klgf8/src.c"
-        FAILED: CMakeFiles/cmTC_0a77b.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_PARAM  -std=gnu90   /wd4457 -o CMakeFiles/cmTC_0a77b.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-5klgf8/src.c"
-        cc.exe: warning: /wd4457: linker input file unused because linking not done
-        cc.exe: error: /wd4457: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_12453/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_12453.dir/build.make CMakeFiles/cmTC_12453.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dkl75w'
+        Building C object CMakeFiles/cmTC_12453.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_HIDES_PARAM  -std=gnu90   /wd4457 -o CMakeFiles/cmTC_12453.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dkl75w/src.c"
+        gcc.exe: warning: C:/msys64/wd4457: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4457: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_12453.dir/build.make:78: CMakeFiles/cmTC_12453.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_12453.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-dkl75w'
+        make: *** [Makefile:127: cmTC_12453/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1053,8 +1152,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_HIDES_GLOBAL"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gapd9a"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gapd9a"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-b3zax0"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-b3zax0"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1064,17 +1163,21 @@ events:
       variable: "UV_LINT_NO_HIDES_GLOBAL"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gapd9a'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-b3zax0'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_08379
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_GLOBAL  -std=gnu90   /wd4459 -o CMakeFiles/cmTC_08379.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gapd9a/src.c"
-        FAILED: CMakeFiles/cmTC_08379.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_HIDES_GLOBAL  -std=gnu90   /wd4459 -o CMakeFiles/cmTC_08379.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-gapd9a/src.c"
-        cc.exe: warning: /wd4459: linker input file unused because linking not done
-        cc.exe: error: /wd4459: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_ffa74/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ffa74.dir/build.make CMakeFiles/cmTC_ffa74.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-b3zax0'
+        Building C object CMakeFiles/cmTC_ffa74.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_HIDES_GLOBAL  -std=gnu90   /wd4459 -o CMakeFiles/cmTC_ffa74.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-b3zax0/src.c"
+        gcc.exe: warning: C:/msys64/wd4459: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4459: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_ffa74.dir/build.make:78: CMakeFiles/cmTC_ffa74.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_ffa74.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-b3zax0'
+        make: *** [Makefile:127: cmTC_ffa74/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1085,8 +1188,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-1ntqdf"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-1ntqdf"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8f4cea"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8f4cea"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1096,17 +1199,21 @@ events:
       variable: "UV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-1ntqdf'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8f4cea'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_f963c
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC  -std=gnu90   /wd4706 -o CMakeFiles/cmTC_f963c.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-1ntqdf/src.c"
-        FAILED: CMakeFiles/cmTC_f963c.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC  -std=gnu90   /wd4706 -o CMakeFiles/cmTC_f963c.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-1ntqdf/src.c"
-        cc.exe: warning: /wd4706: linker input file unused because linking not done
-        cc.exe: error: /wd4706: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_935b7/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_935b7.dir/build.make CMakeFiles/cmTC_935b7.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8f4cea'
+        Building C object CMakeFiles/cmTC_935b7.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_CONDITIONAL_ASSIGNMENT_MSVC  -std=gnu90   /wd4706 -o CMakeFiles/cmTC_935b7.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8f4cea/src.c"
+        gcc.exe: warning: C:/msys64/wd4706: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4706: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_935b7.dir/build.make:78: CMakeFiles/cmTC_935b7.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_935b7.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-8f4cea'
+        make: *** [Makefile:127: cmTC_935b7/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1117,8 +1224,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_UNSAFE_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xn7ve9"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xn7ve9"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l3rpi5"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l3rpi5"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1128,17 +1235,21 @@ events:
       variable: "UV_LINT_NO_UNSAFE_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xn7ve9'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l3rpi5'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_53e3a
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNSAFE_MSVC  -std=gnu90   /wd4996 -o CMakeFiles/cmTC_53e3a.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xn7ve9/src.c"
-        FAILED: CMakeFiles/cmTC_53e3a.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNSAFE_MSVC  -std=gnu90   /wd4996 -o CMakeFiles/cmTC_53e3a.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xn7ve9/src.c"
-        cc.exe: warning: /wd4996: linker input file unused because linking not done
-        cc.exe: error: /wd4996: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_2a4ff/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2a4ff.dir/build.make CMakeFiles/cmTC_2a4ff.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l3rpi5'
+        Building C object CMakeFiles/cmTC_2a4ff.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_UNSAFE_MSVC  -std=gnu90   /wd4996 -o CMakeFiles/cmTC_2a4ff.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l3rpi5/src.c"
+        gcc.exe: warning: C:/msys64/wd4996: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/wd4996: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_2a4ff.dir/build.make:78: CMakeFiles/cmTC_2a4ff.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_2a4ff.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-l3rpi5'
+        make: *** [Makefile:127: cmTC_2a4ff/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1149,8 +1260,8 @@ events:
     checks:
       - "Performing Test UV_LINT_WALL"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-k995qi"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-k995qi"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fxv3ii"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fxv3ii"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1160,11 +1271,18 @@ events:
       variable: "UV_LINT_WALL"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-k995qi'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fxv3ii'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_49937
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_WALL  -std=gnu90   -Wall -o CMakeFiles/cmTC_49937.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-k995qi/src.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_49937.dir/src.c.obj -o cmTC_49937.exe -Wl,--out-implib,libcmTC_49937.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_e2938/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_e2938.dir/build.make CMakeFiles/cmTC_e2938.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fxv3ii'
+        Building C object CMakeFiles/cmTC_e2938.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_WALL  -std=gnu90   -Wall -o CMakeFiles/cmTC_e2938.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fxv3ii/src.c"
+        Linking C executable cmTC_e2938.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_e2938.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_e2938.dir/objects.a @CMakeFiles/cmTC_e2938.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_e2938.dir/objects.a -Wl,--no-whole-archive -o cmTC_e2938.exe -Wl,--out-implib,libcmTC_e2938.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_e2938.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fxv3ii'
         
       exitCode: 0
   -
@@ -1177,8 +1295,8 @@ events:
     checks:
       - "Performing Test UV_LINT_NO_UNUSED_PARAMETER"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-tbpdsz"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-tbpdsz"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jaico0"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jaico0"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1188,11 +1306,18 @@ events:
       variable: "UV_LINT_NO_UNUSED_PARAMETER"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-tbpdsz'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jaico0'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_98b97
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_NO_UNUSED_PARAMETER  -std=gnu90   -Wno-unused-parameter -o CMakeFiles/cmTC_98b97.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-tbpdsz/src.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_98b97.dir/src.c.obj -o cmTC_98b97.exe -Wl,--out-implib,libcmTC_98b97.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_41e27/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_41e27.dir/build.make CMakeFiles/cmTC_41e27.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jaico0'
+        Building C object CMakeFiles/cmTC_41e27.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_NO_UNUSED_PARAMETER  -std=gnu90   -Wno-unused-parameter -o CMakeFiles/cmTC_41e27.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jaico0/src.c"
+        Linking C executable cmTC_41e27.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_41e27.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_41e27.dir/objects.a @CMakeFiles/cmTC_41e27.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_41e27.dir/objects.a -Wl,--no-whole-archive -o cmTC_41e27.exe -Wl,--out-implib,libcmTC_41e27.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_41e27.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-jaico0'
         
       exitCode: 0
   -
@@ -1205,8 +1330,8 @@ events:
     checks:
       - "Performing Test UV_LINT_STRICT_PROTOTYPES"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j4jmdn"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j4jmdn"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ykyfy4"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ykyfy4"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1216,11 +1341,18 @@ events:
       variable: "UV_LINT_STRICT_PROTOTYPES"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j4jmdn'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ykyfy4'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_ecc0e
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_STRICT_PROTOTYPES  -std=gnu90   -Wstrict-prototypes -o CMakeFiles/cmTC_ecc0e.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-j4jmdn/src.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_ecc0e.dir/src.c.obj -o cmTC_ecc0e.exe -Wl,--out-implib,libcmTC_ecc0e.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_0087d/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_0087d.dir/build.make CMakeFiles/cmTC_0087d.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ykyfy4'
+        Building C object CMakeFiles/cmTC_0087d.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_STRICT_PROTOTYPES  -std=gnu90   -Wstrict-prototypes -o CMakeFiles/cmTC_0087d.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ykyfy4/src.c"
+        Linking C executable cmTC_0087d.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_0087d.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_0087d.dir/objects.a @CMakeFiles/cmTC_0087d.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_0087d.dir/objects.a -Wl,--no-whole-archive -o cmTC_0087d.exe -Wl,--out-implib,libcmTC_0087d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_0087d.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-ykyfy4'
         
       exitCode: 0
   -
@@ -1233,8 +1365,8 @@ events:
     checks:
       - "Performing Test UV_LINT_EXTRA"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xekad9"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xekad9"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-r6ofov"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-r6ofov"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1244,11 +1376,18 @@ events:
       variable: "UV_LINT_EXTRA"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xekad9'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-r6ofov'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_c0a6e
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_EXTRA  -std=gnu90   -Wextra -o CMakeFiles/cmTC_c0a6e.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-xekad9/src.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_c0a6e.dir/src.c.obj -o cmTC_c0a6e.exe -Wl,--out-implib,libcmTC_c0a6e.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_b76a3/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_b76a3.dir/build.make CMakeFiles/cmTC_b76a3.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-r6ofov'
+        Building C object CMakeFiles/cmTC_b76a3.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_EXTRA  -std=gnu90   -Wextra -o CMakeFiles/cmTC_b76a3.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-r6ofov/src.c"
+        Linking C executable cmTC_b76a3.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_b76a3.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_b76a3.dir/objects.a @CMakeFiles/cmTC_b76a3.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_b76a3.dir/objects.a -Wl,--no-whole-archive -o cmTC_b76a3.exe -Wl,--out-implib,libcmTC_b76a3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_b76a3.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-r6ofov'
         
       exitCode: 0
   -
@@ -1261,8 +1400,8 @@ events:
     checks:
       - "Performing Test UV_LINT_UTF8_MSVC"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fj9x6h"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fj9x6h"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6tnsfn"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6tnsfn"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1272,17 +1411,21 @@ events:
       variable: "UV_LINT_UTF8_MSVC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fj9x6h'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6tnsfn'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_783cc
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_UTF8_MSVC  -std=gnu90   /utf-8 -o CMakeFiles/cmTC_783cc.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fj9x6h/src.c"
-        FAILED: CMakeFiles/cmTC_783cc.dir/src.c.obj 
-        C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_LINT_UTF8_MSVC  -std=gnu90   /utf-8 -o CMakeFiles/cmTC_783cc.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-fj9x6h/src.c"
-        cc.exe: warning: /utf-8: linker input file unused because linking not done
-        cc.exe: error: /utf-8: linker input file not found: No such file or directory
-        ninja: build stopped: subcommand failed.
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_49245/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_49245.dir/build.make CMakeFiles/cmTC_49245.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6tnsfn'
+        Building C object CMakeFiles/cmTC_49245.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_LINT_UTF8_MSVC  -std=gnu90   /utf-8 -o CMakeFiles/cmTC_49245.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6tnsfn/src.c"
+        gcc.exe: warning: C:/msys64/utf-8: linker input file unused because linking not done
+        gcc.exe: error: C:/msys64/utf-8: linker input file not found: No such file or directory
+        make[1]: *** [CMakeFiles/cmTC_49245.dir/build.make:78: CMakeFiles/cmTC_49245.dir/src.c.obj] Error 1
+        make[1]: *** Deleting file 'CMakeFiles/cmTC_49245.dir/src.c.obj'
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-6tnsfn'
+        make: *** [Makefile:127: cmTC_49245/fast] Error 2
         
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1293,8 +1436,8 @@ events:
     checks:
       - "Performing Test UV_F_STRICT_ALIASING"
     directories:
-      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pk7hu0"
-      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pk7hu0"
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-3yuyg9"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-3yuyg9"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1304,11 +1447,189 @@ events:
       variable: "UV_F_STRICT_ALIASING"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pk7hu0'
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-3yuyg9'
         
-        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/Ninja/bin/ninja.exe -v cmTC_a71c7
-        [1/2] C:\\msys64\\ucrt64\\bin\\cc.exe -DUV_F_STRICT_ALIASING  -std=gnu90   -fno-strict-aliasing -o CMakeFiles/cmTC_a71c7.dir/src.c.obj -c "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-pk7hu0/src.c"
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\msys64\\ucrt64\\bin\\cc.exe   CMakeFiles/cmTC_a71c7.dir/src.c.obj -o cmTC_a71c7.exe -Wl,--out-implib,libcmTC_a71c7.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_aa00b/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_aa00b.dir/build.make CMakeFiles/cmTC_aa00b.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-3yuyg9'
+        Building C object CMakeFiles/cmTC_aa00b.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -DUV_F_STRICT_ALIASING  -std=gnu90   -fno-strict-aliasing -o CMakeFiles/cmTC_aa00b.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-3yuyg9/src.c"
+        Linking C executable cmTC_aa00b.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_aa00b.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_aa00b.dir/objects.a @CMakeFiles/cmTC_aa00b.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_aa00b.dir/objects.a -Wl,--no-whole-archive -o cmTC_aa00b.exe -Wl,--out-implib,libcmTC_aa00b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_aa00b.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-3yuyg9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "build/_deps/glfw-src/CMakeLists.txt:111 (check_include_file)"
+    checks:
+      - "Looking for dinput.h"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-snufug"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-snufug"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-src/CMake/modules"
+    buildResult:
+      variable: "DINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-snufug'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_6df3e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_6df3e.dir/build.make CMakeFiles/cmTC_6df3e.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-snufug'
+        Building C object CMakeFiles/cmTC_6df3e.dir/CheckIncludeFile.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_6df3e.dir/CheckIncludeFile.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-snufug/CheckIncludeFile.c"
+        Linking C executable cmTC_6df3e.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_6df3e.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_6df3e.dir/objects.a @CMakeFiles/cmTC_6df3e.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_6df3e.dir/objects.a -Wl,--no-whole-archive -o cmTC_6df3e.exe -Wl,--out-implib,libcmTC_6df3e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_6df3e.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-snufug'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "build/_deps/glfw-src/CMakeLists.txt:112 (check_include_file)"
+    checks:
+      - "Looking for xinput.h"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-16fhlg"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-16fhlg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-src/CMake/modules"
+    buildResult:
+      variable: "XINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-16fhlg'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_78221/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_78221.dir/build.make CMakeFiles/cmTC_78221.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-16fhlg'
+        Building C object CMakeFiles/cmTC_78221.dir/CheckIncludeFile.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe    -o CMakeFiles/cmTC_78221.dir/CheckIncludeFile.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-16fhlg/CheckIncludeFile.c"
+        Linking C executable cmTC_78221.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_78221.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_78221.dir/objects.a @CMakeFiles/cmTC_78221.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe -Wl,--whole-archive CMakeFiles/cmTC_78221.dir/objects.a -Wl,--no-whole-archive -o cmTC_78221.exe -Wl,--out-implib,libcmTC_78221.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_78221.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-16fhlg'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/glfw-src/CMakeLists.txt:122 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test _GLFW_HAS_DEP"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-98hyk8"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-98hyk8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-src/CMake/modules"
+    buildResult:
+      variable: "_GLFW_HAS_DEP"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-98hyk8'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_c162b/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_c162b.dir/build.make CMakeFiles/cmTC_c162b.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-98hyk8'
+        Building C object CMakeFiles/cmTC_c162b.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -D_GLFW_HAS_DEP  -Wl,--nxcompat -o CMakeFiles/cmTC_c162b.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-98hyk8/src.c"
+        Linking C executable cmTC_c162b.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_c162b.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_c162b.dir/objects.a @CMakeFiles/cmTC_c162b.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe  -Wl,--nxcompat -Wl,--whole-archive CMakeFiles/cmTC_c162b.dir/objects.a -Wl,--no-whole-archive -o cmTC_c162b.exe -Wl,--out-implib,libcmTC_c162b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_c162b.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-98hyk8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/glfw-src/CMakeLists.txt:129 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test _GLFW_HAS_ASLR"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34mrt9"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34mrt9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-src/CMake/modules"
+    buildResult:
+      variable: "_GLFW_HAS_ASLR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34mrt9'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_570bb/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_570bb.dir/build.make CMakeFiles/cmTC_570bb.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34mrt9'
+        Building C object CMakeFiles/cmTC_570bb.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -D_GLFW_HAS_ASLR  -Wl,--dynamicbase -o CMakeFiles/cmTC_570bb.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34mrt9/src.c"
+        Linking C executable cmTC_570bb.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_570bb.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_570bb.dir/objects.a @CMakeFiles/cmTC_570bb.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe  -Wl,--dynamicbase -Wl,--whole-archive CMakeFiles/cmTC_570bb.dir/objects.a -Wl,--no-whole-archive -o cmTC_570bb.exe -Wl,--out-implib,libcmTC_570bb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_570bb.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-34mrt9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/ST/STM32CubeCLT_1.17.0/CMake/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "build/_deps/glfw-src/CMakeLists.txt:136 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test _GLFW_HAS_64ASLR"
+    directories:
+      source: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-sa95li"
+      binary: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-sa95li"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/glfw-src/CMake/modules"
+    buildResult:
+      variable: "_GLFW_HAS_64ASLR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-sa95li'
+        
+        Run Build Command(s): C:/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E env VERBOSE=1 C:/msys64/usr/bin/make.exe -f Makefile cmTC_3188e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3188e.dir/build.make CMakeFiles/cmTC_3188e.dir/build
+        make[1]: Entering directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-sa95li'
+        Building C object CMakeFiles/cmTC_3188e.dir/src.c.obj
+        /C/msys64/ucrt64/bin/gcc.exe -D_GLFW_HAS_64ASLR  -Wl,--high-entropy-va -o CMakeFiles/cmTC_3188e.dir/src.c.obj -c "/C/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-sa95li/src.c"
+        Linking C executable cmTC_3188e.exe
+        /C/ST/STM32CubeCLT_1.17.0/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_3188e.dir/objects.a
+        /C/msys64/ucrt64/bin/ar.exe qc CMakeFiles/cmTC_3188e.dir/objects.a @CMakeFiles/cmTC_3188e.dir/objects1.rsp
+        /C/msys64/ucrt64/bin/gcc.exe  -Wl,--high-entropy-va -Wl,--whole-archive CMakeFiles/cmTC_3188e.dir/objects.a -Wl,--no-whole-archive -o cmTC_3188e.exe -Wl,--out-implib,libcmTC_3188e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_3188e.dir/linkLibs.rsp
+        make[1]: Leaving directory '/c/Users/Motaz/Music/Nueva carpeta/sintetizador/build/CMakeFiles/CMakeScratch/TryCompile-sa95li'
         
       exitCode: 0
 ...

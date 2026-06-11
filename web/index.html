@@ -1558,6 +1558,159 @@
             }
         } /* Cierre de @media (max-width: 600px) */
 
+        /* ── SEQUENCER PAD GRID ─────────────────────────── */
+        .seq-pad {
+            flex: 1;
+            min-width: 0;
+            height: 40px;
+            background: #0d0d10;
+            border: 1px solid #252530;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.07s ease, border-color 0.07s ease, box-shadow 0.07s ease;
+            user-select: none;
+        }
+        .seq-pad.beat-4-sep {
+            margin-left: 8px;
+        }
+        .seq-pad .step-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.38rem;
+            color: #333;
+            position: absolute;
+            bottom: 2px;
+            right: 3px;
+            pointer-events: none;
+        }
+        .seq-pad:hover:not(.active) {
+            border-color: #3a3a50;
+            background: #14141c;
+        }
+        .seq-pad.active {
+            background: linear-gradient(135deg, #0f2a14 0%, #0a1f0e 100%);
+            border-color: #00e84a;
+            box-shadow: 0 0 8px rgba(0,232,74,0.45), inset 0 0 5px rgba(0,232,74,0.15);
+        }
+        .seq-pad.active .step-num { color: #00e84a; }
+        .seq-pad.playhead {
+            border-color: #00aaff !important;
+            box-shadow: 0 0 12px rgba(0,170,255,0.75), inset 0 0 6px rgba(0,170,255,0.15) !important;
+        }
+        .seq-pad.active.playhead {
+            background: linear-gradient(135deg, #091e2e 0%, #051218 100%) !important;
+            border-color: #00e5ff !important;
+            box-shadow: 0 0 16px rgba(0,229,255,0.9), inset 0 0 8px rgba(0,229,255,0.2) !important;
+        }
+
+        /* ── GROOVE TOOLBAR ─────────────────────────────── */
+        .groove-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            background: #0a0a12;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #1a2a1a;
+            margin-bottom: 4px;
+        }
+        .groove-selector-wrap {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+            min-width: 180px;
+        }
+        .groove-sel-lbl {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: #00e84a !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        .groove-select {
+            flex: 1;
+            background: #000;
+            border: 1px solid #1a3a1a;
+            color: var(--neutral-white) !important;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            padding: 4px 6px;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+        .groove-select:focus { border-color: #00e84a; }
+        .groove-btn {
+            background: rgba(0, 232, 74, 0.05);
+            border: 1px solid #1a3a1a;
+            color: var(--neutral-white) !important;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.52rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+        .groove-btn:hover {
+            background: rgba(0,232,74,0.18);
+            border-color: #00e84a;
+            box-shadow: 0 0 6px rgba(0,232,74,0.3);
+        }
+        .groove-btn.danger:hover {
+            background: rgba(255,50,50,0.2);
+            border-color: #ff3232;
+            box-shadow: 0 0 6px rgba(255,50,50,0.3);
+        }
+        .groove-btn.accent {
+            background: rgba(0,232,74,0.12);
+            border-color: #00e84a;
+        }
+        .pad-row-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pad-inst-lbl {
+            width: 80px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--neutral-white) !important;
+            font-size: 0.65rem;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .pad-inst-groove-sel {
+            width: 120px;
+            background: #0a0a12;
+            color: #00e84a !important;
+            border: 1px solid #1a3a1a;
+            font-size: 0.58rem;
+            padding: 3px 5px;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .pad-steps-row {
+            display: flex;
+            gap: 3px;
+            flex: 1;
+        }
+        .pad-group-sep {
+            width: 6px;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 
@@ -1703,6 +1856,45 @@
 
         <!-- ── COLUMNA CENTRAL (ACTIVE INSTRUMENT TABBED) ── -->
         <div class="center-col">
+            
+            <div class="main-view-toggle" style="display:flex; justify-content:space-between; align-items:center; background:#111; padding:10px 15px; border-bottom:1px solid #333;">
+                <div style="font-size:1.1rem; color:#0f0; text-shadow:0 0 5px #0f0; letter-spacing:1px; font-weight:bold;" id="main-view-title">CONSOLA DE MEZCLA MAESTRA</div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="font-size:0.7rem; font-weight:bold; color:#777;">MIXER</span>
+                    <label class="switch" style="position:relative; display:inline-block; width:50px; height:24px;">
+                        <input type="checkbox" id="view-toggle-checkbox" onchange="toggleMainView()">
+                        <span class="slider round" style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#333; transition:.4s; border-radius:24px; border:1px solid #555;"></span>
+                        <style>
+                            .slider:before { position:absolute; content:""; height:16px; width:16px; left:4px; bottom:3px; background-color:#0f0; transition:.4s; border-radius:50%; box-shadow:0 0 5px #0f0; }
+                            input:checked + .slider { background-color:#222; border-color:#0f0; }
+                            input:checked + .slider:before { transform:translateX(24px); background-color:#0f0; box-shadow:0 0 8px #0f0; }
+                        </style>
+                    </label>
+                    <span style="font-size:0.7rem; font-weight:bold; color:#0f0; text-shadow:0 0 3px #0f0;">PAD</span>
+                </div>
+            </div>
+
+            <!-- PAD CONSOLE -->
+            <div class="pad-console" id="pad-console" style="display:none; padding:15px; background:#000; flex-direction:column; gap:15px;">
+                <div id="pad-grid-container" style="display:flex; flex-direction:column; gap:10px; background:#111; padding:15px; border-radius:6px; border:1px solid #222;">
+                    <!-- Grid renderizado por JS -->
+                </div>
+                <!-- GROOVE TOOLBAR -->
+                <div class="groove-toolbar">
+                    <div class="groove-selector-wrap">
+                        <span class="groove-sel-lbl">GROOVE</span>
+                        <select class="groove-select" id="global-groove-select" onchange="applyGrooveGlobal(this.value)">
+                            <option value="">-- Seleccionar --</option>
+                        </select>
+                    </div>
+                    <button class="groove-btn accent" onclick="applyGrooveGlobal(document.getElementById('global-groove-select').value)" title="Aplicar groove a todos los instrumentos">▶ Aplicar</button>
+                    <button class="groove-btn" onclick="promptSaveGroove()" title="Guardar estado actual como nuevo groove">💾 Guardar</button>
+                    <button class="groove-btn" onclick="promptRenameGroove()" title="Renombrar groove seleccionado">✏️ Renombrar</button>
+                    <button class="groove-btn" onclick="randomizeGroove()" title="Patrón aleatorio en tiempo real">🎲 Random</button>
+                    <button class="groove-btn" onclick="clearAllSteps()" title="Limpiar todos los pasos">✖ Clear</button>
+                    <button class="groove-btn danger" onclick="confirmDeleteGroove()" title="Eliminar groove seleccionado">🗑️ Borrar</button>
+                </div>
+            </div>
 
             <!-- MASTER MIXER CONSOLE -->
             <div class="master-mix-console" id="master-mix-console"></div>
@@ -1866,1551 +2058,7 @@
         </div>
     </div>
 
-    <script>
-
-        const apiBase = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
-
-        let isBpmLocked = false;
-        let lastServerStep0 = 0;
-        let lastServerTime = 0;
-        let lastTriggeredStepIndex = -1;
-        let localSchedulerInterval = null;
-        let hasWebSocketSync = false;
-        let wsSyncTimeout = null;
-        function toggleBpmLock(isLocked) {
-            isBpmLocked = isLocked;
-            const bpmSlider = document.getElementById("master-bpm-slider");
-            if (bpmSlider) bpmSlider.disabled = isLocked;
-        }
-
-        let originalBpmBeforeNudge = 140;
-        function nudgeBpm(amount) {
-            if (isBpmLocked) return;
-            const bpmSlider = document.getElementById("master-bpm-slider");
-            if (!bpmSlider) return;
-            originalBpmBeforeNudge = parseFloat(bpmSlider.value) || 140;
-            const newBpm = originalBpmBeforeNudge + amount;
-            if (window.faustUI) {
-                window.faustUI.setParamValue("/master/bpm", newBpm);
-            } else {
-                fetch(`${apiBase}/param`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ path: "/master/bpm", value: newBpm }) });
-            }
-        }
-
-        function resetNudge() {
-            if (isBpmLocked) return;
-            if (window.faustUI) {
-                window.faustUI.setParamValue("/master/bpm", originalBpmBeforeNudge);
-            } else {
-                fetch(`${apiBase}/param`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ path: "/master/bpm", value: originalBpmBeforeNudge }) });
-            }
-        }
-        
-        // WebSocket para Monitor de Sincronización
-        let wsMonitor = null;
-        function connectWsMonitor() {
-            wsMonitor = new WebSocket("ws://127.0.0.1:8002");
-            wsMonitor.onmessage = function(event) {
-                try {
-                    const data = JSON.parse(event.data);
-                    if (data.type === "beat") {
-                        hasWebSocketSync = true;
-                        if (data.step === 0) {
-                            triggerBlueLedFlash(); // Cada 16 beats (64 pasos, inicio de frase de 4 compases)
-                        } else if (data.step === 16 || data.step === 32 || data.step === 48) {
-                            triggerGreenLedFlash(); // Cada 4 beats (16 pasos, inicio de compás)
-                        } else {
-                            triggerRedLedFlash(); // Beats intermedios (cada beat)
-                        }
-                        if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
-                        wsSyncTimeout = setTimeout(() => {
-                            hasWebSocketSync = false;
-                        }, 3000);
-                    } else if (data.type === "tx") {
-                        const ledTx = document.getElementById("led-tx");
-                        const trace = document.getElementById("web-osc-trace");
-                        if (data.pulse === 1) { // 50ms Beat 1 (Step 0)
-                            hasWebSocketSync = true;
-                            triggerGreenLedFlash();
-                            if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
-                            wsSyncTimeout = setTimeout(() => {
-                                hasWebSocketSync = false;
-                            }, 3000);
-
-                            const c = data.color || "#00ff00";
-                            ledTx.style.background = c;
-                            ledTx.style.boxShadow = "0 0 5px " + c;
-                            trace.style.borderColor = c;
-                            trace.style.borderBottomColor = "transparent";
-                            trace.style.width = "40%";
-                        } else if (data.pulse === 2) { // 10ms
-                            const c = data.color || "#00ffff";
-                            ledTx.style.background = c;
-                            ledTx.style.boxShadow = "0 0 5px " + c;
-                            trace.style.borderColor = c;
-                            trace.style.borderBottomColor = "transparent";
-                            trace.style.width = "10%";
-                        } else {
-                            ledTx.style.background = "#220000";
-                            ledTx.style.boxShadow = "none";
-                            trace.style.borderColor = "transparent";
-                        }
-                    } else if (data.type === "rx") {
-                        const ledRx = document.getElementById("led-rx");
-                        ledRx.style.background = data.color;
-                        ledRx.style.boxShadow = "0 0 5px " + data.color;
-                        setTimeout(() => {
-                            ledRx.style.background = "#002200";
-                            ledRx.style.boxShadow = "none";
-                        }, 50);
-                    }
-                } catch(e) {}
-            };
-            wsMonitor.onclose = function() {
-                setTimeout(connectWsMonitor, 3000);
-            };
-        }
-        connectWsMonitor();
-
-        let isMappingMode = false;
-        let paramMappings = JSON.parse(localStorage.getItem("paramMappings") || "{}");
-
-        function toggleMappingMode() {
-            isMappingMode = !isMappingMode;
-            const btn = document.getElementById("btn-mapeo");
-            if (isMappingMode) {
-                btn.style.background = "var(--accent-cyan)";
-                btn.innerText = "DESACTIVAR";
-            } else {
-                btn.style.background = "rgba(255,255,255,0.02)";
-                btn.innerText = "ACTIVAR";
-            }
-        }
-
-        let currentMappingPath = "";
-        function openMappingModal(path, defaultMin, defaultMax) {
-            currentMappingPath = path;
-            document.getElementById("modal-path").innerText = path;
-            let map = paramMappings[path] || { min: defaultMin, max: defaultMax };
-            document.getElementById("modal-min").value = map.min;
-            document.getElementById("modal-max").value = map.max;
-            document.getElementById("mapping-modal").style.display = "flex";
-        }
-
-        function closeMappingModal() {
-            document.getElementById("mapping-modal").style.display = "none";
-        }
-
-        function saveMappingModal() {
-            let nMin = parseFloat(document.getElementById("modal-min").value);
-            let nMax = parseFloat(document.getElementById("modal-max").value);
-            paramMappings[currentMappingPath] = { min: nMin, max: nMax };
-            localStorage.setItem("paramMappings", JSON.stringify(paramMappings));
-            closeMappingModal();
-            saveMappingsToServer();
-        }
-
-        async function saveMappingsToServer() {
-            try {
-                const jsonStr = JSON.stringify(paramMappings);
-                await fetch(apiBase + `/api/mappings/save?data=${encodeURIComponent(jsonStr)}`);
-                console.log("Mapped ranges saved to server.");
-            } catch (e) {
-                console.error("Error saving mappings to server:", e);
-            }
-        }
-
-        async function loadMappingsFromServer() {
-            try {
-                const response = await fetch(apiBase + '/api/mappings/load');
-                if (response.ok) {
-                    const mappings = await response.json();
-                    if (mappings && typeof mappings === 'object') {
-                        paramMappings = mappings;
-                        localStorage.setItem("paramMappings", JSON.stringify(paramMappings));
-                        console.log("Mapped ranges loaded from server:", paramMappings);
-                        if (typeof updateActiveInstrumentValues === 'function') {
-                            updateActiveInstrumentValues();
-                        }
-                    }
-                }
-            } catch (e) {
-                console.error("Error loading mappings from server:", e);
-            }
-        }
-
-        function getEffectiveRange(path, origMin, origMax) {
-            return paramMappings[path] || { min: origMin, max: origMax };
-        }
-
-        function getSliderValueFromEffective(path, effValue, origMin, origMax) {
-            let eff = getEffectiveRange(path, origMin, origMax);
-            if (eff.min === eff.max) return origMin;
-            let proportion = (effValue - eff.min) / (eff.max - eff.min);
-            if (isNaN(proportion)) proportion = 0;
-            proportion = Math.max(0, Math.min(1, proportion));
-            return origMin + proportion * (origMax - origMin);
-        }
-
-        let parameters = [];
-        let activeKnob = null;
-        let startY = 0, startVal = 0;
-        let ledInterval = null;
-        let currentBpm = 140;
-        let lastBpmChangeTime = 0;
-        let externalClockActive = false;
-        let activeInstrumentKey = 'bombo';
-        let simulatedRam = 18.2;
-        let activeInstrumentRendered = false;
-
-        const INSTRUMENTS = [
-            { key: 'bombo', name: 'Bombo', prefix: '/kick/' },
-            { key: 'caja', name: 'Caja', prefix: '/snare/' },
-            { key: 'platillos', name: 'Platillos', prefix: '/hat/' },
-            { key: 'bajo', name: 'Bajo WG', prefix: '/bass/' },
-            { key: 'psycho', name: 'Synth Psyche', prefix: '/syn1/' },
-            { key: 'siringe', name: 'Siringe FDN', prefix: '/syn2/' }
-        ];
-
-        /* ── AUTOMATION PERFORMER ENGINE ──────────── */
-        let perfInterval = null;
-        let perfActive = false;
-        let perfStartTime = 0;
-        let perfCurrentTime = 0; // seconds
-        let activePerfKey = 'song-5m';
-        let customPerfPresets = {};
-
-        const BUILTIN_PERFS = {
-            'song-5m': {
-                name: "Cancion 5-Minutos (Progression)",
-                duration: 300,
-                description: "Evolucion fluida de 5 min: Comienzo sutil con kick sordo y rumble, progresion de base tribal, transicion hipnotica espacial, climax distorsionado de alta energia y fundido lento.",
-                keyframes: [
-                    {
-                        timePct: 0, params: {
-                            "/master/bpm": 124, "/master/accent": 0.3, "/master/swing": 10, "/master/groove": 0, "/master/nota": 36,
-                            "/kick/vol": 0.3, "/kick/dec": 0.12, "/kick/sweep": 100.0, "/kick/comp_drive": 1.2, "/kick/mix": 0.15,
-                            "/snare/vol": 0.0, "/snare/dec_resorte": 0.1, "/snare/mix": 0.4, "/snare/freq": 1200.0, "/snare/drive": 1.0,
-                            "/hat/vol": 0.0, "/hat/dec": 0.08, "/hat/mix": 0.1, "/hat/cutoff": 4000.0, "/hat/drive": 1.0,
-                            "/bass/vol": 0.0, "/bass/dec": 0.15, "/bass/drive": 1.0, "/bass/lfo": 0.1,
-                            "/syn1/vol": 0.0, "/syn1/dec": 0.3, "/syn1/auto_p": 0.1, "/syn1/auto_v": 0.1,
-                            "/syn2/vol": 0.0, "/syn2/dec": 0.2, "/syn2/disp": 0.2, "/syn2/lfo_f": 1.0
-                        }
-                    },
-                    {
-                        timePct: 15, params: {
-                            "/master/bpm": 125, "/master/accent": 0.5, "/master/swing": 20, "/master/groove": 1,
-                            "/kick/vol": 0.75, "/kick/dec": 0.2, "/kick/sweep": 130.0, "/kick/comp_drive": 2.2, "/kick/mix": 0.35,
-                            "/snare/vol": 0.15, "/snare/dec_resorte": 0.15, "/snare/mix": 0.6, "/snare/freq": 1600.0, "/snare/drive": 1.2,
-                            "/hat/vol": 0.25, "/hat/dec": 0.12, "/hat/mix": 0.3, "/hat/cutoff": 6000.0, "/hat/drive": 1.2,
-                            "/bass/vol": 0.4, "/bass/dec": 0.22, "/bass/drive": 1.2, "/bass/lfo": 0.25,
-                            "/syn1/vol": 0.1, "/syn1/dec": 0.4, "/syn1/auto_p": 0.3, "/syn1/auto_v": 0.3,
-                            "/syn2/vol": 0.05, "/syn2/dec": 0.3, "/syn2/disp": 0.3, "/syn2/lfo_f": 1.5
-                        }
-                    },
-                    {
-                        timePct: 35, params: {
-                            "/master/bpm": 128, "/master/accent": 0.65, "/master/swing": 35, "/master/groove": 3, "/master/nota": 38,
-                            "/kick/vol": 0.85, "/kick/dec": 0.25, "/kick/sweep": 160.0, "/kick/comp_drive": 3.8, "/kick/mix": 0.45,
-                            "/snare/vol": 0.55, "/snare/dec_resorte": 0.2, "/snare/mix": 0.75, "/snare/freq": 2200.0, "/snare/drive": 1.8,
-                            "/hat/vol": 0.55, "/hat/dec": 0.18, "/hat/mix": 0.5, "/hat/cutoff": 8000.0, "/hat/drive": 1.5,
-                            "/bass/vol": 0.6, "/bass/dec": 0.28, "/bass/drive": 1.5, "/bass/lfo": 0.45,
-                            "/syn1/vol": 0.3, "/syn1/dec": 0.5, "/syn1/auto_p": 0.55, "/syn1/auto_v": 0.6,
-                            "/syn2/vol": 0.2, "/syn2/dec": 0.4, "/syn2/disp": 0.45, "/syn2/lfo_f": 2.2
-                        }
-                    },
-                    {
-                        timePct: 55, params: {
-                            "/master/bpm": 128, "/master/accent": 0.45, "/master/swing": 15, "/master/groove": 2,
-                            "/kick/vol": 0.15, "/kick/dec": 0.4, "/kick/sweep": 120.0, "/kick/comp_drive": 1.5, "/kick/mix": 0.6,
-                            "/snare/vol": 0.05, "/snare/dec_resorte": 0.1, "/snare/mix": 0.5, "/snare/freq": 1400.0, "/snare/drive": 1.0,
-                            "/hat/vol": 0.35, "/hat/dec": 0.32, "/hat/mix": 0.8, "/hat/cutoff": 9000.0, "/hat/drive": 1.1,
-                            "/bass/vol": 0.2, "/bass/dec": 0.5, "/bass/drive": 1.1, "/bass/lfo": 0.8,
-                            "/syn1/vol": 0.75, "/syn1/dec": 0.85, "/syn1/auto_p": 0.85, "/syn1/auto_v": 1.6,
-                            "/syn2/vol": 0.55, "/syn2/dec": 0.75, "/syn2/disp": 0.8, "/syn2/lfo_f": 4.5
-                        }
-                    },
-                    {
-                        timePct: 75, params: {
-                            "/master/bpm": 138, "/master/accent": 0.95, "/master/swing": 45, "/master/groove": 6, "/master/nota": 41,
-                            "/kick/vol": 0.98, "/kick/dec": 0.32, "/kick/sweep": 260.0, "/kick/comp_drive": 6.8, "/kick/mix": 0.55,
-                            "/snare/vol": 0.8, "/snare/dec_resorte": 0.25, "/snare/mix": 0.85, "/snare/freq": 3200.0, "/snare/drive": 3.8,
-                            "/hat/vol": 0.78, "/hat/dec": 0.22, "/hat/mix": 0.6, "/hat/cutoff": 10500.0, "/hat/drive": 1.8,
-                            "/bass/vol": 0.8, "/bass/dec": 0.32, "/bass/drive": 2.2, "/bass/lfo": 0.35,
-                            "/syn1/vol": 0.8, "/syn1/dec": 0.6, "/syn1/auto_p": 0.65, "/syn1/auto_v": 0.8,
-                            "/syn2/vol": 0.45, "/syn2/dec": 0.5, "/syn2/disp": 0.6, "/syn2/lfo_f": 3.0
-                        }
-                    },
-                    {
-                        timePct: 90, params: {
-                            "/master/bpm": 128, "/master/accent": 0.55, "/master/swing": 20, "/master/groove": 1,
-                            "/kick/vol": 0.65, "/kick/dec": 0.22, "/kick/sweep": 150.0, "/kick/comp_drive": 2.8, "/kick/mix": 0.3,
-                            "/snare/vol": 0.35, "/snare/dec_resorte": 0.18, "/snare/mix": 0.6, "/snare/freq": 2000.0, "/snare/drive": 1.5,
-                            "/hat/vol": 0.45, "/hat/dec": 0.15, "/hat/mix": 0.4, "/hat/cutoff": 7500.0, "/hat/drive": 1.3,
-                            "/bass/vol": 0.45, "/bass/dec": 0.25, "/bass/drive": 1.4, "/bass/lfo": 0.4,
-                            "/syn1/vol": 0.35, "/syn1/dec": 0.45, "/syn1/auto_p": 0.4, "/syn1/auto_v": 0.4,
-                            "/syn2/vol": 0.15, "/syn2/dec": 0.35, "/syn2/disp": 0.4, "/syn2/lfo_f": 1.8
-                        }
-                    },
-                    {
-                        timePct: 100, params: {
-                            "/master/bpm": 124, "/master/accent": 0.3, "/master/swing": 10, "/master/groove": 0,
-                            "/kick/vol": 0.0, "/kick/dec": 0.1, "/kick/sweep": 90.0, "/kick/comp_drive": 1.0, "/kick/mix": 0.0,
-                            "/snare/vol": 0.0, "/snare/dec_resorte": 0.1, "/snare/mix": 0.0, "/snare/freq": 1000.0, "/snare/drive": 1.0,
-                            "/hat/vol": 0.0, "/hat/dec": 0.08, "/hat/mix": 0.0, "/hat/cutoff": 3000.0, "/hat/drive": 1.0,
-                            "/bass/vol": 0.0, "/bass/dec": 0.1, "/bass/drive": 1.0, "/bass/lfo": 0.0,
-                            "/syn1/vol": 0.0, "/syn1/dec": 0.2, "/syn1/auto_p": 0.0, "/syn1/auto_v": 0.0,
-                            "/syn2/vol": 0.0, "/syn2/dec": 0.2, "/syn2/disp": 0.0, "/syn2/lfo_f": 1.0
-                        }
-                    }
-                ]
-            },
-            'house': {
-                name: "House Automatico",
-                duration: 120,
-                description: "Groove clasico House 4/4 con MPC Swing elevado, transiciones de platillos envolventes y modulacion de decaimiento y saturacion de bajo progresivas.",
-                keyframes: [
-                    {
-                        timePct: 0, params: {
-                            "/master/bpm": 122, "/master/accent": 0.6, "/master/swing": 45, "/master/groove": 4, "/master/nota": 38,
-                            "/kick/vol": 0.8, "/kick/dec": 0.18, "/kick/sweep": 130.0, "/kick/comp_drive": 2.2, "/kick/mix": 0.25,
-                            "/snare/vol": 0.0, "/snare/dec_resorte": 0.15, "/snare/mix": 0.6, "/snare/freq": 1800.0, "/snare/drive": 1.1,
-                            "/hat/vol": 0.2, "/hat/dec": 0.1, "/hat/mix": 0.3, "/hat/cutoff": 6500.0, "/hat/drive": 1.1,
-                            "/bass/vol": 0.0, "/bass/dec": 0.2, "/bass/drive": 1.1, "/bass/lfo": 0.2,
-                            "/syn1/vol": 0.0, "/syn1/dec": 0.4, "/syn1/auto_v": 0.2,
-                            "/syn2/vol": 0.0, "/syn2/dec": 0.3, "/syn2/disp": 0.3
-                        }
-                    },
-                    {
-                        timePct: 25, params: {
-                            "/kick/vol": 0.8, "/kick/dec": 0.22, "/kick/comp_drive": 2.8,
-                            "/snare/vol": 0.35, "/snare/dec_resorte": 0.18, "/snare/drive": 1.3,
-                            "/hat/vol": 0.55, "/hat/dec": 0.18, "/hat/mix": 0.45, "/hat/cutoff": 8000.0,
-                            "/bass/vol": 0.65, "/bass/dec": 0.26, "/bass/drive": 1.4, "/bass/lfo": 0.35, "/bass/intervalo": -5,
-                            "/syn1/vol": 0.15, "/syn1/dec": 0.5,
-                            "/syn2/vol": 0.0, "/syn2/dec": 0.35
-                        }
-                    },
-                    {
-                        timePct: 50, params: {
-                            "/master/swing": 58, "/master/groove": 5,
-                            "/kick/vol": 0.82, "/kick/dec": 0.25, "/kick/comp_drive": 3.5,
-                            "/snare/vol": 0.72, "/snare/dec_resorte": 0.22, "/snare/mix": 0.75, "/snare/drive": 1.6,
-                            "/hat/vol": 0.7, "/hat/dec": 0.24, "/hat/mix": 0.6, "/hat/cutoff": 9000.0,
-                            "/bass/vol": 0.75, "/bass/dec": 0.32, "/bass/drive": 1.8, "/bass/lfo": 0.5,
-                            "/syn1/vol": 0.45, "/syn1/dec": 0.65, "/syn1/auto_v": 0.6,
-                            "/syn2/vol": 0.2, "/syn2/dec": 0.45, "/syn2/disp": 0.5
-                        }
-                    },
-                    {
-                        timePct: 85, params: {
-                            "/kick/vol": 0.85, "/kick/dec": 0.2, "/kick/comp_drive": 2.5,
-                            "/snare/vol": 0.55, "/snare/dec_resorte": 0.15, "/snare/drive": 1.2,
-                            "/hat/vol": 0.65, "/hat/dec": 0.14, "/hat/mix": 0.35, "/hat/cutoff": 7500.0,
-                            "/bass/vol": 0.7, "/bass/dec": 0.22, "/bass/drive": 1.3, "/bass/lfo": 0.3,
-                            "/syn1/vol": 0.25, "/syn1/dec": 0.4, "/syn1/auto_v": 0.3,
-                            "/syn2/vol": 0.1, "/syn2/dec": 0.3, "/syn2/disp": 0.3
-                        }
-                    },
-                    {
-                        timePct: 100, params: {
-                            "/kick/vol": 0.0, "/bass/vol": 0.0, "/snare/vol": 0.0, "/hat/vol": 0.0, "/syn1/vol": 0.0, "/syn2/vol": 0.0
-                        }
-                    }
-                ]
-            },
-            'groove': {
-                name: "Techno Groove",
-                duration: 150,
-                description: "Progresion percusiva enérgica. Juega de forma fluida con los transitorios del bombo, rolls de reloj en la caja, y modulación de decaimiento metálico en platillos.",
-                keyframes: [
-                    {
-                        timePct: 0, params: {
-                            "/master/bpm": 133, "/master/accent": 0.7, "/master/swing": 12, "/master/groove": 5, "/master/nota": 36,
-                            "/kick/vol": 0.85, "/kick/dec": 0.13, "/kick/sweep": 150.0, "/kick/comp_drive": 3.0, "/kick/reloj": 1.0,
-                            "/snare/vol": 0.0, "/snare/dec_resorte": 0.12, "/snare/mix": 0.6, "/snare/freq": 1600.0, "/snare/drive": 1.2, "/snare/reloj": 1.0,
-                            "/hat/vol": 0.4, "/hat/dec": 0.12, "/hat/mix": 0.4, "/hat/cutoff": 6800.0, "/hat/drive": 1.2, "/hat/reloj": 1.0,
-                            "/bass/vol": 0.3, "/bass/dec": 0.18, "/bass/drive": 1.2,
-                            "/syn1/vol": 0.0, "/syn2/vol": 0.0
-                        }
-                    },
-                    {
-                        timePct: 30, params: {
-                            "/kick/vol": 0.85, "/kick/dec": 0.22, "/kick/reloj": 2.0, "/kick/comp_drive": 4.5,
-                            "/snare/vol": 0.65, "/snare/dec_resorte": 0.2, "/snare/mix": 0.75, "/snare/drive": 1.8, "/snare/reloj": 1.0,
-                            "/hat/vol": 0.55, "/hat/dec": 0.18, "/hat/mix": 0.5, "/hat/cutoff": 8500.0, "/hat/reloj": 2.0,
-                            "/bass/vol": 0.55, "/bass/dec": 0.25, "/bass/drive": 1.6,
-                            "/syn1/vol": 0.25, "/syn1/dec": 0.4
-                        }
-                    },
-                    {
-                        timePct: 60, params: {
-                            "/master/swing": 30,
-                            "/kick/vol": 0.88, "/kick/dec": 0.18, "/kick/reloj": 1.0, "/kick/comp_drive": 5.2, "/kick/sweep": 220.0,
-                            "/snare/vol": 0.75, "/snare/dec_resorte": 0.25, "/snare/mix": 0.85, "/snare/drive": 2.4, "/snare/reloj": 2.0,
-                            "/hat/vol": 0.68, "/hat/dec": 0.22, "/hat/mix": 0.6, "/hat/cutoff": 9500.0, "/hat/reloj": 1.0,
-                            "/bass/vol": 0.7, "/bass/dec": 0.28, "/bass/drive": 1.9,
-                            "/syn1/vol": 0.45, "/syn1/dec": 0.5,
-                            "/syn2/vol": 0.25, "/syn2/dec": 0.4
-                        }
-                    },
-                    {
-                        timePct: 85, params: {
-                            "/master/bpm": 136, "/master/swing": 45,
-                            "/kick/vol": 0.85, "/kick/dec": 0.15, "/kick/comp_drive": 3.8, "/kick/sweep": 180.0,
-                            "/snare/vol": 0.55, "/snare/dec_resorte": 0.15, "/snare/mix": 0.65, "/snare/drive": 1.5, "/snare/reloj": 1.0,
-                            "/hat/vol": 0.5, "/hat/dec": 0.14, "/hat/mix": 0.4, "/hat/cutoff": 8000.0,
-                            "/bass/vol": 0.45, "/bass/dec": 0.2, "/bass/drive": 1.4,
-                            "/syn1/vol": 0.2, "/syn1/dec": 0.35,
-                            "/syn2/vol": 0.1, "/syn2/dec": 0.3
-                        }
-                    },
-                    {
-                        timePct: 100, params: {
-                            "/kick/vol": 0.0, "/bass/vol": 0.0, "/snare/vol": 0.0, "/hat/vol": 0.0, "/syn1/vol": 0.0, "/syn2/vol": 0.0
-                        }
-                    }
-                ]
-            },
-            'hypnotic': {
-                name: "Hipnotico Evolving",
-                duration: 180,
-                description: "Inmersion tridimensional profunda. Modula sutilmente los filtros FDN, los osciladores y LFOs del sintetizador Psycho y Siringe de forma sumamente suave y espacial.",
-                keyframes: [
-                    {
-                        timePct: 0, params: {
-                            "/master/bpm": 126, "/master/accent": 0.5, "/master/swing": 8, "/master/groove": 2, "/master/nota": 36,
-                            "/kick/vol": 0.6, "/kick/dec": 0.15, "/kick/sweep": 110.0, "/kick/comp_drive": 1.8, "/kick/mix": 0.35,
-                            "/snare/vol": 0.1, "/snare/dec_resorte": 0.15, "/snare/mix": 0.5, "/snare/freq": 1400.0,
-                            "/hat/vol": 0.25, "/hat/dec": 0.15, "/hat/mix": 0.3, "/hat/cutoff": 6500.0,
-                            "/bass/vol": 0.3, "/bass/dec": 0.25, "/bass/drive": 1.1, "/bass/lfo": 0.3,
-                            "/syn1/vol": 0.4, "/syn1/dec": 0.6, "/syn1/auto_v": 0.2, "/syn1/auto_p": 0.3, "/syn1/auto_r": 2.5,
-                            "/syn2/vol": 0.2, "/syn2/dec": 0.5, "/syn2/disp": 0.4, "/syn2/lfo_f": 1.5, "/syn2/lfo_p": 0.3
-                        }
-                    },
-                    {
-                        timePct: 35, params: {
-                            "/kick/vol": 0.65, "/kick/dec": 0.25, "/kick/mix": 0.45,
-                            "/snare/vol": 0.2, "/snare/dec_resorte": 0.18, "/snare/freq": 1800.0,
-                            "/hat/vol": 0.4, "/hat/dec": 0.22, "/hat/mix": 0.5, "/hat/cutoff": 7500.0,
-                            "/bass/vol": 0.45, "/bass/dec": 0.35, "/bass/drive": 1.3, "/bass/lfo": 0.55,
-                            "/syn1/vol": 0.65, "/syn1/dec": 0.75, "/syn1/auto_v": 0.9, "/syn1/auto_p": 0.65, "/syn1/auto_r": 4.8,
-                            "/syn2/vol": 0.4, "/syn2/dec": 0.65, "/syn2/disp": 0.65, "/syn2/lfo_f": 2.8, "/syn2/lfo_p": 0.6
-                        }
-                    },
-                    {
-                        timePct: 70, params: {
-                            "/master/bpm": 128, "/master/groove": 3,
-                            "/kick/vol": 0.7, "/kick/dec": 0.32, "/kick/mix": 0.55,
-                            "/snare/vol": 0.3, "/snare/dec_resorte": 0.22, "/snare/freq": 2200.0,
-                            "/hat/vol": 0.5, "/hat/dec": 0.3, "/hat/mix": 0.75, "/hat/cutoff": 8500.0,
-                            "/bass/vol": 0.55, "/bass/dec": 0.45, "/bass/drive": 1.5, "/bass/lfo": 0.75,
-                            "/syn1/vol": 0.78, "/syn1/dec": 0.9, "/syn1/auto_v": 1.6, "/syn1/auto_p": 0.85, "/syn1/auto_r": 7.2,
-                            "/syn2/vol": 0.55, "/syn2/dec": 0.8, "/syn2/disp": 0.8, "/syn2/lfo_f": 4.2, "/syn2/lfo_p": 0.85
-                        }
-                    },
-                    {
-                        timePct: 100, params: {
-                            "/kick/vol": 0.0, "/bass/vol": 0.0, "/snare/vol": 0.0, "/hat/vol": 0.0, "/syn1/vol": 0.0, "/syn2/vol": 0.0
-                        }
-                    }
-                ]
-            },
-            'hard': {
-                name: "Hard Techno Peak",
-                duration: 90,
-                description: "Maxima distorsion techno Peak-Time. BPM acelerado a 145, el compresor de bombo saturado al 100%, caja industrial abrasiva y platillos ultrabrillantes.",
-                keyframes: [
-                    {
-                        timePct: 0, params: {
-                            "/master/bpm": 138, "/master/accent": 0.8, "/master/swing": 20, "/master/groove": 6, "/master/nota": 41,
-                            "/kick/vol": 0.9, "/kick/dec": 0.25, "/kick/sweep": 180.0, "/kick/comp_drive": 4.5, "/kick/comp_thresh": 0.3, "/kick/mix": 0.45,
-                            "/snare/vol": 0.4, "/snare/dec_resorte": 0.18, "/snare/mix": 0.75, "/snare/freq": 2000.0, "/snare/drive": 2.2,
-                            "/hat/vol": 0.5, "/hat/dec": 0.15, "/hat/mix": 0.45, "/hat/cutoff": 8500.0, "/hat/drive": 1.4,
-                            "/bass/vol": 0.5, "/bass/dec": 0.22, "/bass/drive": 1.5, "/bass/lfo": 0.35,
-                            "/syn1/vol": 0.2, "/syn1/dec": 0.4,
-                            "/syn2/vol": 0.15, "/syn2/dec": 0.35
-                        }
-                    },
-                    {
-                        timePct: 40, params: {
-                            "/master/bpm": 142, "/master/swing": 30,
-                            "/kick/vol": 0.95, "/kick/dec": 0.3, "/kick/comp_drive": 6.8, "/kick/comp_thresh": 0.18, "/kick/sweep": 230.0,
-                            "/snare/vol": 0.7, "/snare/dec_resorte": 0.22, "/snare/mix": 0.8, "/snare/freq": 2800.0, "/snare/drive": 3.8,
-                            "/hat/vol": 0.72, "/hat/dec": 0.2, "/hat/mix": 0.6, "/hat/cutoff": 10000.0, "/hat/drive": 1.8,
-                            "/bass/vol": 0.75, "/bass/dec": 0.28, "/bass/drive": 2.2, "/bass/lfo": 0.55,
-                            "/syn1/vol": 0.55, "/syn1/dec": 0.55,
-                            "/syn2/vol": 0.35, "/syn2/dec": 0.45
-                        }
-                    },
-                    {
-                        timePct: 75, params: {
-                            "/master/bpm": 145, "/master/accent": 0.98, "/master/swing": 40,
-                            "/kick/vol": 0.98, "/kick/dec": 0.35, "/kick/comp_drive": 8.0, "/kick/comp_thresh": 0.1, "/kick/sweep": 280.0,
-                            "/snare/vol": 0.88, "/snare/dec_resorte": 0.28, "/snare/mix": 0.88, "/snare/freq": 3600.0, "/snare/drive": 4.8,
-                            "/hat/vol": 0.85, "/hat/dec": 0.25, "/hat/mix": 0.75, "/hat/cutoff": 11500.0, "/hat/drive": 2.5,
-                            "/bass/vol": 0.85, "/bass/dec": 0.32, "/bass/drive": 3.2, "/bass/lfo": 0.75,
-                            "/syn1/vol": 0.7, "/syn1/dec": 0.7,
-                            "/syn2/vol": 0.5, "/syn2/dec": 0.6
-                        }
-                    },
-                    {
-                        timePct: 100, params: {
-                            "/kick/vol": 0.0, "/bass/vol": 0.0, "/snare/vol": 0.0, "/hat/vol": 0.0, "/syn1/vol": 0.0, "/syn2/vol": 0.0
-                        }
-                    }
-                ]
-            }
-        };
-
-        let instrumentAutoState = {
-            'bombo': true,
-            'caja': true,
-            'platillos': true,
-            'bajo': true,
-            'psycho': true,
-            'siringe': true
-        };
-
-        function getActivePerformances() {
-            return Object.assign({}, BUILTIN_PERFS, customPerfPresets);
-        }
-
-        async function initPerformer() {
-            try {
-                const response = await fetch(apiBase + '/api/performances/load');
-                const data = await response.json();
-                if (data && data.customPerfPresets) {
-                    customPerfPresets = data.customPerfPresets;
-                }
-                if (data && data.instrumentAutoState) {
-                    instrumentAutoState = Object.assign(instrumentAutoState, data.instrumentAutoState);
-                }
-            } catch (e) {
-                console.error("Error al cargar performances desde el servidor:", e);
-            }
-            refreshPerformanceSelector();
-            loadSelectedPerformance(activePerfKey);
-            renderMixerConsole();
-        }
-
-        async function savePerformancesAndStatesToServer() {
-            const dataToSave = {
-                customPerfPresets: customPerfPresets,
-                instrumentAutoState: instrumentAutoState
-            };
-            const jsonStr = JSON.stringify(dataToSave);
-            try {
-                const response = await fetch(apiBase + `/api/performances/save?data=${encodeURIComponent(jsonStr)}`);
-                const resText = await response.text();
-                if (resText !== "OK") {
-                    console.error("Error al guardar en el servidor:", resText);
-                }
-            } catch (e) {
-                console.error("Error al conectar con el servidor para guardar:", e);
-            }
-        }
-
-        function toggleInstrumentAuto(key, event) {
-            if (event) event.stopPropagation(); // Evitar cambiar de pestaña al hacer click en el botón
-            instrumentAutoState[key] = !instrumentAutoState[key];
-
-            // Guardar al servidor
-            savePerformancesAndStatesToServer();
-
-            // Actualizar la interfaz
-            renderMixerConsole();
-        }
-
-        function refreshPerformanceSelector() {
-            const sel = document.getElementById('performer-preset-select');
-            if (!sel) return;
-            const all = getActivePerformances();
-            sel.innerHTML = Object.keys(all).map(key => {
-                const p = all[key];
-                const type = BUILTIN_PERFS[key] ? '[PRESET]' : '[CUSTOM]';
-                return `<option value="${key}">${type} ${p.name}</option>`;
-            }).join('');
-            sel.value = activePerfKey;
-        }
-
-        function loadSelectedPerformance(key) {
-            activePerfKey = key;
-            const all = getActivePerformances();
-            const p = all[key];
-            if (!p) return;
-
-            document.getElementById('perf-description-text').innerText = p.description || "";
-            document.getElementById('perf-json-editor').value = JSON.stringify(p, null, 2);
-
-            const isCustom = !BUILTIN_PERFS[key];
-            const delBtn = document.getElementById('btn-perf-delete');
-            if (delBtn) delBtn.style.display = isCustom ? 'block' : 'none';
-
-            if (!perfActive) {
-                document.getElementById('perf-timer').innerText = `00:00 / ${formatTime(p.duration)}`;
-                document.getElementById('perf-progress-bar').style.width = '0%';
-                document.getElementById('perf-phase-name').innerText = "Fase: Esperando...";
-            }
-        }
-
-        function formatTime(secs) {
-            const m = Math.floor(secs / 60).toString().padStart(2, '0');
-            const s = Math.floor(secs % 60).toString().padStart(2, '0');
-            return `${m}:${s}`;
-        }
-
-        function togglePerformerDrawer() {
-            const drawer = document.querySelector('.performer-drawer');
-            drawer.classList.toggle('open');
-            const btn = document.getElementById('btn-performer-toggle');
-            if (btn) btn.classList.toggle('btn-active', drawer.classList.contains('open'));
-
-            if (drawer.classList.contains('open')) {
-                const settingsDrawer = document.querySelector('.right-col');
-                if (settingsDrawer.classList.contains('open')) {
-                    toggleSettingsDrawer();
-                }
-            }
-        }
-
-        function startPerformance() {
-            stopPerformance();
-            const all = getActivePerformances();
-            const p = all[activePerfKey];
-            if (!p) return;
-
-            perfActive = true;
-            perfStartTime = Date.now();
-            perfCurrentTime = 0;
-
-            document.getElementById('perf-status').innerText = "ESTADO: Ejecutando";
-            document.getElementById('perf-status').style.color = "#00ff00";
-            document.getElementById('btn-perf-play').classList.add('btn-active');
-
-            perfInterval = setInterval(() => {
-                if (!perfActive) return;
-                const elapsedMs = Date.now() - perfStartTime;
-                perfCurrentTime = elapsedMs / 1000;
-
-                if (perfCurrentTime >= p.duration) {
-                    perfCurrentTime = p.duration;
-                    stopPerformance();
-                    // Ejecutar keyframe final
-                    applyPerformanceTick(p, 100);
-                    return;
-                }
-
-                const activePct = (perfCurrentTime / p.duration) * 100;
-                document.getElementById('perf-timer').innerText = `${formatTime(perfCurrentTime)} / ${formatTime(p.duration)}`;
-                document.getElementById('perf-progress-bar').style.width = `${activePct}%`;
-
-                // Calculate Phase Name visually
-                let phaseName = "1. Inicio";
-                if (activePerfKey === 'song-5m') {
-                    if (activePct < 15) phaseName = "1. Suave Inicio";
-                    else if (activePct < 35) phaseName = "2. Ritmo & Base";
-                    else if (activePct < 55) phaseName = "3. Groove Completo";
-                    else if (activePct < 75) phaseName = "4. Descanso/Relax";
-                    else if (activePct < 90) phaseName = "5. CLÍMAX TECNOLÓGICO";
-                    else phaseName = "6. Fin & Fundido";
-                } else {
-                    phaseName = `Fase Activa: ${Math.round(activePct)}%`;
-                }
-                document.getElementById('perf-phase-name').innerText = phaseName;
-
-                applyPerformanceTick(p, activePct);
-            }, 100);
-        }
-
-        function stopPerformance() {
-            perfActive = false;
-            if (perfInterval) {
-                clearInterval(perfInterval);
-                perfInterval = null;
-            }
-            document.getElementById('perf-status').innerText = "ESTADO: Detenido";
-            document.getElementById('perf-status').style.color = "#ffffff";
-            document.getElementById('btn-perf-play').classList.remove('btn-active');
-        }
-
-        function applyPerformanceTick(perf, activePct) {
-            let allPaths = new Set();
-            perf.keyframes.forEach(kf => {
-                Object.keys(kf.params).forEach(p => allPaths.add(p));
-            });
-
-            allPaths.forEach(path => {
-                // Si el parámetro pertenece a un instrumento desactivado, lo saltamos
-                let isInstrumentParam = false;
-                let instrumentKey = null;
-                for (let inst of INSTRUMENTS) {
-                    if (path.startsWith(inst.prefix)) {
-                        isInstrumentParam = true;
-                        instrumentKey = inst.key;
-                        break;
-                    }
-                }
-
-                if (isInstrumentParam && instrumentKey && instrumentAutoState[instrumentKey] === false) {
-                    // La automatización para este instrumento está explícitamente desactivada (bypasseada)
-                    return;
-                }
-
-                let kfs = perf.keyframes.filter(kf => kf.params[path] !== undefined);
-                if (kfs.length === 0) return;
-
-                kfs.sort((a, b) => a.timePct - b.timePct);
-
-                let prev = null, next = null;
-                for (let i = 0; i < kfs.length; i++) {
-                    if (kfs[i].timePct <= activePct) {
-                        prev = kfs[i];
-                    }
-                    if (kfs[i].timePct > activePct && !next) {
-                        next = kfs[i];
-                    }
-                }
-
-                let finalVal = 0.0;
-                if (!prev && next) {
-                    finalVal = next.params[path];
-                } else if (prev && !next) {
-                    finalVal = prev.params[path];
-                } else if (prev && next) {
-                    let ratio = (activePct - prev.timePct) / (next.timePct - prev.timePct);
-                    finalVal = prev.params[path] + ratio * (next.params[path] - prev.params[path]);
-                }
-
-                // Dispatch to C++ backend dynamically!
-                updateParam(path, finalVal);
-            });
-        }
-
-        async function saveActivePerformance() {
-            const editorVal = document.getElementById('perf-json-editor').value;
-            try {
-                const parsed = JSON.parse(editorVal);
-                if (!parsed.name || !parsed.duration || !parsed.keyframes) {
-                    alert("Error: El JSON debe contener name, duration y keyframes.");
-                    return;
-                }
-
-                const isCustom = !BUILTIN_PERFS[activePerfKey];
-                if (!isCustom) {
-                    // Si intenta guardar sobre un preset incorporado, creamos uno custom
-                    const newKey = 'custom_' + Date.now();
-                    customPerfPresets[newKey] = parsed;
-                    activePerfKey = newKey;
-                } else {
-                    customPerfPresets[activePerfKey] = parsed;
-                }
-
-                await savePerformancesAndStatesToServer();
-                refreshPerformanceSelector();
-                loadSelectedPerformance(activePerfKey);
-                alert("Performance guardada con éxito en el servidor.");
-            } catch (e) {
-                alert("Error al parsear el JSON: " + e.message);
-            }
-        }
-
-        async function createNewPerformance() {
-            const template = {
-                name: "Nueva Automatización Custom",
-                duration: 60,
-                description: "Modulación de 60 segundos creada por el productor.",
-                keyframes: [
-                    { timePct: 0, params: { "/master/bpm": 128, "/kick/vol": 0.8, "/bass/vol": 0.0 } },
-                    { timePct: 50, params: { "/kick/vol": 0.8, "/bass/vol": 0.7 } },
-                    { timePct: 100, params: { "/kick/vol": 0.0, "/bass/vol": 0.0 } }
-                ]
-            };
-            const newKey = 'custom_' + Date.now();
-            customPerfPresets[newKey] = template;
-            activePerfKey = newKey;
-
-            await savePerformancesAndStatesToServer();
-            refreshPerformanceSelector();
-            loadSelectedPerformance(newKey);
-            togglePerformerDrawer(); // Asegura de abrirlo
-            const drawer = document.querySelector('.performer-drawer');
-            if (!drawer.classList.contains('open')) {
-                drawer.classList.add('open');
-                document.getElementById('btn-performer-toggle').classList.add('btn-active');
-            }
-        }
-
-        async function deleteActivePerformance() {
-            const isCustom = !BUILTIN_PERFS[activePerfKey];
-            if (!isCustom) return;
-
-            if (confirm("Â¿Estás seguro de borrar este Preset Personalizado?")) {
-                delete customPerfPresets[activePerfKey];
-                await savePerformancesAndStatesToServer();
-                activePerfKey = 'song-5m';
-                refreshPerformanceSelector();
-                loadSelectedPerformance(activePerfKey);
-            }
-        }
-
-        /* ── BPM LED ──────────────────────────── */
-        function triggerGreenLedFlash() {
-            const led = document.getElementById('bpm-led');
-            if (!led) return;
-            led.classList.add('led-active-green');
-            setTimeout(() => {
-                led.classList.remove('led-active-green');
-            }, 120);
-        }
-
-        function triggerRedLedFlash() {
-            const led = document.getElementById('bpm-led');
-            if (!led) return;
-            led.classList.add('led-active-red');
-            setTimeout(() => {
-                led.classList.remove('led-active-red');
-            }, 120);
-        }
-
-        function triggerBlueLedFlash() {
-            const led = document.getElementById('bpm-led');
-            if (!led) return;
-            led.classList.add('led-active-blue');
-            setTimeout(() => {
-                led.classList.remove('led-active-blue');
-            }, 120);
-        }
-
-        function startLedBlinking() {
-            if (ledInterval) clearInterval(ledInterval);
-            if (localSchedulerInterval) clearInterval(localSchedulerInterval);
-        }
-
-        /* ── TOGGLE SETTINGS DRAWER ─────────────────────── */
-        function toggleSettingsDrawer() {
-            const drawer = document.querySelector('.right-col');
-            drawer.classList.toggle('open');
-            const btn = document.getElementById('btn-settings-toggle');
-            if (btn) btn.classList.toggle('btn-active', drawer.classList.contains('open'));
-
-            if (drawer.classList.contains('open')) {
-                const performerDrawer = document.querySelector('.performer-drawer');
-                if (performerDrawer.classList.contains('open')) {
-                    togglePerformerDrawer();
-                }
-            }
-        }
-
-        /* ── FETCH PARAMS ─────────────────────── */
-        async function fetchParams() {
-            try {
-                const r = await fetch(apiBase + '/api/params');
-                if (!r.ok) return;
-                parameters = await r.json();
-
-                const bpmParam = parameters.find(p => p.path === '/master/bpm');
-                if (bpmParam) {
-                    const bv = Math.round(bpmParam.value);
-                    const isRecentUserChange = (Date.now() - lastBpmChangeTime) < 1500;
-                    if (!isRecentUserChange) {
-                        document.getElementById('bpm-display').innerText = bv;
-                        if (!externalClockActive) {
-                            const sl = document.getElementById('master-bpm-slider');
-                            if (sl && document.activeElement !== sl) sl.value = bv;
-                        }
-                        if (Math.abs(currentBpm - bpmParam.value) > 0.5) {
-                            currentBpm = bpmParam.value;
-                            startLedBlinking();
-                        }
-                    }
-                }
-
-                // Sincronizar todos los controles del Mixer Console a las variables OSC locales decopladas
-                INSTRUMENTS.forEach(inst => {
-                    const accentParam = parameters.find(p => p.path === inst.prefix + 'accent');
-                    if (accentParam) {
-                        const outer = document.getElementById(`outer-inst-master-accent-${inst.key}`);
-                        if (outer && activeKnob !== outer) {
-                            let origMin = parseFloat(outer.getAttribute('data-min'));
-                            let origMax = parseFloat(outer.getAttribute('data-max'));
-                            let rawVal = getSliderValueFromEffective(accentParam.path, accentParam.value, origMin, origMax);
-                            outer.setAttribute('data-value', rawVal);
-                            updateKnobGraphics(outer);
-                        }
-                        const disp = document.getElementById(`display-inst-master-accent-${inst.key}`);
-                        if (disp) disp.innerText = accentParam.value.toFixed(2);
-                    }
-
-                    const swingParam = parameters.find(p => p.path === inst.prefix + 'swing');
-                    if (swingParam) {
-                        const outer = document.getElementById(`outer-inst-master-swing-${inst.key}`);
-                        if (outer && activeKnob !== outer) {
-                            let origMin = parseFloat(outer.getAttribute('data-min'));
-                            let origMax = parseFloat(outer.getAttribute('data-max'));
-                            let rawVal = getSliderValueFromEffective(swingParam.path, swingParam.value, origMin, origMax);
-                            outer.setAttribute('data-value', rawVal);
-                            updateKnobGraphics(outer);
-                        }
-                        const disp = document.getElementById(`display-inst-master-swing-${inst.key}`);
-                        if (disp) disp.innerText = swingParam.value.toFixed(2);
-                    }
-
-                    const notaParam = parameters.find(p => p.path === inst.prefix + 'nota');
-                    if (notaParam) {
-                        const sel = document.getElementById(`select-inst-master-nota-${inst.key}`);
-                        if (sel && document.activeElement !== sel) {
-                            sel.value = Math.round(notaParam.value);
-                        }
-                    }
-
-                    const grooveParam = parameters.find(p => p.path === inst.prefix + 'groove');
-                    if (grooveParam) {
-                        const sel = document.getElementById(`select-inst-master-groove-${inst.key}`);
-                        if (sel && document.activeElement !== sel) {
-                            sel.value = Math.round(grooveParam.value);
-                        }
-                    }
-
-                    const volParam = parameters.find(p => p.path === inst.prefix + 'vol');
-                    if (volParam) {
-                        const disp = document.getElementById(`display-mixer-vol-${inst.key}`);
-                        if (disp) disp.innerText = volParam.value.toFixed(2);
-                        const sl = document.getElementById(`slider-mixer-vol-${inst.key}`);
-                        if (sl && document.activeElement !== sl) {
-                            let rawVal = getSliderValueFromEffective(volParam.path, volParam.value, parseFloat(sl.min), parseFloat(sl.max));
-                            sl.value = rawVal;
-                        }
-                    }
-
-                    const decayKey = inst.key === 'caja' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
-                    const decayParam = parameters.find(p => p.path === inst.prefix + decayKey);
-                    if (decayParam) {
-                        const disp = document.getElementById(`display-mixer-decay-${inst.key}`);
-                        if (disp) disp.innerText = decayParam.value.toFixed(2);
-                        const sl = document.getElementById(`slider-mixer-decay-${inst.key}`);
-                        if (sl && document.activeElement !== sl) {
-                            let rawVal = getSliderValueFromEffective(decayParam.path, decayParam.value, parseFloat(sl.min), parseFloat(sl.max));
-                            sl.value = rawVal;
-                        }
-                    }
-                });
-
-                const emuActive = parameters.find(p => p.path === '/emulator/active');
-                const emuBpm = parameters.find(p => p.path === '/emulator/bpm');
-                if (emuActive) {
-                    const t = document.getElementById('emu-active-toggle');
-                    if (t && document.activeElement !== t) t.checked = emuActive.value > 0.5;
-                }
-                if (emuBpm) {
-                    const sl = document.getElementById('emu-bpm-input');
-                    if (sl && document.activeElement !== sl) {
-                        sl.value = Math.round(emuBpm.value);
-                        document.getElementById('emu-bpm-display').innerText = Math.round(emuBpm.value);
-                    }
-                }
-
-                if (!document.getElementById('master-mix-console').innerHTML) {
-                    renderMixerConsole();
-                }
-
-                // Render active synthesis section with butter smooth dynamic value updates
-                if (!activeInstrumentRendered) {
-                    renderActiveInstrument();
-                } else {
-                    updateActiveInstrumentValues();
-                }
-            } catch (e) { console.error(e); }
-        }
-
-        /* ── FETCH STATUS ─────────────────────── */
-        async function fetchStatus() {
-            try {
-                const r = await fetch(apiBase + '/api/status');
-                if (!r.ok) return;
-                const st = await r.json();
-
-                if (st.lastStep0 !== undefined && st.serverTime !== undefined) {
-                    lastServerStep0 = st.lastStep0;
-                    lastServerTime = st.serverTime;
-                }
-
-                const ipList = document.getElementById('ip-list');
-                if (ipList) {
-                    ipList.innerHTML = st.ips.length === 0
-                        ? '<li>Localhost (127.0.0.1)</li>'
-                        : st.ips.map(ip => `<li>🌐 <a href="http://${ip}:8000" target="_blank" style="text-decoration: underline; color: var(--neutral-white) !important; font-weight: 700;">${ip}</a></li>`).join('');
-                }
-
-                const sel = document.getElementById('audio-device-select');
-                if (sel) {
-                    sel.innerHTML = st.devices.map(d =>
-                        `<option value="${d.id}" ${d.active ? 'selected' : ''}>${d.name}</option>`
-                    ).join('');
-                }
-
-                externalClockActive = st.externalClock === true;
-                const bpmSlider = document.getElementById('master-bpm-slider');
-                if (bpmSlider) bpmSlider.disabled = externalClockActive;
-
-                document.querySelectorAll('.bpm-btn').forEach(btn => {
-                    btn.disabled = externalClockActive;
-                });
-
-                if (externalClockActive && st.bpm > 20) {
-                    currentBpm = st.bpm;
-                    const bv = Math.round(st.bpm);
-                    document.getElementById('bpm-display').innerText = bv;
-                    startLedBlinking();
-                }
-
-                const ind = document.getElementById('hud-midi');
-                if (ind) {
-                    ind.classList.add('active');
-                    setTimeout(() => ind.classList.remove('active'), 80);
-                }
-
-                simulateAudioMeter();
-                updateRamMetric();
-            } catch (e) { console.error(e); }
-        }
-
-        function simulateAudioMeter() {
-            const bar = document.getElementById('hud-master-bar');
-            if (!bar) return;
-            const segments = bar.children;
-            const activeCount = Math.floor(Math.random() * 4) + 2;
-            for (let i = 0; i < segments.length; i++) {
-                segments[i].className = 'led-segment-mini';
-                if (i < activeCount) {
-                    if (i >= 5) {
-                        segments[i].classList.add('active-prim');
-                    } else if (i >= 4) {
-                        segments[i].classList.add('active-sec');
-                    } else {
-                        segments[i].classList.add('active-accent');
-                    }
-                }
-            }
-            const dbVal = -24 + (activeCount * 4);
-            document.getElementById('hud-db').innerText = `${dbVal} dB`;
-        }
-
-        function updateRamMetric() {
-            simulatedRam += (Math.random() - 0.5) * 0.08;
-            simulatedRam = Math.max(18.0, Math.min(18.8, simulatedRam));
-            const ramEl = document.getElementById('hud-ram');
-            if (ramEl) ramEl.innerText = `${simulatedRam.toFixed(1)} MB`;
-        }
-
-        function parseStyle(p) {
-            const label = p.label || '';
-            let style = 'slider', menuItems = [];
-            if (label.includes('style:knob')) {
-                style = 'knob';
-            } else if (label.includes('style:menu')) {
-                style = 'menu';
-                const m = label.match(/style:menu\s*\{([^}]+)\}/);
-                if (m && m[1]) {
-                    m[1].split(';').forEach(item => {
-                        const parts = item.split(':');
-                        if (parts.length === 2) {
-                            const text = parts[0].trim().replace(/['"]/g, '');
-                            const val = parseFloat(parts[1].trim());
-                            if (!isNaN(val)) menuItems.push({ text, value: val });
-                        }
-                    });
-                }
-            }
-            return { style, menuItems };
-        }
-
-        function setActiveInstrument(key) {
-            activeInstrumentKey = key;
-            INSTRUMENTS.forEach(inst => {
-                const btn = document.getElementById(`tab-${inst.key}`);
-                if (btn) btn.classList.toggle('active', inst.key === key);
-
-                const strip = document.getElementById(`chan-${inst.key}`);
-                if (strip) strip.classList.toggle('active-strip', inst.key === key);
-            });
-            activeInstrumentRendered = false; // Trigger full DOM re-creation once
-            renderActiveInstrument();
-        }
-
-        /* ── ZERO LATENCY SELECTOR SYNC ──────────────── */
-        function onMasterNotaChange(value) {
-            INSTRUMENTS.forEach(inst => {
-                const sel = document.getElementById(`select-inst-master-nota-${inst.key}`);
-                if (sel) sel.value = value;
-            });
-            updateParam('/master/nota', value);
-        }
-
-        function onMasterGrooveChange(value) {
-            INSTRUMENTS.forEach(inst => {
-                const sel = document.getElementById(`select-inst-master-groove-${inst.key}`);
-                if (sel) sel.value = value;
-            });
-            updateParam('/master/groove', value);
-        }
-
-        function renderMixerConsole() {
-            const container = document.getElementById('master-mix-console');
-            if (!container || parameters.length === 0) return;
-
-            container.innerHTML = `
-                <div class="mixer-header">CONSOLA DE MEZCLA MAESTRA (MASTER MIX)</div>
-                <div class="mixer-channels-grid">
-                    ${INSTRUMENTS.map(inst => {
-                const clkParam = parameters.find(p => p.path === inst.prefix + 'reloj') || { value: 1.0 };
-                const volParam = parameters.find(p => p.path === inst.prefix + 'vol') || { value: 0.8, min: 0, max: 1 };
-
-                const decayKey = inst.key === 'caja' ? 'dec_resorte' : (inst.key === 'bombo' ? 'dec' : (inst.key === 'bajo' ? 'dec' : 'dec'));
-                const decayParam = parameters.find(p => p.path === inst.prefix + decayKey) || { value: 0.2, min: 0.01, max: 2.0 };
-                const decayName = (decayParam && decayParam.path) ? decayParam.path.split('/').pop().toUpperCase() : 'DECAY';
-                const activeStripClass = inst.key === activeInstrumentKey ? 'active-strip' : '';
-
-                return `
-                            <div class="mixer-channel-strip ${activeStripClass}" id="chan-${inst.key}">
-                                <div class="chan-title-row" onclick="setActiveInstrument('${inst.key}')" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;" title="Ver Síntesis Avanzada de ${inst.name.toUpperCase()}">
-                                    <span class="chan-title">${inst.name.toUpperCase()}</span>
-                                    <div class="toggle-switch-wrapper" onclick="toggleInstrumentAuto('${inst.key}', event)" 
-                                         title="${instrumentAutoState[inst.key] !== false ? 'Auto Activado' : 'Bypass (Manual)'}">
-                                        <div class="toggle-switch ${instrumentAutoState[inst.key] !== false ? 'active' : ''}">
-                                            <div class="toggle-handle"></div>
-                                        </div>
-                                        <span class="toggle-lbl lbl-auto ${instrumentAutoState[inst.key] !== false ? 'active-lbl' : ''}">AUTO</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Reloj Multiplier -->
-                                <div class="mixer-widget-box">
-                                    <span class="mixer-lbl">Sync Reloj</span>
-                                    <div class="clk-btn-group-mini">
-                                        ${[0.25, 0.5, 1.0, 2.0, 4.0].map(val => {
-                    const lbl = val === 0.25 ? '÷4' : (val === 0.5 ? '÷2' : (val === 1.0 ? 'x1' : (val === 2.0 ? 'x2' : 'x4')));
-                    const active = Math.abs(clkParam.value - val) < 0.05 ? 'active' : '';
-                    return `<button class="clk-mini-btn ${active}" onclick="updateParam('${clkParam.path || inst.prefix + 'reloj'}', ${val})">${lbl}</button>`;
-                }).join('')}
-                                    </div>
-                                </div>
-
-                                <!-- Accent & Swing Knobs (DECOUPLED LOCAL CHANNELS) -->
-                                <div class="mixer-knob-row">
-                                    <div class="knob-widget-mini">
-                                        <span class="mixer-lbl">Accent</span>
-                                        <div class="knob-outer mini-knob" id="outer-inst-master-accent-${inst.key}"
-                                             data-path="${inst.prefix}accent" data-min="0" data-max="1" data-value="${parameters.find(p => p.path === inst.prefix + 'accent')?.value || 0.5}">
-                                             <svg class="knob-svg" viewBox="0 0 100 100">
-                                                 <circle cx="50" cy="50" r="40" stroke="#121217" stroke-width="10" fill="none"/>
-                                                 <circle class="knob-active-ring" cx="50" cy="50" r="40"
-                                                         stroke-width="10" fill="none" stroke-linecap="round"/>
-                                             </svg>
-                                             <div class="knob-dial dial-mini"><div class="knob-pointer pointer-mini"></div></div>
-                                         </div>
-                                         <span class="mixer-val-mini" id="display-inst-master-accent-${inst.key}">0.50</span>
-                                    </div>
-
-                                    <div class="knob-widget-mini">
-                                        <span class="mixer-lbl">Swing</span>
-                                        <div class="knob-outer mini-knob" id="outer-inst-master-swing-${inst.key}"
-                                             data-path="${inst.prefix}swing" data-min="0" data-max="75" data-value="${parameters.find(p => p.path === inst.prefix + 'swing')?.value || 0}">
-                                             <svg class="knob-svg" viewBox="0 0 100 100">
-                                                 <circle cx="50" cy="50" r="40" stroke="#121217" stroke-width="10" fill="none"/>
-                                                 <circle class="knob-active-ring" cx="50" cy="50" r="40"
-                                                         stroke-width="10" fill="none" stroke-linecap="round"/>
-                                             </svg>
-                                             <div class="knob-dial dial-mini"><div class="knob-pointer pointer-mini"></div></div>
-                                         </div>
-                                         <span class="mixer-val-mini" id="display-inst-master-swing-${inst.key}">0.00</span>
-                                    </div>
-                                </div>
-
-                                <!-- Groove & Nota Selectors (DECOUPLED LOCAL CHANNELS) -->
-                                <div class="mixer-widget-box">
-                                    <span class="mixer-lbl">Tonalidad</span>
-                                    <select class="mixer-select" id="select-inst-master-nota-${inst.key}" onchange="updateParam('${inst.prefix}nota', this.value)">
-                                        <option value="36">C (Do)</option>
-                                        <option value="37">C# (Do#)</option>
-                                        <option value="38">D (Re)</option>
-                                        <option value="39">D# (Re#)</option>
-                                        <option value="40">E (Mi)</option>
-                                        <option value="41">F (Fa)</option>
-                                        <option value="42">F# (Fa#)</option>
-                                        <option value="43">G (Sol)</option>
-                                        <option value="44">G# (Sol#)</option>
-                                        <option value="45">A (La)</option>
-                                        <option value="46">A# (La#)</option>
-                                        <option value="47">B (Si)</option>
-                                    </select>
-                                </div>
-
-                                <div class="mixer-widget-box">
-                                    <span class="mixer-lbl">Groove</span>
-                                    <select class="mixer-select" id="select-inst-master-groove-${inst.key}" onchange="updateParam('${inst.prefix}groove', this.value)">
-                                        <option value="0">1: Ultra Hipnótico</option>
-                                        <option value="1">2: Deep Mental</option>
-                                        <option value="2">3: Bucle Psíquico</option>
-                                        <option value="3">4: Driving Techno</option>
-                                        <option value="4">5: Tribal Funk</option>
-                                        <option value="5">6: Hardgroove Tradicional</option>
-                                        <option value="6">7: Hardgroove Frenético</option>
-                                    </select>
-                                </div>
-
-                                <!-- Decay Slider (Horizontal) -->
-                                <div class="mixer-widget-box">
-                                    <div class="mixer-lbl-row">
-                                        <span class="mixer-lbl">${decayName.substring(0, 8)}</span>
-                                        <span class="mixer-val-txt" id="display-mixer-decay-${inst.key}">${decayParam.value.toFixed(2)}</span>
-                                    </div>
-                                    <input type="range" class="mixer-slider-h" id="slider-mixer-decay-${inst.key}"
-                                           min="${decayParam.min}" max="${decayParam.max}" step="0.01" value="${decayParam.value}"
-                                           oninput="updateParam('${decayParam.path}', this.value, 'display-mixer-decay-${inst.key}')">
-                                </div>
-
-                                <!-- Vertical Volume Fader -->
-                                <div class="fader-widget-vertical">
-                                    <div class="fader-lbl-row">
-                                        <span class="mixer-lbl">VOLUME</span>
-                                        <span class="fader-val-txt" id="display-mixer-vol-${inst.key}">${volParam.value.toFixed(2)}</span>
-                                    </div>
-                                    <div class="fader-track-container">
-                                        <input type="range" class="fader-slider-v" id="slider-mixer-vol-${inst.key}"
-                                               min="${volParam.min}" max="${volParam.max}" step="0.01" value="${volParam.value}"
-                                               oninput="updateParam('${volParam.path}', this.value, 'display-mixer-vol-${inst.key}')">
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-            }).join('')}
-                </div>
-            `;
-
-            // Vincular eventos de drag a todos los knobs del mixer console
-            INSTRUMENTS.forEach(inst => {
-                ['accent', 'swing'].forEach(k => {
-                    const ko = document.getElementById(`outer-inst-master-${k}-${inst.key}`);
-                    if (ko) {
-                        ko.addEventListener('mousedown', startKnobDrag);
-                        ko.addEventListener('touchstart', startKnobDrag, { passive: false });
-                        updateKnobGraphics(ko);
-                    }
-                });
-            });
-        }
-
-        function renderActiveInstrument() {
-            const panel = document.getElementById('active-instrument-panel');
-            if (!panel || parameters.length === 0) return;
-
-            const inst = INSTRUMENTS.find(i => i.key === activeInstrumentKey);
-            if (!inst) return;
-
-            const allParams = parameters.filter(p => p.path.startsWith(inst.prefix));
-
-            const excludedKeys = ['vol', 'volume', 'decay', 'dec', 'dec_cuerpo', 'dec_resorte', 'ataque', 'attack', 'release', 'reloj', 'accent', 'swing', 'nota', 'nota_base', 'groove'];
-            const synthParams = allParams.filter(p => {
-                const pk = p.path.split('/').pop().toLowerCase();
-                return !excludedKeys.includes(pk);
-            });
-
-            panel.innerHTML = `
-                <!-- VERTICAL SYNTH PANEL (ADVANCED SYNTHESIS ONLY) -->
-                <div class="active-synth-section">
-                    <div class="panel-header" style="font-size:0.7rem; border:none; margin:0; padding:0; color:var(--neutral-white) !important;">
-                        CONTROLES DE SÍNTESIS AVANZADA: ${inst.name.toUpperCase()}
-                    </div>
-                    <div class="knobs-grid" id="synth-knobs-${inst.key}"></div>
-                    <div id="synth-sliders-${inst.key}" style="display:flex; flex-direction:column; gap:10px;"></div>
-                    <div id="synth-menus-${inst.key}" style="display:flex; flex-direction:column; gap:10px;"></div>
-                </div>
-            `;
-
-            const knobGrid = document.getElementById(`synth-knobs-${inst.key}`);
-            const sliderContainer = document.getElementById(`synth-sliders-${inst.key}`);
-            const menuContainer = document.getElementById(`synth-menus-${inst.key}`);
-
-            synthParams.forEach(p => {
-                const parsed = parseStyle(p);
-                const paramKey = p.path.split('/').pop();
-                const cleanName = paramKey.replace(/_/g, ' ');
-                const elemId = `synth-${inst.key}-${paramKey}`;
-
-                if (parsed.style === 'knob') {
-                    const w = document.createElement('div');
-                    w.id = elemId; w.className = 'knob-widget';
-                    w.innerHTML = `
-                        <span class="knob-label" title="${cleanName}">${cleanName}</span>
-                        <div class="knob-outer" id="outer-${elemId}" data-path="${p.path}" data-min="${p.min}" data-max="${p.max}" data-value="${p.value}">
-                            <svg class="knob-svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#121217" stroke-width="8" fill="none"/><circle class="knob-active-ring" cx="50" cy="50" r="40" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
-                            <div class="knob-dial"><div class="knob-pointer"></div></div>
-                        </div>
-                        <span class="knob-value-display" id="disp-${elemId}">${p.value.toFixed(2)}</span>
-                    `;
-                    knobGrid.appendChild(w);
-                    const ko = w.querySelector('.knob-outer');
-                    ko.addEventListener('mousedown', startKnobDrag);
-                    ko.addEventListener('touchstart', startKnobDrag, { passive: false });
-                    updateKnobGraphics(ko);
-                } else if (parsed.style === 'menu') {
-                    const w = document.createElement('div');
-                    w.id = elemId; w.className = 'select-widget';
-                    const opts = parsed.menuItems.map(o => `<option value="${o.value}">${o.text}</option>`).join('');
-                    w.innerHTML = `
-                        <span class="select-label">${cleanName}</span>
-                        <select id="sel-${elemId}" onchange="updateParam('${p.path}', this.value)">${opts}</select>
-                    `;
-                    menuContainer.appendChild(w);
-                    const sel = document.getElementById(`sel-${elemId}`);
-                    if (sel) sel.value = p.value;
-                } else {
-                    const w = document.createElement('div');
-                    w.id = elemId; w.className = 'slider-widget';
-                    w.innerHTML = `
-                        <div class="slider-label-row"><span>${cleanName}</span><span class="slider-val" id="disp-${elemId}">${p.value.toFixed(2)}</span></div>
-                        <div class="slider-container"><input type="range" id="inp-${elemId}" min="${p.min}" max="${p.max}" step="0.001" value="${p.value}" oninput="updateParam('${p.path}', this.value, 'disp-${elemId}')"></div>
-                    `;
-                    sliderContainer.appendChild(w);
-                }
-            });
-
-            activeInstrumentRendered = true;
-        }
-
-        /* ── DYNAMIC VALUE UPDATE FOR SYNTH PANEL WITHOUT DESTROYING DOM nodes ── */
-        function updateActiveInstrumentValues() {
-            if (parameters.length === 0) return;
-            const inst = INSTRUMENTS.find(i => i.key === activeInstrumentKey);
-            if (!inst) return;
-
-            const allParams = parameters.filter(p => p.path.startsWith(inst.prefix));
-            const excludedKeys = ['vol', 'volume', 'decay', 'dec', 'dec_cuerpo', 'dec_resorte', 'ataque', 'attack', 'release', 'reloj', 'accent', 'swing', 'nota', 'nota_base', 'groove'];
-            const synthParams = allParams.filter(p => {
-                const pk = p.path.split('/').pop().toLowerCase();
-                return !excludedKeys.includes(pk);
-            });
-
-            synthParams.forEach(p => {
-                const parsed = parseStyle(p);
-                const paramKey = p.path.split('/').pop();
-                const elemId = `synth-${inst.key}-${paramKey}`;
-
-                if (parsed.style === 'knob') {
-                    const outer = document.getElementById(`outer-${elemId}`);
-                    if (outer && activeKnob !== outer) {
-                        let origMin = parseFloat(outer.getAttribute('data-min'));
-                        let origMax = parseFloat(outer.getAttribute('data-max'));
-                        let rawVal = getSliderValueFromEffective(p.path, p.value, origMin, origMax);
-                        outer.setAttribute('data-value', rawVal);
-                        updateKnobGraphics(outer);
-                    }
-                    const disp = document.getElementById(`disp-${elemId}`);
-                    if (disp) disp.innerText = p.value.toFixed(2);
-                } else if (parsed.style === 'menu') {
-                    const sel = document.getElementById(`sel-${elemId}`);
-                    if (sel && document.activeElement !== sel) {
-                        sel.value = p.value;
-                    }
-                } else {
-                    const inp = document.getElementById(`inp-${elemId}`);
-                    if (inp && document.activeElement !== inp) {
-                        let rawVal = getSliderValueFromEffective(p.path, p.value, parseFloat(inp.min), parseFloat(inp.max));
-                        inp.value = rawVal;
-                    }
-                    const disp = document.getElementById(`disp-${elemId}`);
-                    if (disp) disp.innerText = p.value.toFixed(2);
-                }
-            });
-        }
-
-        function startKnobDrag(e) {
-            activeKnob = e.currentTarget;
-            startY = e.clientY || (e.touches ? e.touches[0].clientY : 0);
-            startVal = parseFloat(activeKnob.getAttribute('data-value'));
-            document.addEventListener('mousemove', dragKnob);
-            document.addEventListener('touchmove', dragKnob, { passive: false });
-            document.addEventListener('mouseup', stopKnobDrag);
-            document.addEventListener('touchend', stopKnobDrag);
-            e.preventDefault();
-        }
-        function dragKnob(e) {
-            if (!activeKnob) return;
-            const cy = e.clientY || (e.touches ? e.touches[0].clientY : 0);
-            const deltaY = startY - cy;
-            const min = parseFloat(activeKnob.getAttribute('data-min'));
-            const max = parseFloat(activeKnob.getAttribute('data-max'));
-            let nv = startVal + (deltaY / 200) * (max - min);
-            nv = Math.max(min, Math.min(max, nv));
-
-            const path = activeKnob.getAttribute('data-path');
-            activeKnob.setAttribute('data-value', nv);
-            updateKnobGraphics(activeKnob);
-            updateParam(path, nv);
-
-            // Feedback instantáneo de sincronización global para knobs en Mixer Console
-            if (path === '/master/accent' || path === '/master/swing') {
-                const k = path === '/master/accent' ? 'accent' : 'swing';
-                INSTRUMENTS.forEach(inst => {
-                    const otherKnob = document.getElementById(`outer-inst-master-${k}-${inst.key}`);
-                    if (otherKnob && otherKnob !== activeKnob) {
-                        otherKnob.setAttribute('data-value', nv);
-                        updateKnobGraphics(otherKnob);
-                    }
-                });
-            }
-            if (e.cancelable) e.preventDefault();
-        }
-        function stopKnobDrag() {
-            activeKnob = null;
-            document.removeEventListener('mousemove', dragKnob);
-            document.removeEventListener('touchmove', dragKnob);
-            document.removeEventListener('mouseup', stopKnobDrag);
-            document.removeEventListener('touchend', stopKnobDrag);
-        }
-        function updateKnobGraphics(knob) {
-            const min = parseFloat(knob.getAttribute('data-min'));
-            const max = parseFloat(knob.getAttribute('data-max'));
-            const val = parseFloat(knob.getAttribute('data-value'));
-            const pct = (val - min) / (max - min);
-            const circ = 251.2;
-            const arc = circ * 0.75;
-            const offset = circ - pct * arc;
-            const ring = knob.querySelector('.knob-active-ring');
-            if (ring) {
-                ring.setAttribute('stroke-dasharray', `${circ}`);
-                ring.setAttribute('stroke-dashoffset', `${offset}`);
-            }
-            const dial = knob.querySelector('.knob-dial');
-            if (dial) dial.style.transform = `rotate(${pct * 270 - 135}deg)`;
-
-            const disp = knob.closest('.knob-widget-mini')?.querySelector('.mixer-val-mini') || knob.closest('.knob-widget')?.querySelector('.knob-value-display');
-            if (disp) disp.innerText = val.toFixed(2);
-        }
-
-        function onMasterBpmInput(val) {
-            if (externalClockActive || isBpmLocked) return;
-            lastBpmChangeTime = Date.now();
-            document.getElementById('bpm-display').innerText = Math.round(val);
-            currentBpm = parseFloat(val);
-            updateParam('/master/bpm', val);
-        }
-        function onBpmAction(action) {
-            if (externalClockActive || isBpmLocked) return;
-            lastBpmChangeTime = Date.now();
-            let currentBpmNum = parseFloat(currentBpm) || 140;
-            let targetBpm = currentBpmNum;
-            if (action === 'divide') targetBpm = Math.max(60, currentBpmNum / 2);
-            else if (action === 'multiply') targetBpm = Math.min(240, currentBpmNum * 2);
-            else if (action === 'dec') targetBpm = Math.max(60, currentBpmNum - 1);
-            else if (action === 'inc') targetBpm = Math.min(240, currentBpmNum + 1);
-            targetBpm = Math.round(targetBpm);
-            currentBpm = targetBpm;
-            document.getElementById('bpm-display').innerText = targetBpm;
-            const bpmSlider = document.getElementById('master-bpm-slider');
-            if (bpmSlider) bpmSlider.value = targetBpm;
-            updateParam('/master/bpm', targetBpm);
-            startLedBlinking();
-        }
-        async function updateParam(path, value, displayId = null) {
-            let origMin = 0; let origMax = 1;
-            let sliderEl = null;
-            if (displayId && displayId.startsWith('disp-')) {
-                let elemId = displayId.substring(5);
-                sliderEl = document.getElementById('inp-' + elemId);
-            } else if (displayId) {
-                // fallbacks for display-mixer-vol-... by finding the input that calls this displayId
-                sliderEl = document.querySelector('input[oninput*="' + displayId + '"]');
-            }
-            if (sliderEl) {
-                origMin = parseFloat(sliderEl.min);
-                origMax = parseFloat(sliderEl.max);
-            }
-
-            if (isMappingMode) {
-                openMappingModal(path, origMin, origMax);
-                // Si el slider se mueve mientras estamos en modo mapeo, devolvemos el slider a su posición anterior (opcional) pero simplemente bloqueamos el envió al backend.
-                return;
-            }
-
-            let effValue = parseFloat(value);
-            let eff = getEffectiveRange(path, origMin, origMax);
-            if (eff.min != origMin || eff.max != origMax) {
-                let proportion = (effValue - origMin) / (origMax - origMin);
-                if (isNaN(proportion)) proportion = 0;
-                effValue = eff.min + proportion * (eff.max - eff.min);
-            }
-
-            if (displayId) {
-                const el = document.getElementById(displayId);
-                if (el) el.innerText = effValue.toFixed(2);
-            }
-
-            // Actualizar botones de reloj visualmente sin recargar
-            if (path.endsWith('/reloj')) {
-                const buttons = document.querySelectorAll(`button[onclick*="${path}"]`);
-                buttons.forEach(btn => {
-                    if (btn.getAttribute('onclick').includes(effValue.toString())) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
-                    }
-                });
-            }
-
-            try {
-                await fetch(apiBase + `/api/set?path=${encodeURIComponent(path)}&value=${effValue}`);
-            } catch (e) {
-                console.error(e);
-            }
-        }
-        async function triggerPreset(action) {
-            try {
-                await fetch(apiBase + `/api/set?path=${encodeURIComponent('/preset/' + action)}&value=1`);
-                alert(`Preset ${action === 'save' ? 'guardado' : 'cargado'} con éxito.`);
-                setTimeout(fetchParams, 300);
-            } catch (e) { console.error(e); }
-        }
-        async function triggerAutomation(action) {
-            try {
-                await fetch(apiBase + `/api/set?path=${encodeURIComponent('/automation/' + action)}&value=1`);
-                ['btn-record', 'btn-play', 'btn-stop', 'btn-r-rec', 'btn-r-play', 'btn-r-stop'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.classList.remove('btn-active');
-                });
-                if (action === 'record') {
-                    document.getElementById('btn-r-rec').classList.add('btn-active');
-                } else if (action === 'play') {
-                    document.getElementById('btn-r-play').classList.add('btn-active');
-                }
-            } catch (e) { console.error(e); }
-        }
-        async function setAudioDevice(id) {
-            if (!id) return;
-            try { await fetch(apiBase + `/api/audio/set?id=${id}`); } catch (e) { console.error(e); }
-        }
-
-        /* ── EMULATOR ──────────────────────────── */
-        function toggleEmulator(active) { updateParam('/emulator/active', active ? 1 : 0); }
-        function setEmulatorBpm(bpm) {
-            document.getElementById('emu-bpm-display').innerText = Math.round(bpm);
-            updateParam('/emulator/bpm', bpm);
-        }
-
-        /* ── INIT ──────────────────────────────── */
-        loadMappingsFromServer().then(() => {
-            fetchParams();
-            fetchStatus();
-            startLedBlinking();
-        });
-        initPerformer();
-        setInterval(fetchParams, 1000);
-        setInterval(fetchStatus, 2000);
-
-
-
-    </script>
+    <script type="module" src="src/main.js"></script>
 
 
 

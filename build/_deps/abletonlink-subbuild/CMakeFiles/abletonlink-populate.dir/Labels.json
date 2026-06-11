@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/CMakeFiles/abletonlink-populate"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/CMakeFiles/abletonlink-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/CMakeFiles/abletonlink-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/abletonlink-subbuild/abletonlink-populate-prefix/src/abletonlink-populate-stamp/abletonlink-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"abletonlink-populate"
+		],
+		"name" : "abletonlink-populate"
+	}
+}

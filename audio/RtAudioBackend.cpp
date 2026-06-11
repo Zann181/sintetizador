@@ -1,6 +1,7 @@
 #include "RtAudioBackend.h"
 #include <RtAudio.h>
 #include <iostream>
+#include <cmath>
 
 #include "../core/FaustDefs.h"
 
@@ -249,11 +250,26 @@ int RtAudioBackend::audioCallback(void* outputBuffer, void* inputBuffer, unsigne
         synth->getClock()->setLastStep0TimeMs(static_cast<double>(lastStep0));
     }
     
-    // 5. Intercalar salida para RtAudio
+    // 5. Intercalar salida para RtAudio y calcular nivel pico
+    float maxVal = 0.0f;
     for (unsigned int i = 0; i < nBufferFrames; i++) {
         out[2 * i]     = outL[i];
         out[2 * i + 1] = outR[i];
+        float absL = std::abs(outL[i]);
+        float absR = std::abs(outR[i]);
+        if (absL > maxVal) maxVal = absL;
+        if (absR > maxVal) maxVal = absR;
     }
+
+    // Envoltura de decaimiento lento para el medidor
+    static float currentPeak = 0.0f;
+    if (maxVal > currentPeak) {
+        currentPeak = maxVal;
+    } else {
+        currentPeak *= 0.95f; // Decaimiento suave por buffer
+        if (currentPeak < 0.0001f) currentPeak = 0.0f;
+    }
+    backend->m_peakLevel.store(currentPeak);
     
     return 0;
 }

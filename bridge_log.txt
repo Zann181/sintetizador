@@ -1,0 +1,32 @@
+============================================
+  BAZZ C++ SYNC BRIDGE  (Ableton Link)    
+============================================
+[Timer] Resolucion del temporizador elevada a 1 ms.
+[Serial] Abriendo puerto COM_DUMMY @ 115200...
+[OSC] Escuchando /synth/ack en puerto 8001 para RTT.
+[Link] Inicializado a 120 BPM.
+[Link] Esperando peers en la red...
+[STEP 2/4]  BPM: 120  Jitter: 0.061 ms
+  [RTT OSC] -> 0.208 ms
+[STEP 3/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.179 ms
+[STEP 4/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.302 ms
+[STEP 1/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.287 ms
+[STEP 2/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.148 ms
+[STEP 3/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.369 ms
+[STEP 4/4]  BPM: 120  Jitter: 0.001 ms
+  [RTT OSC] -> 0.203 ms
+[STEP 1/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.223 ms
+[STEP 2/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.363 ms
+[STEP 3/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.313 ms
+[STEP 4/4]  BPM: 120  Jitter: 0.29 ms
+  [RTT OSC] -> 0.233 ms
+[STEP 1/4]  BPM: 120  Jitter: 0 ms
+  [RTT OSC] -> 0.579 ms

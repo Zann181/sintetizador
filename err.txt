@@ -1,0 +1,1 @@
+[Serial] No se pudo abrir COM3 — modo OSC-only.

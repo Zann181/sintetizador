@@ -1,0 +1,530 @@
+﻿{
+    "value":  [
+                  {
+                      "path":  "/bass/accent",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Accent"
+                  },
+                  {
+                      "path":  "/bass/dec",
+                      "value":  0.062707,
+                      "min":  0.010000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Decaimiento"
+                  },
+                  {
+                      "path":  "/bass/detune",
+                      "value":  0.040000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Desafinado"
+                  },
+                  {
+                      "path":  "/bass/drive",
+                      "value":  0.650000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Saturacion"
+                  },
+                  {
+                      "path":  "/bass/intervalo",
+                      "value":  -12.000000,
+                      "min":  -12.000000,
+                      "max":  7.000000,
+                      "label":  "Sintesis/Intervalo"
+                  },
+                  {
+                      "path":  "/bass/lfo",
+                      "value":  0.450000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Filtro LFO"
+                  },
+                  {
+                      "path":  "/bass/nota",
+                      "value":  43.000000,
+                      "min":  36.000000,
+                      "max":  47.000000,
+                      "label":  "Sintesis/Nota"
+                  },
+                  {
+                      "path":  "/bass/reloj",
+                      "value":  1.000000,
+                      "min":  0.250000,
+                      "max":  4.000000,
+                      "label":  "Sintesis/Reloj"
+                  },
+                  {
+                      "path":  "/bass/swing",
+                      "value":  0.750000,
+                      "min":  0.000000,
+                      "max":  75.000000,
+                      "label":  "Sintesis/Swing"
+                  },
+                  {
+                      "path":  "/bass/vol",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Volumen"
+                  },
+                  {
+                      "path":  "/emulator/active",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  ""
+                  },
+                  {
+                      "path":  "/emulator/bpm",
+                      "value":  137.000000,
+                      "min":  60.000000,
+                      "max":  240.000000,
+                      "label":  ""
+                  },
+                  {
+                      "path":  "/hat/accent",
+                      "value":  0.075000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Accent"
+                  },
+                  {
+                      "path":  "/hat/ataque",
+                      "value":  0.001000,
+                      "min":  0.001000,
+                      "max":  0.100000,
+                      "label":  "Sintesis/Ataque"
+                  },
+                  {
+                      "path":  "/hat/cutoff",
+                      "value":  11199.400391,
+                      "min":  3000.000000,
+                      "max":  12000.000000,
+                      "label":  "Sintesis/Filtro Paso Alto"
+                  },
+                  {
+                      "path":  "/hat/dec",
+                      "value":  0.380000,
+                      "min":  0.010000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Decaimiento"
+                  },
+                  {
+                      "path":  "/hat/drive",
+                      "value":  0.521000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Saturacion"
+                  },
+                  {
+                      "path":  "/hat/mix",
+                      "value":  0.892000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Mix Metal Ruido"
+                  },
+                  {
+                      "path":  "/hat/nota",
+                      "value":  43.000000,
+                      "min":  36.000000,
+                      "max":  47.000000,
+                      "label":  "Sintesis/Nota"
+                  },
+                  {
+                      "path":  "/hat/reloj",
+                      "value":  1.000000,
+                      "min":  0.250000,
+                      "max":  4.000000,
+                      "label":  "Sintesis/Reloj"
+                  },
+                  {
+                      "path":  "/hat/swing",
+                      "value":  75.000000,
+                      "min":  0.000000,
+                      "max":  75.000000,
+                      "label":  "Sintesis/Swing"
+                  },
+                  {
+                      "path":  "/hat/tune",
+                      "value":  -0.713000,
+                      "min":  -12.000000,
+                      "max":  12.000000,
+                      "label":  "Sintesis/Afinacion"
+                  },
+                  {
+                      "path":  "/hat/vol",
+                      "value":  0.930000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Volumen"
+                  },
+                  {
+                      "path":  "/kick/accent",
+                      "value":  0.010000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Accent"
+                  },
+                  {
+                      "path":  "/kick/comp_drive",
+                      "value":  3.299000,
+                      "min":  0.500000,
+                      "max":  8.000000,
+                      "label":  "Dinamica/Saturacion Pegada"
+                  },
+                  {
+                      "path":  "/kick/comp_fmax",
+                      "value":  7583.569824,
+                      "min":  1000.000000,
+                      "max":  8000.000000,
+                      "label":  "Dinamica/Filtro Frec Max"
+                  },
+                  {
+                      "path":  "/kick/comp_fmin",
+                      "value":  100.000000,
+                      "min":  100.000000,
+                      "max":  2000.000000,
+                      "label":  "Dinamica/Filtro Frec Min"
+                  },
+                  {
+                      "path":  "/kick/comp_ratio",
+                      "value":  1.988000,
+                      "min":  1.000000,
+                      "max":  20.000000,
+                      "label":  "Dinamica/Lim Ratio"
+                  },
+                  {
+                      "path":  "/kick/comp_thresh",
+                      "value":  0.400000,
+                      "min":  0.010000,
+                      "max":  1.000000,
+                      "label":  "Dinamica/Lim Umbral"
+                  },
+                  {
+                      "path":  "/kick/dec",
+                      "value":  0.220000,
+                      "min":  0.020000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Decaimiento"
+                  },
+                  {
+                      "path":  "/kick/mix",
+                      "value":  0.425000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Mix Rumble"
+                  },
+                  {
+                      "path":  "/kick/nota",
+                      "value":  36.000000,
+                      "min":  36.000000,
+                      "max":  47.000000,
+                      "label":  "Sintesis/Nota"
+                  },
+                  {
+                      "path":  "/kick/reloj",
+                      "value":  1.000000,
+                      "min":  0.250000,
+                      "max":  4.000000,
+                      "label":  "Sintesis/Reloj"
+                  },
+                  {
+                      "path":  "/kick/sweep",
+                      "value":  150.000000,
+                      "min":  0.000000,
+                      "max":  300.000000,
+                      "label":  "Sintesis/Transitorio"
+                  },
+                  {
+                      "path":  "/kick/swing",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  75.000000,
+                      "label":  "Sintesis/Swing"
+                  },
+                  {
+                      "path":  "/kick/tune",
+                      "value":  0.463000,
+                      "min":  -12.000000,
+                      "max":  12.000000,
+                      "label":  "Sintesis/Afinacion"
+                  },
+                  {
+                      "path":  "/kick/vol",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Volumen"
+                  },
+                  {
+                      "path":  "/master/bpm",
+                      "value":  139.839996,
+                      "min":  60.000000,
+                      "max":  240.000000,
+                      "label":  "BPM_Maestro"
+                  },
+                  {
+                      "path":  "/snare/accent",
+                      "value":  1.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Accent"
+                  },
+                  {
+                      "path":  "/snare/dec_cuerpo",
+                      "value":  0.070000,
+                      "min":  0.010000,
+                      "max":  0.400000,
+                      "label":  "Sintesis/Decay Cuerpo"
+                  },
+                  {
+                      "path":  "/snare/dec_resorte",
+                      "value":  0.140000,
+                      "min":  0.020000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Decay Resortes"
+                  },
+                  {
+                      "path":  "/snare/drive",
+                      "value":  1.310000,
+                      "min":  1.000000,
+                      "max":  5.000000,
+                      "label":  "Sintesis/Saturacion"
+                  },
+                  {
+                      "path":  "/snare/freq",
+                      "value":  1711.349976,
+                      "min":  1000.000000,
+                      "max":  4000.000000,
+                      "label":  "Sintesis/Frecuencia Resortes"
+                  },
+                  {
+                      "path":  "/snare/hp",
+                      "value":  184.173004,
+                      "min":  80.000000,
+                      "max":  400.000000,
+                      "label":  "Sintesis/Filtro Paso Alto"
+                  },
+                  {
+                      "path":  "/snare/mix",
+                      "value":  0.352000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Mix Resortes"
+                  },
+                  {
+                      "path":  "/snare/nota",
+                      "value":  37.000000,
+                      "min":  36.000000,
+                      "max":  47.000000,
+                      "label":  "Sintesis/Nota"
+                  },
+                  {
+                      "path":  "/snare/q",
+                      "value":  3.016000,
+                      "min":  1.000000,
+                      "max":  5.000000,
+                      "label":  "Sintesis/Resonancia Resortes"
+                  },
+                  {
+                      "path":  "/snare/reloj",
+                      "value":  0.500000,
+                      "min":  0.250000,
+                      "max":  4.000000,
+                      "label":  "Sintesis/Reloj"
+                  },
+                  {
+                      "path":  "/snare/swing",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  75.000000,
+                      "label":  "Sintesis/Swing"
+                  },
+                  {
+                      "path":  "/snare/tune",
+                      "value":  -6.668000,
+                      "min":  -12.000000,
+                      "max":  12.000000,
+                      "label":  "Sintesis/Afinacion"
+                  },
+                  {
+                      "path":  "/snare/vol",
+                      "value":  0.010000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Volumen"
+                  },
+                  {
+                      "path":  "/syn1/accent",
+                      "value":  0.785000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Accent"
+                  },
+                  {
+                      "path":  "/syn1/auto_p",
+                      "value":  1.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Auto Profundidad"
+                  },
+                  {
+                      "path":  "/syn1/auto_r",
+                      "value":  9.000000,
+                      "min":  1.000000,
+                      "max":  9.000000,
+                      "label":  "Sintesis/Auto Resonancia"
+                  },
+                  {
+                      "path":  "/syn1/auto_v",
+                      "value":  0.886000,
+                      "min":  0.050000,
+                      "max":  5.000000,
+                      "label":  "Sintesis/Auto Velocidad"
+                  },
+                  {
+                      "path":  "/syn1/dec",
+                      "value":  2.000000,
+                      "min":  0.010000,
+                      "max":  2.000000,
+                      "label":  "Sintesis/Decaimiento"
+                  },
+                  {
+                      "path":  "/syn1/nota",
+                      "value":  44.000000,
+                      "min":  36.000000,
+                      "max":  47.000000,
+                      "label":  "Sintesis/Nota"
+                  },
+                  {
+                      "path":  "/syn1/osc1",
+                      "value":  3.701000,
+                      "min":  0.000000,
+                      "max":  12.000000,
+                      "label":  "Sintesis/Osc 1"
+                  },
+                  {
+                      "path":  "/syn1/osc2",
+                      "value":  13.508000,
+                      "min":  0.000000,
+                      "max":  19.000000,
+                      "label":  "Sintesis/Osc 2"
+                  },
+                  {
+                      "path":  "/syn1/reloj",
+                      "value":  2.000000,
+                      "min":  0.250000,
+                      "max":  4.000000,
+                      "label":  "Sintesis/Reloj"
+                  },
+                  {
+                      "path":  "/syn1/swing",
+                      "value":  56.250000,
+                      "min":  0.000000,
+                      "max":  75.000000,
+                      "label":  "Sintesis/Swing"
+                  },
+                  {
+                      "path":  "/syn1/vol",
+                      "value":  0.000000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Volumen"
+                  },
+                  {
+                      "path":  "/syn2/accent",
+                      "value":  0.940000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Accent"
+                  },
+                  {
+                      "path":  "/syn2/comp_a",
+                      "value":  0.019000,
+                      "min":  0.001000,
+                      "max":  0.100000,
+                      "label":  "Dinamica/Comp Ataque"
+                  },
+                  {
+                      "path":  "/syn2/comp_r",
+                      "value":  5.664000,
+                      "min":  1.000000,
+                      "max":  20.000000,
+                      "label":  "Dinamica/Comp Ratio"
+                  },
+                  {
+                      "path":  "/syn2/comp_rel",
+                      "value":  0.129000,
+                      "min":  0.010000,
+                      "max":  1.000000,
+                      "label":  "Dinamica/Comp Liberacion"
+                  },
+                  {
+                      "path":  "/syn2/comp_th",
+                      "value":  -29.030001,
+                      "min":  -60.000000,
+                      "max":  0.000000,
+                      "label":  "Dinamica/Comp Umbral"
+                  },
+                  {
+                      "path":  "/syn2/dec",
+                      "value":  0.880000,
+                      "min":  0.010000,
+                      "max":  2.000000,
+                      "label":  "Sintesis/Decaimiento"
+                  },
+                  {
+                      "path":  "/syn2/disp",
+                      "value":  0.643000,
+                      "min":  0.100000,
+                      "max":  0.900000,
+                      "label":  "Sintesis/Dispersion"
+                  },
+                  {
+                      "path":  "/syn2/lfo_f",
+                      "value":  7.257000,
+                      "min":  0.100000,
+                      "max":  20.000000,
+                      "label":  "Sintesis/LFO Freq"
+                  },
+                  {
+                      "path":  "/syn2/lfo_p",
+                      "value":  0.425000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/LFO Profundidad"
+                  },
+                  {
+                      "path":  "/syn2/nota",
+                      "value":  24.000000,
+                      "min":  12.000000,
+                      "max":  24.000000,
+                      "label":  "Sintesis/Nota Siringe"
+                  },
+                  {
+                      "path":  "/syn2/reloj",
+                      "value":  1.000000,
+                      "min":  0.250000,
+                      "max":  4.000000,
+                      "label":  "Sintesis/Reloj"
+                  },
+                  {
+                      "path":  "/syn2/swing",
+                      "value":  56.625000,
+                      "min":  0.000000,
+                      "max":  75.000000,
+                      "label":  "Sintesis/Swing"
+                  },
+                  {
+                      "path":  "/syn2/vol",
+                      "value":  0.970000,
+                      "min":  0.000000,
+                      "max":  1.000000,
+                      "label":  "Sintesis/Volumen"
+                  }
+              ],
+    "Count":  75
+}

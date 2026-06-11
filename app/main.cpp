@@ -59,6 +59,14 @@ static void signalHandler(int signum) {
 }
 
 int main(int argc, char* argv[]) {
+    std::cout << R"(
+  ____    _     _____ _____ 
+ |  _ \  / \   |__  /|__  / 
+ | |_) |/ _ \    / /   / /  
+ |  _ < / ___ \  / /_  / /_  
+ |_| \_\_/   \_\/____|/____|
+  TR-808 ALGORITHMIC STATION
+)" << std::endl;
     std::cout << "=== TR-808 Algorithmic Techno Station Server ===" << std::endl;
 
     // 1. Instanciar DSP de Faust
@@ -66,6 +74,9 @@ int main(int argc, char* argv[]) {
 
     // 2. Instanciar Dominio (Synthesizer)
     core::Synthesizer synthCore;
+
+    // Inicializar el DSP antes de mapear la interfaz para poblar la memoria con valores por defecto
+    synthDsp->init(44100);
 
     // 3. Crear UI de mapeo OSC/Faust
     audio::FaustMapUI ui(&synthCore);

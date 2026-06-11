@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.obj.d"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/backends/imgui_impl_opengl3.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/backends/imgui_impl_opengl3.cpp.obj.d"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui.cpp.obj.d"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui_draw.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui_draw.cpp.obj.d"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui_tables.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui_tables.cpp.obj.d"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui_widgets.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/_deps/imgui-src/imgui_widgets.cpp.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/bsd.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/bsd.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/context.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/context.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/crypto/openssl.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/crypto/openssl.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/eventing/libuv.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/eventing/libuv.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/loop.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/loop.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/quic.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/quic.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/socket.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/socket.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/udp.c.obj"
+  "CMakeFiles/cpp_bridge.dir/deps/uWebSockets/uSockets/src/udp.c.obj.d"
+  "CMakeFiles/cpp_bridge.dir/modulo_midi_sync/cpp_bridge/main.cpp.obj"
+  "CMakeFiles/cpp_bridge.dir/modulo_midi_sync/cpp_bridge/main.cpp.obj.d"
+  "cpp_bridge.exe"
+  "cpp_bridge.exe.manifest"
+  "cpp_bridge.pdb"
+  "libcpp_bridge.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C CXX)
+  include(CMakeFiles/cpp_bridge.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
