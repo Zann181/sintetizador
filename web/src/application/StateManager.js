@@ -20,6 +20,7 @@ export class StateManager {
         this.oscActive = false;
         this.midiActive = false;
         this.audioDevices = [];
+        this.hasWebSocketSync = false;
 
         // UI trigger callbacks (decopuling Presentation from logic)
         this.listeners = {
@@ -28,14 +29,16 @@ export class StateManager {
             mappingsChanged: [],
             mixerChanged: [],
             instrumentChanged: [],
-            groovesChanged: []
+            groovesChanged: [],
+            triggerMappingModal: []
         };
     }
 
     on(event, cb) {
-        if (this.listeners[event]) {
-            this.listeners[event].push(cb);
+        if (!this.listeners[event]) {
+            this.listeners[event] = [];
         }
+        this.listeners[event].push(cb);
     }
 
     emit(event, data) {

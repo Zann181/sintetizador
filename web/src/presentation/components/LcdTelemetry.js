@@ -131,7 +131,7 @@ export class LcdTelemetry {
         
         let blinkStep = 0;
         const triggerBlink = () => {
-            if (this.stateManager.syncWebSocket.hasWebSocketSync) return; // Prioritize link sync
+            if (this.stateManager.hasWebSocketSync) return; // Prioritize link sync
             this.triggerBpmLedFlash(blinkStep);
             blinkStep = (blinkStep + 1) % 16;
             

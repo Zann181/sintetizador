@@ -2102,83 +2102,92 @@
         let wsMonitor = null;
         let wsErrorLogged = false;
         function connectWsMonitor() {
-            wsMonitor = new WebSocket("ws://127.0.0.1:8002");
-            wsMonitor.onerror = function(err) {
-                if (!wsErrorLogged) {
-                    console.warn("Ableton Link Bridge no detectado (ws://127.0.0.1:8002). El sintetizador funcionará con reloj interno.");
-                    wsErrorLogged = true;
-                }
-            };
-            wsMonitor.onmessage = function(event) {
-                try {
-                    wsErrorLogged = false;
-                    const data = JSON.parse(event.data);
-                    if (data.type === "beat") {
-                        hasWebSocketSync = true;
-                        const step = data.step % 16;
-                        if (step !== undefined && step >= 0 && step !== playheadStep) {
-                            playheadStep = step;
-                            updatePlayhead(step);
-                        }
-                        // Sync playhead to beat 0 (phrase start)
-                        if (data.step === 0) {
-                            triggerBlueLedFlash();
-                            syncPlayheadToBeat();
-                        } else if (data.step === 16 || data.step === 32 || data.step === 48) {
-                            triggerGreenLedFlash();
-                        } else if (data.step % 4 === 0) {
-                            triggerGreenLedFlash();
-                        } else {
-                            triggerRedLedFlash();
-                        }
-                        if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
-                        wsSyncTimeout = setTimeout(() => {
-                            hasWebSocketSync = false;
-                        }, 3000);
-                    } else if (data.type === "tx") {
-                        const ledTx = document.getElementById("led-tx");
-                        const trace = document.getElementById("web-osc-trace");
-                        if (data.pulse === 1) { // 50ms Beat 1 (Step 0)
+            try {
+                const host = window.location.hostname || "127.0.0.1";
+                wsMonitor = new WebSocket("ws://" + host + ":8002");
+                wsMonitor.onerror = function(err) {
+                    if (!wsErrorLogged) {
+                        console.warn("Ableton Link Bridge no detectado (ws://" + host + ":8002). El sintetizador funcionará con reloj interno.");
+                        wsErrorLogged = true;
+                    }
+                };
+                wsMonitor.onmessage = function(event) {
+                    try {
+                        wsErrorLogged = false;
+                        const data = JSON.parse(event.data);
+                        if (data.type === "beat") {
                             hasWebSocketSync = true;
-                            triggerGreenLedFlash();
-                            syncPlayheadToBeat(); // Also sync on tx pulse 1
+                            const step = data.step % 16;
+                            if (step !== undefined && step >= 0 && step !== playheadStep) {
+                                playheadStep = step;
+                                updatePlayhead(step);
+                            }
+                            // Sync playhead to beat 0 (phrase start)
+                            if (data.step === 0) {
+                                triggerBlueLedFlash();
+                                syncPlayheadToBeat();
+                            } else if (data.step === 16 || data.step === 32 || data.step === 48) {
+                                triggerGreenLedFlash();
+                            } else if (data.step % 4 === 0) {
+                                triggerGreenLedFlash();
+                            } else {
+                                triggerRedLedFlash();
+                            }
                             if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
                             wsSyncTimeout = setTimeout(() => {
                                 hasWebSocketSync = false;
                             }, 3000);
+                        } else if (data.type === "tx") {
+                            const ledTx = document.getElementById("led-tx");
+                            const trace = document.getElementById("web-osc-trace");
+                            if (data.pulse === 1) { // 50ms Beat 1 (Step 0)
+                                hasWebSocketSync = true;
+                                triggerGreenLedFlash();
+                                syncPlayheadToBeat(); // Also sync on tx pulse 1
+                                if (wsSyncTimeout) clearTimeout(wsSyncTimeout);
+                                wsSyncTimeout = setTimeout(() => {
+                                    hasWebSocketSync = false;
+                                }, 3000);
 
-                            const c = data.color || "#00ff00";
-                            ledTx.style.background = c;
-                            ledTx.style.boxShadow = "0 0 5px " + c;
-                            trace.style.borderColor = c;
-                            trace.style.borderBottomColor = "transparent";
-                            trace.style.width = "40%";
-                        } else if (data.pulse === 2) { // 10ms
-                            const c = data.color || "#00ffff";
-                            ledTx.style.background = c;
-                            ledTx.style.boxShadow = "0 0 5px " + c;
-                            trace.style.borderColor = c;
-                            trace.style.borderBottomColor = "transparent";
-                            trace.style.width = "10%";
-                        } else {
-                            ledTx.style.background = "#220000";
-                            ledTx.style.boxShadow = "none";
-                            trace.style.borderColor = "transparent";
+                                const c = data.color || "#00ff00";
+                                ledTx.style.background = c;
+                                ledTx.style.boxShadow = "0 0 5px " + c;
+                                trace.style.borderColor = c;
+                                trace.style.borderBottomColor = "transparent";
+                                trace.style.width = "40%";
+                            } else if (data.pulse === 2) { // 10ms
+                                const c = data.color || "#00ffff";
+                                ledTx.style.background = c;
+                                ledTx.style.boxShadow = "0 0 5px " + c;
+                                trace.style.borderColor = c;
+                                trace.style.borderBottomColor = "transparent";
+                                trace.style.width = "10%";
+                            } else {
+                                ledTx.style.background = "#220000";
+                                ledTx.style.boxShadow = "none";
+                                trace.style.borderColor = "transparent";
+                            }
+                        } else if (data.type === "rx") {
+                            const ledRx = document.getElementById("led-rx");
+                            ledRx.style.background = data.color;
+                            ledRx.style.boxShadow = "0 0 5px " + data.color;
+                            setTimeout(() => {
+                                ledRx.style.background = "#002200";
+                                ledRx.style.boxShadow = "none";
+                            }, 50);
                         }
-                    } else if (data.type === "rx") {
-                        const ledRx = document.getElementById("led-rx");
-                        ledRx.style.background = data.color;
-                        ledRx.style.boxShadow = "0 0 5px " + data.color;
-                        setTimeout(() => {
-                            ledRx.style.background = "#002200";
-                            ledRx.style.boxShadow = "none";
-                        }, 50);
-                    }
-                } catch(e) {}
-            };
-            wsMonitor.onclose = function() {
+                    } catch(e) {}
+                };
+                wsMonitor.onclose = function() {
+                    setTimeout(connectWsMonitor, 3000);
+                };
+            } catch (e) {
+                if (!wsErrorLogged) {
+                    console.warn("Error al conectar WebSocket de monitor de sincronización:", e.message);
+                    wsErrorLogged = true;
+                }
                 setTimeout(connectWsMonitor, 3000);
-            };
+            }
         }
         connectWsMonitor();
 

@@ -24,33 +24,42 @@ export class SyncWebSocket {
     }
 
     connect() {
-        this.ws = new WebSocket("ws://127.0.0.1:8002");
-        
-        this.ws.onerror = (err) => {
+        try {
+            const host = window.location.hostname || "127.0.0.1";
+            this.ws = new WebSocket("ws://" + host + ":8002");
+            
+            this.ws.onerror = (err) => {
+                if (!this.wsErrorLogged) {
+                    console.warn("Ableton Link Bridge no detectado (ws://" + host + ":8002). El sintetizador funcionará con reloj interno.");
+                    this.wsErrorLogged = true;
+                }
+            };
+
+            this.ws.onmessage = (event) => {
+                try {
+                    this.wsErrorLogged = false;
+                    const data = JSON.parse(event.data);
+                    if (data.type === "beat") {
+                        this.emit('beat', data);
+                    } else if (data.type === "tx") {
+                        this.emit('tx', data);
+                    } else if (data.type === "rx") {
+                        this.emit('rx', data);
+                    }
+                } catch (e) {
+                    // Ignore parsing errors
+                }
+            };
+
+            this.ws.onclose = () => {
+                setTimeout(() => this.connect(), 3000);
+            };
+        } catch (e) {
             if (!this.wsErrorLogged) {
-                console.warn("Ableton Link Bridge no detectado (ws://127.0.0.1:8002). El sintetizador funcionará con reloj interno.");
+                console.warn("Error al conectar WebSocket de sincronización:", e.message);
                 this.wsErrorLogged = true;
             }
-        };
-
-        this.ws.onmessage = (event) => {
-            try {
-                this.wsErrorLogged = false;
-                const data = JSON.parse(event.data);
-                if (data.type === "beat") {
-                    this.emit('beat', data);
-                } else if (data.type === "tx") {
-                    this.emit('tx', data);
-                } else if (data.type === "rx") {
-                    this.emit('rx', data);
-                }
-            } catch (e) {
-                // Ignore parsing errors
-            }
-        };
-
-        this.ws.onclose = () => {
             setTimeout(() => this.connect(), 3000);
-        };
+        }
     }
 }

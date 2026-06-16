@@ -98,6 +98,7 @@ export class SequencerService {
 
     handleWebSocketBeat(data) {
         this.hasWebSocketSync = true;
+        this.stateManager.hasWebSocketSync = true;
         const step = data.step % 16;
         if (step !== undefined && step >= 0 && step !== this.playheadStep) {
             this.playheadStep = step;
@@ -110,6 +111,7 @@ export class SequencerService {
         if (this.wsSyncTimeout) clearTimeout(this.wsSyncTimeout);
         this.wsSyncTimeout = setTimeout(() => {
             this.hasWebSocketSync = false;
+            this.stateManager.hasWebSocketSync = false;
         }, 3000);
     }
 

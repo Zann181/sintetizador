@@ -80,6 +80,7 @@ sequencerService.on('txPulse', (data) => {
 
     if (data.pulse === 1) { // Phrase start beat pulse
         sequencerService.hasWebSocketSync = true;
+        stateManager.hasWebSocketSync = true;
         lcdTelemetry.triggerBpmLedFlash(0);
         
         const c = data.color || "#00ff00";
@@ -416,14 +417,21 @@ async function start() {
             
             // Audio output device list
             const select = document.getElementById('audio-device-select');
-            if (select && select.options.length <= 1 && st.audioDevices) {
-                stateManager.audioDevices = st.audioDevices;
-                let html = '';
-                st.audioDevices.forEach(d => {
-                    const sel = d.active ? 'selected' : '';
-                    html += `<option value="${d.id}" ${sel}>${d.name}</option>`;
-                });
-                select.innerHTML = html;
+            if (select && st.devices) {
+                if (select.options.length <= 1) {
+                    stateManager.audioDevices = st.devices;
+                    let html = '';
+                    st.devices.forEach(d => {
+                        const sel = d.active ? 'selected' : '';
+                        html += `<option value="${d.id}" ${sel}>${d.name}</option>`;
+                    });
+                    select.innerHTML = html;
+                } else {
+                    const activeDev = st.devices.find(d => d.active);
+                    if (activeDev && select.value !== String(activeDev.id)) {
+                        select.value = activeDev.id;
+                    }
+                }
             }
 
             // Remote OSC IPs list

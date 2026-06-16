@@ -1,0 +1,37 @@
+# ninja log v5
+3	99	8021323974083984	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-mkdir	6dd8e2aa6ea2f0d7
+223	289	8021327838399111	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-patch	2f242d2dfd4e494f
+3	99	8021323974083984	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-mkdir	6dd8e2aa6ea2f0d7
+100	43561	8021324408751705	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-download	7928c2faaf706e7e
+223	289	8021327838399111	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-patch	2f242d2dfd4e494f
+100	43561	8021324408751705	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-download	7928c2faaf706e7e
+20	223	0	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-update	bd4fdb83e2835e9c
+20	223	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-update	bd4fdb83e2835e9c
+605	688	8021327842406063	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/CMakeFiles/nlohmann_json-populate-complete	cea0e57dc244051c
+289	357	8021327839094935	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-configure	3f9e44d1ad0810b5
+289	357	8021327839094935	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-configure	3f9e44d1ad0810b5
+358	478	8021327840270260	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-build	7e42f202af1ee1b9
+478	544	8021327840978043	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-install	36349bd45eb6df03
+358	478	8021327840270260	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-build	7e42f202af1ee1b9
+478	544	8021327840978043	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-install	36349bd45eb6df03
+545	605	8021327841578485	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-test	4969ef6283be8f67
+545	605	8021327841578485	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-test	4969ef6283be8f67
+605	688	8021327842406063	CMakeFiles/nlohmann_json-populate-complete	cea0e57dc244051c
+605	688	8021327842406063	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-done	cea0e57dc244051c
+605	688	8021327842406063	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-done	cea0e57dc244051c
+22	202	0	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-update	bd4fdb83e2835e9c
+22	202	0	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-update	bd4fdb83e2835e9c
+202	274	8021329246003985	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-patch	2f242d2dfd4e494f
+202	274	8021329246003985	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-patch	2f242d2dfd4e494f
+274	335	8021329246634050	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-configure	3f9e44d1ad0810b5
+274	335	8021329246634050	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-configure	3f9e44d1ad0810b5
+335	398	8021329247268364	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-build	7e42f202af1ee1b9
+335	398	8021329247268364	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-build	7e42f202af1ee1b9
+399	464	8021329247919105	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-install	36349bd45eb6df03
+399	464	8021329247919105	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-install	36349bd45eb6df03
+464	526	8021329248514072	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-test	4969ef6283be8f67
+464	526	8021329248514072	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-test	4969ef6283be8f67
+526	616	8021329249431075	CMakeFiles/nlohmann_json-populate-complete	cea0e57dc244051c
+526	616	8021329249431075	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-done	cea0e57dc244051c
+526	616	8021329249431075	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/CMakeFiles/nlohmann_json-populate-complete	cea0e57dc244051c
+526	616	8021329249431075	C:/Users/Motaz/Music/Nueva carpeta/sintetizador/build/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-done	cea0e57dc244051c
